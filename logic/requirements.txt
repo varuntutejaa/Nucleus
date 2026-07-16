@@ -1,0 +1,16 @@
+
+streamlit>=1.40.0
+streamlit-option-menu>=0.4.0
+pandas>=2.2.2
+numpy>=1.26.4
+plotly>=5.24.1
+matplotlib>=3.9.2
+networkx>=3.3
+scikit-learn>=1.5.2
+scipy>=1.14.1
+reportlab>=4.2.2
+joblib>=1.4.2
+pyarrow>=17.0.0
+openpyxl>=3.1.5
+Pillow>=10.4.0
+pyinstaller>=6.10.0

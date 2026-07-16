@@ -1,0 +1,22 @@
+.DS_Store
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Env files
+.env
+.env.*
+
+# Generated data / outputs
+logic/data/
+logic/outputs/
+backend/app/data/raw/
