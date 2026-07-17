@@ -15,6 +15,7 @@ dist-ssr/
 # Env files
 .env
 .env.*
+!frontend/.env.example
 
 # Generated data / outputs
 logic/data/
