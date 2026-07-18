@@ -7,6 +7,18 @@ from pydantic import BaseModel, Field
 class AiopsSummary(BaseModel):
     raw_count: int
     host_count: int
+    hosts: List[str]
+
+
+class EngineIncidentMemberOut(BaseModel):
+    alert_id: str
+    timestamp: str
+    host: str
+    metric: str
+    severity: str
+    value: float
+    root_score: float
+    is_root: bool
 
 
 class EngineIncidentOut(BaseModel):
@@ -20,6 +32,7 @@ class EngineIncidentOut(BaseModel):
     root_score: float
     alert_count: int
     suppressed_count: int
+    members: List[EngineIncidentMemberOut] = Field(default_factory=list, description="every raw alert folded into this incident, in timestamp order; empty unless include_members=true was passed")
 
 
 class EngineMetricsOut(BaseModel):
@@ -40,6 +53,7 @@ class SampleAlertOut(BaseModel):
     timestamp: str = Field(description="ISO 8601 UTC timestamp")
     host: str
     metric: str
+    value: float = Field(description="the real metric reading that triggered this alert")
     severity: str = Field(description="Critical | Warning | Info")
     message: str
 

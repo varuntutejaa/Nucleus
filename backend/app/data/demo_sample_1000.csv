@@ -1,0 +1,1001 @@
+alert_id,timestamp,host,metric,value,severity,message,source
+1280616c-c331-4e25-b0d6-ce77e42c4162,1587582880000,os_021,CPU_util_pct,5.618989,Critical,High CPU Utilization,os_linux.csv
+a9fa91f5-ff10-4d91-a30d-3c28b99cd16b,1587582886000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+87063daf-d659-4210-b6a1-df4a774683f1,1587582886000,db_008,MEM_real_util,83.78,Critical,High Memory Utilization,db_oracle_11g.csv
+d680c88c-07dd-4c06-93e4-33a6c7479ef8,1587582886000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+68e5d7cc-ad85-4126-844f-e052df2ffb10,1587582888000,os_004,CPU_util_pct,1.182492,Critical,High CPU Utilization,os_linux.csv
+9b2b7d6c-7708-44a6-9c60-8cb2c1d900cd,1587582890000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+8ce90c1c-2971-47ea-bd14-ee1a20f87a70,1587582892000,os_017,CPU_util_pct,2.387742,Critical,High CPU Utilization,os_linux.csv
+70334fd2-3da5-4dfe-bfc4-cdc19fc44a2c,1587582900000,db_007,MEM_real_util,81.87,Critical,High Memory Utilization,db_oracle_11g.csv
+4dddac96-151c-44fd-ae93-2d8782e58d45,1587582900000,os_002,CPU_util_pct,1.733172,Critical,High CPU Utilization,os_linux.csv
+28f098fe-7356-4da7-b0e8-981ca593cb27,1587582903000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+71af4fe8-f9cf-41df-85ee-c0a2ac07e201,1587582906000,db_010,MEM_real_util,57.82,Critical,High Memory Utilization,db_oracle_11g.csv
+1cbbd48c-5957-4130-999b-a2087ba0415f,1587582915000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+a0c4c8ec-e2c9-43fc-a405-85bbf98ed286,1587582915000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+53e1e6b8-077a-44cf-b3bf-f59fec586ef2,1587582916000,os_001,CPU_util_pct,1.985125,Critical,High CPU Utilization,os_linux.csv
+0c465502-ec57-4828-a97b-5fd6d283f4ee,1587582918000,db_013,MEM_real_util,54.6,Critical,High Memory Utilization,db_oracle_11g.csv
+2a014020-2e4c-492a-b89d-8efc87c90f30,1587582921000,os_019,CPU_util_pct,2.276394,Critical,High CPU Utilization,os_linux.csv
+341ed710-f4fe-460d-81ad-49bc01498952,1587582925000,os_018,CPU_util_pct,2.700278,Critical,High CPU Utilization,os_linux.csv
+6a384d09-5367-4b7f-bcd6-6137d70c6866,1587582928000,db_008,Sess_Connect,505.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+57eaa4f9-a3ba-4296-b001-6dd291007ac5,1587582928000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+a48f2d3e-f8d0-4fb3-9daa-74394dbf10d1,1587582928000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+a844d093-b20d-4686-9332-6938d6d44725,1587582930000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+284b6709-bb0c-4e47-9439-535e4c05a693,1587582932000,os_022,CPU_util_pct,4.248882,Critical,High CPU Utilization,os_linux.csv
+2df818cb-5084-4642-94a7-4ad8c70bbcf7,1587582932000,os_005,CPU_util_pct,4.655078,Critical,High CPU Utilization,os_linux.csv
+d7938db9-7a12-4a04-a2b9-f096c8a888af,1587582934000,db_011,MEM_real_util,57.53,Critical,High Memory Utilization,db_oracle_11g.csv
+0be4ac65-e2c7-4e05-87c5-cdb05405151b,1587582940000,os_021,CPU_util_pct,5.324507,Critical,High CPU Utilization,os_linux.csv
+a02aaed2-cf36-4f93-a136-728bdb205bcd,1587582940000,os_020,CPU_util_pct,2.358251,Critical,High CPU Utilization,os_linux.csv
+9b16bfd2-f578-403f-802f-145e0386a432,1587582940000,os_003,CPU_util_pct,9.05506,Critical,High CPU Utilization,os_linux.csv
+5cd9e96b-ea8b-4956-85ee-4110ca54b898,1587582945000,db_008,MEM_real_util,83.7,Critical,High Memory Utilization,db_oracle_11g.csv
+c010a835-61f8-42be-bb75-2dacb422a087,1587582945000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+cdc24975-5f34-4233-8127-b4a880f4c79c,1587582945000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+188dce1b-f6ab-4352-ba23-854d23fc8438,1587582948000,os_004,CPU_util_pct,1.168332,Critical,High CPU Utilization,os_linux.csv
+70ed0468-6267-4a20-8833-8b58425163ef,1587582950000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+d5a1c6f3-88aa-4103-a128-d4867992a4e8,1587582953000,os_017,CPU_util_pct,2.487341,Critical,High CPU Utilization,os_linux.csv
+1cd4cc94-02d8-4d47-a9d3-5550632f5e02,1587582960000,db_007,MEM_real_util,81.87,Critical,High Memory Utilization,db_oracle_11g.csv
+40b5ceef-9475-4f0b-80d0-31338f1c3d9e,1587582962000,os_002,CPU_util_pct,1.797522,Critical,High CPU Utilization,os_linux.csv
+b82ab9aa-c10c-48bc-87f6-9bf1a8ffaef0,1587582963000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+09cc5a1e-8c80-4f25-9962-8325f7ac3a21,1587582965000,os_012,CPU_util_pct,1.143509,Critical,High CPU Utilization,os_linux.csv
+20dd596f-69fc-4297-b825-793f017e61b1,1587582966000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+9b47842a-8d65-41d7-8c07-293a6d5dcf43,1587582975000,db_002,MEM_real_util,45.2,Critical,High Memory Utilization,db_oracle_11g.csv
+ffda5d78-781e-4ba5-b023-f896f757ae1a,1587582975000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+56a71284-2a77-466b-9291-815e7cfd8a3a,1587582976000,os_001,CPU_util_pct,1.87903,Critical,High CPU Utilization,os_linux.csv
+558d12af-1b6e-4d14-a632-90ecb10380c3,1587582978000,db_013,MEM_real_util,54.6,Critical,High Memory Utilization,db_oracle_11g.csv
+9aeb3ea3-2c8f-4c31-9f78-3fc995b22b99,1587582981000,os_019,CPU_util_pct,2.32259,Critical,High CPU Utilization,os_linux.csv
+c7d089fe-db50-40d6-85b9-481d2973feda,1587582984000,os_018,CPU_util_pct,2.594304,Critical,High CPU Utilization,os_linux.csv
+f94feff2-a795-474a-a02a-e12065af4842,1587582988000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+32eb7f2b-e93b-45f3-9abc-426d348848f1,1587582988000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+3a6d897a-0022-4e15-b90d-1e7465cf4ab3,1587582988000,db_008,Sess_Connect,505.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+87c47e2a-442e-4aaf-8770-6c36e370a93e,1587582990000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+9af2b903-447f-47fc-94aa-7a9243663eeb,1587582993000,os_022,CPU_util_pct,5.023747,Critical,High CPU Utilization,os_linux.csv
+e1a2a3a7-bd5a-4894-93f2-338086ab301e,1587582993000,os_005,CPU_util_pct,4.785374,Critical,High CPU Utilization,os_linux.csv
+6da0bc2a-a38b-4275-bb73-5f106ed1b673,1587582994000,db_011,MEM_real_util,57.53,Critical,High Memory Utilization,db_oracle_11g.csv
+03e2ed84-f28e-4eec-a267-af12559a3238,1587583000000,os_021,CPU_util_pct,5.718495,Critical,High CPU Utilization,os_linux.csv
+8d0f98c4-4df4-4df8-85e9-d570a4d23f10,1587583000000,os_003,CPU_util_pct,9.147785,Critical,High CPU Utilization,os_linux.csv
+511ed264-7db3-4a07-8ddb-118f9c7545b7,1587583000000,os_020,CPU_util_pct,2.327474,Critical,High CPU Utilization,os_linux.csv
+824725ea-82ab-4d19-a1f9-5ade9ff08eba,1587583005000,db_003,MEM_real_util,45.33,Critical,High Memory Utilization,db_oracle_11g.csv
+da7a0d42-905b-4f06-91d7-9b1be555dd98,1587583005000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+bbe86998-041d-4c7b-9250-e66f03574e8d,1587583005000,db_008,MEM_real_util,83.71,Critical,High Memory Utilization,db_oracle_11g.csv
+5b3d5277-8dd1-4288-8a8c-6d0078d4f71a,1587583008000,os_004,CPU_util_pct,1.273859,Critical,High CPU Utilization,os_linux.csv
+176cbd79-6a11-4607-bb22-3921cb0b04c3,1587583010000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+1aad021a-4934-4471-aecd-7aa93424142a,1587583012000,os_017,CPU_util_pct,2.555415,Critical,High CPU Utilization,os_linux.csv
+eea9383c-e2fb-43df-8586-e7f4661b2e12,1587583020000,db_007,MEM_real_util,81.87,Critical,High Memory Utilization,db_oracle_11g.csv
+4d94b56f-3480-40a5-9d47-28d853085861,1587583020000,os_002,CPU_util_pct,1.723299,Critical,High CPU Utilization,os_linux.csv
+82d90f1f-2af3-4fc8-bf87-983fc054f592,1587583023000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+ed14029a-7098-4d6e-8558-bad2d5712512,1587583026000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+f7ec7d48-4552-4882-b14c-0b85dc60a0e9,1587583035000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+7670d9e2-687f-4639-a02a-02584a0b70ee,1587583035000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+d9b86818-e9ed-4871-99f0-d3b489c788b3,1587583037000,os_001,CPU_util_pct,1.868016,Critical,High CPU Utilization,os_linux.csv
+c9f57843-115c-4bd0-8ad9-aceecbb58939,1587583038000,db_013,MEM_real_util,54.6,Critical,High Memory Utilization,db_oracle_11g.csv
+0c052d31-2fd8-4225-aa32-2a356b6aff47,1587583041000,os_019,CPU_util_pct,2.355183,Critical,High CPU Utilization,os_linux.csv
+459dd22b-45f1-4b97-8148-d09f1bb25e3c,1587583045000,os_018,CPU_util_pct,2.757171,Critical,High CPU Utilization,os_linux.csv
+c3ace49f-6084-4229-9bb4-ce4ac427df68,1587583048000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+c584f27a-6dfd-42f7-9c56-5c3e9c474500,1587583048000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+97f58d2a-a702-4cd0-b2ad-698c21c47e56,1587583048000,db_008,Sess_Connect,501.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+5075fe9c-d942-41c1-9dc2-efd9c39cecb0,1587583050000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+d21cc49f-a29e-45cf-94fd-982ef29bcd37,1587583052000,os_005,CPU_util_pct,4.829952,Critical,High CPU Utilization,os_linux.csv
+e256e185-fcd5-4ed4-8f8d-9b5e700fda5b,1587583052000,os_022,CPU_util_pct,5.168946,Critical,High CPU Utilization,os_linux.csv
+ab56b059-69e0-4464-a67f-5331e4027ea6,1587583054000,db_011,MEM_real_util,57.53,Critical,High Memory Utilization,db_oracle_11g.csv
+7b454bd8-0efb-40b4-8111-bab38a92089d,1587583060000,os_021,CPU_util_pct,5.093152,Critical,High CPU Utilization,os_linux.csv
+a0e06c15-d0d4-475d-bc96-b20d06dc17bd,1587583060000,os_003,CPU_util_pct,9.411641,Critical,High CPU Utilization,os_linux.csv
+620d0c1f-d3e6-4afc-8731-106719d5ca41,1587583060000,os_020,CPU_util_pct,2.426371,Critical,High CPU Utilization,os_linux.csv
+827e471b-e5f5-4cdf-be15-040f8eafa690,1587583065000,db_008,MEM_real_util,83.71,Critical,High Memory Utilization,db_oracle_11g.csv
+6bda455c-5a4a-4085-8080-165734d723b0,1587583065000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+6dd20786-04f8-420b-b88e-a532fce8da47,1587583065000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+790f6053-98fe-4606-a04d-16d10e0e0411,1587583068000,os_004,CPU_util_pct,1.149666,Critical,High CPU Utilization,os_linux.csv
+4536b7ae-5934-4af0-b367-dfd0454b2fe9,1587583070000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+2d1ef584-df7d-4722-b625-767d713f54f4,1587583072000,os_017,CPU_util_pct,2.455259,Critical,High CPU Utilization,os_linux.csv
+bc21a685-37e1-4d64-ac54-1a9b4c39eb87,1587583080000,db_007,MEM_real_util,81.74,Critical,High Memory Utilization,db_oracle_11g.csv
+4787fe4c-2aa8-4feb-b103-2c49aab1352f,1587583080000,os_002,CPU_util_pct,1.676374,Critical,High CPU Utilization,os_linux.csv
+81583063-c8c8-4e48-8433-55647b7d7f38,1587583083000,db_009,MEM_real_util,8.48,Critical,High Memory Utilization,db_oracle_11g.csv
+8712e5db-13db-442e-a4b5-41d582a8eeea,1587583086000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+6940a527-2339-4772-a2b9-5fe77e452db1,1587583095000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+931c6af0-5916-4cf7-95e1-e5442b5c732b,1587583095000,db_002,MEM_real_util,45.2,Critical,High Memory Utilization,db_oracle_11g.csv
+0fc3d2b7-34ea-4e32-8d0b-c37e44fe6160,1587583096000,os_001,CPU_util_pct,1.889991,Critical,High CPU Utilization,os_linux.csv
+4d861778-df27-4beb-9dad-221ca3cfd0bc,1587583098000,db_013,MEM_real_util,54.6,Critical,High Memory Utilization,db_oracle_11g.csv
+bbac70f8-146c-4e2c-852d-f4aa68e409a8,1587583101000,os_019,CPU_util_pct,2.214697,Critical,High CPU Utilization,os_linux.csv
+14e5aa34-16c7-46c4-82f7-4dbd9aa86f6f,1587583105000,os_018,CPU_util_pct,2.708494,Critical,High CPU Utilization,os_linux.csv
+6f5b1dc9-c499-4c46-9ea5-6930163d94e6,1587583108000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+dac954dd-a74b-474e-b29a-e5b934be583b,1587583108000,db_008,Sess_Connect,501.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+7adba8d1-f67c-4e0d-880b-ff6f0db6ee52,1587583108000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+5ce36b72-cfd7-483e-a7b0-8065ec061e14,1587583110000,db_004,MEM_real_util,4.87,Critical,High Memory Utilization,db_oracle_11g.csv
+555db48b-8c19-4079-869b-5f08bc353d06,1587583112000,os_022,CPU_util_pct,4.979244,Critical,High CPU Utilization,os_linux.csv
+e081a376-6b31-430f-aec0-a308518d1c75,1587583112000,os_005,CPU_util_pct,4.749984,Critical,High CPU Utilization,os_linux.csv
+146905f4-62b9-4061-b5e1-460e00b1a6cf,1587583114000,db_011,MEM_real_util,57.53,Critical,High Memory Utilization,db_oracle_11g.csv
+11c00190-d794-44b0-8971-77587e420d11,1587583121000,os_021,CPU_util_pct,5.346607,Critical,High CPU Utilization,os_linux.csv
+16dfbec2-be56-4eaf-81ae-d97ba6806091,1587583121000,os_020,CPU_util_pct,2.284594,Critical,High CPU Utilization,os_linux.csv
+7b9af820-0059-4009-a072-17fb4773ce2a,1587583122000,os_003,CPU_util_pct,9.348179,Critical,High CPU Utilization,os_linux.csv
+0ec8205b-5462-42e7-8bf9-f55fdd369197,1587583125000,db_003,MEM_real_util,45.33,Critical,High Memory Utilization,db_oracle_11g.csv
+36708961-5719-4b3b-8c8c-ed7c91fb8a8d,1587583125000,db_008,MEM_real_util,83.71,Critical,High Memory Utilization,db_oracle_11g.csv
+bd824d86-b86a-4f13-9bd6-a724844af80d,1587583125000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+c6900c03-7c17-4785-b109-6f585393259b,1587583128000,os_004,CPU_util_pct,1.17074,Critical,High CPU Utilization,os_linux.csv
+a182791b-4744-4a78-95aa-198c14099b03,1587583130000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+6fbfc521-6f6d-48af-8ca8-fff5499b9a30,1587583132000,os_017,CPU_util_pct,2.362369,Critical,High CPU Utilization,os_linux.csv
+f2dc0706-044a-4998-8585-97b3dc22a142,1587583140000,os_002,CPU_util_pct,1.721575,Critical,High CPU Utilization,os_linux.csv
+1b9cca55-00d1-4e80-862f-98e5ab3cfad8,1587583140000,db_007,MEM_real_util,81.81,Critical,High Memory Utilization,db_oracle_11g.csv
+07f8d2ae-f7f4-4049-b33b-fe26f124cfd2,1587583143000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+bc9f8e0a-32a7-4e32-ac62-cfe073180dc7,1587583146000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+56439bb7-dd33-4ef9-98db-0e3b74dc720d,1587583155000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+470f7933-3a26-4a79-87ab-875b8c0e6e4e,1587583155000,db_002,MEM_real_util,45.2,Critical,High Memory Utilization,db_oracle_11g.csv
+7365d622-31aa-4b4e-9664-e618b538dd03,1587583156000,os_001,CPU_util_pct,1.981724,Critical,High CPU Utilization,os_linux.csv
+485ee77b-c7c1-4ae9-a054-de9a3af73c9b,1587583158000,db_013,MEM_real_util,54.6,Critical,High Memory Utilization,db_oracle_11g.csv
+28fcfcdc-dc61-4a75-a63e-5b400d4e3a9f,1587583160000,os_019,CPU_util_pct,2.188319,Critical,High CPU Utilization,os_linux.csv
+7345a56a-247a-48d2-8615-adf805426552,1587583164000,os_018,CPU_util_pct,2.582333,Critical,High CPU Utilization,os_linux.csv
+680e834a-3147-40d8-825e-5052ef593f47,1587583168000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+ebd80f99-592c-43f1-a0d3-d2669e7a9179,1587583168000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+b37d3fd2-cbc6-49a7-9872-25d8f5ae0afe,1587583168000,db_008,Sess_Connect,502.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+eafb8394-70d5-43da-8024-09b39fa4f110,1587583170000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+728f9818-a627-40b0-b3a9-7f11e6ec84e7,1587583173000,os_005,CPU_util_pct,4.746176,Critical,High CPU Utilization,os_linux.csv
+7f2aa3b1-bebf-47e3-9608-8eabe553c293,1587583173000,os_022,CPU_util_pct,5.625111,Critical,High CPU Utilization,os_linux.csv
+6d2338ec-1a5c-4207-9090-3744f6c4adf6,1587583174000,db_011,MEM_real_util,57.53,Critical,High Memory Utilization,db_oracle_11g.csv
+ea301011-19f3-45e6-981c-919e2c29420e,1587583180000,os_020,CPU_util_pct,2.334427,Critical,High CPU Utilization,os_linux.csv
+a93c32c8-f748-43c1-8e7e-ffef18c824c1,1587583180000,os_003,CPU_util_pct,9.666898,Critical,High CPU Utilization,os_linux.csv
+5801b29b-f109-4aa6-a505-8572ff9657b3,1587583180000,os_021,CPU_util_pct,5.05182,Critical,High CPU Utilization,os_linux.csv
+bb661659-5a2a-4afa-9758-40a1e3c86aff,1587583185000,db_008,MEM_real_util,83.71,Critical,High Memory Utilization,db_oracle_11g.csv
+bb9f52b6-f93b-4a1d-89b3-d882f995c7c0,1587583185000,db_001,MEM_real_util,46.21,Critical,High Memory Utilization,db_oracle_11g.csv
+8c216c8e-76f7-4d61-a0d6-5cc20548b630,1587583185000,db_003,MEM_real_util,45.43,Critical,High Memory Utilization,db_oracle_11g.csv
+39e31334-ecb2-4eb2-a519-cbd658f58a97,1587583188000,os_004,CPU_util_pct,1.185052,Critical,High CPU Utilization,os_linux.csv
+ce8e7751-891a-420a-a10f-8e7bc6b481f5,1587583190000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+78124895-df1a-45d2-a3d8-552ead68530a,1587583193000,os_017,CPU_util_pct,2.407384,Critical,High CPU Utilization,os_linux.csv
+80ebef56-4551-4fd5-9044-5cdea531df82,1587583200000,os_002,CPU_util_pct,1.715223,Critical,High CPU Utilization,os_linux.csv
+03935aed-da9d-46e2-8aa0-fd08a8a8a253,1587583200000,db_007,MEM_real_util,81.81,Critical,High Memory Utilization,db_oracle_11g.csv
+dc2fb3d5-03bf-4b70-a6cd-16ad597ecdeb,1587583203000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+160dd7da-dce8-482b-9dc1-e64cf6006c6a,1587583206000,db_010,MEM_real_util,57.82,Critical,High Memory Utilization,db_oracle_11g.csv
+d8a9b6b1-c268-4c32-b192-d2c16f0bdd99,1587583215000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+8cb0d855-7ad2-4099-9cd0-f53d379d05ff,1587583215000,db_002,MEM_real_util,45.2,Critical,High Memory Utilization,db_oracle_11g.csv
+9287939f-ca39-4cb0-b4ec-cd74cbf6d496,1587583217000,os_001,CPU_util_pct,1.846834,Critical,High CPU Utilization,os_linux.csv
+0e0377af-6f8a-49e8-ab54-0580db3f95be,1587583218000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+622a0fac-131c-4ca2-9e71-2220777c5ae6,1587583220000,os_019,CPU_util_pct,2.131802,Critical,High CPU Utilization,os_linux.csv
+5fc93412-518b-49b0-89c7-50ee01b6b960,1587583224000,os_018,CPU_util_pct,2.459165,Critical,High CPU Utilization,os_linux.csv
+357e11a7-0dc2-4d8e-b8a2-4763434d7196,1587583228000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+2c1d5c26-f443-47b2-a16d-0addf378bb53,1587583228000,db_008,Sess_Connect,501.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+9c4dbccf-7acd-4299-9164-6867d104bd58,1587583228000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+89aa3c14-6ec2-45f2-90c6-236e21b61fab,1587583230000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+65b633e2-03ec-4bfb-86a9-40a46e106861,1587583232000,os_022,CPU_util_pct,5.399184,Critical,High CPU Utilization,os_linux.csv
+4cfd4fd8-9f2e-44f8-8bbc-d87c7b705163,1587583232000,os_005,CPU_util_pct,4.988414,Critical,High CPU Utilization,os_linux.csv
+5229bf3c-8e2c-47a6-8ffa-1af87d854090,1587583234000,db_011,MEM_real_util,57.53,Critical,High Memory Utilization,db_oracle_11g.csv
+0825d8bd-f279-453a-ac9e-8488db927391,1587583240000,os_003,CPU_util_pct,9.268828,Critical,High CPU Utilization,os_linux.csv
+a22df058-4ae5-4136-b8b0-64b69aa764eb,1587583240000,os_021,CPU_util_pct,6.43198,Critical,High CPU Utilization,os_linux.csv
+7027c643-e10f-410a-bd3b-159c5e18c917,1587583240000,os_020,CPU_util_pct,2.346716,Critical,High CPU Utilization,os_linux.csv
+d4790dd8-92aa-40ed-a74e-9b4889298e4e,1587583245000,db_008,MEM_real_util,83.71,Critical,High Memory Utilization,db_oracle_11g.csv
+903780fd-34bd-4596-8f04-c7336d63d8d3,1587583245000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+efa764e3-89de-427d-aae3-cd091d203e02,1587583245000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+041eb6d7-240e-4f5a-ae1f-aa8f4a53ec3f,1587583248000,os_004,CPU_util_pct,1.120144,Critical,High CPU Utilization,os_linux.csv
+68344d94-42e3-45db-8be0-fcf881e0220d,1587583250000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+16903110-31dd-498d-8176-c8dede1bf524,1587583252000,os_017,CPU_util_pct,2.394168,Critical,High CPU Utilization,os_linux.csv
+2dafb85c-1e05-4860-b21e-35d1cc40f6ac,1587583260000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+9a795ca7-646d-46ea-bc29-b87bec3aa014,1587583260000,os_002,CPU_util_pct,1.683417,Critical,High CPU Utilization,os_linux.csv
+90c2bf70-8d48-450d-81eb-f7dcc488c7b2,1587583263000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+2607e745-1478-4c5e-82f1-b9010699d707,1587583266000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+7b359f1d-1905-4a54-973d-6ae40e1fa900,1587583275000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+ba597f5c-2669-4d85-81ff-dbba976d8036,1587583275000,db_002,MEM_real_util,45.2,Critical,High Memory Utilization,db_oracle_11g.csv
+ee116ba8-6d6f-4491-89bd-14690162e0d8,1587583277000,os_001,CPU_util_pct,1.819218,Critical,High CPU Utilization,os_linux.csv
+ae7e3726-8ae8-46b2-aab2-7f34b4d2325e,1587583278000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+62098c79-06c7-45ff-bbdd-d6abe1576b96,1587583280000,os_019,CPU_util_pct,2.099876,Critical,High CPU Utilization,os_linux.csv
+810aa274-c6a5-4690-b2f0-d1ed5778a97d,1587583285000,os_018,CPU_util_pct,2.525333,Critical,High CPU Utilization,os_linux.csv
+696033f3-720a-4e7c-800d-64a668926df3,1587583288000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+05c043cf-dcb9-490f-ab8a-f1430574514f,1587583288000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+506a6857-fbaf-4a21-b5d8-6fbd08e97c9f,1587583288000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+f5c4aa14-8b06-4ce2-af4d-a65a0805e6a8,1587583290000,db_004,MEM_real_util,4.87,Critical,High Memory Utilization,db_oracle_11g.csv
+f031056e-4191-4484-a995-4d0a63864aa0,1587583292000,os_022,CPU_util_pct,5.320916,Critical,High CPU Utilization,os_linux.csv
+1b9aa1f0-6c04-4ef3-94b2-eee14d77e27e,1587583292000,os_005,CPU_util_pct,4.864899,Critical,High CPU Utilization,os_linux.csv
+43fc4daf-0007-4a3c-bc29-9b0739ebd264,1587583294000,db_011,MEM_real_util,57.53,Critical,High Memory Utilization,db_oracle_11g.csv
+112b1733-902b-47ed-a424-09d4e08117cf,1587583300000,os_020,CPU_util_pct,2.347075,Critical,High CPU Utilization,os_linux.csv
+eac4ba3f-f830-4d79-8f0c-45cf5c4bf6b4,1587583301000,os_021,CPU_util_pct,5.325254,Critical,High CPU Utilization,os_linux.csv
+9e66ef4e-13af-4701-bff4-01dfe9669458,1587583302000,os_003,CPU_util_pct,9.17799,Critical,High CPU Utilization,os_linux.csv
+a5be345c-993c-448e-8cc8-8071d241362c,1587583305000,db_008,MEM_real_util,83.7,Critical,High Memory Utilization,db_oracle_11g.csv
+9bc6e73c-82f7-466b-b77a-860c3af22c9f,1587583305000,db_003,MEM_real_util,45.33,Critical,High Memory Utilization,db_oracle_11g.csv
+f34d86d7-0a7e-4275-bca5-a091c26e15e9,1587583305000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+6fea23ba-1e97-4aad-94a5-885ddc43760c,1587583310000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+dc2bb63e-ad74-4eae-a228-073ea27f1af2,1587583310000,os_004,CPU_util_pct,1.100783,Critical,High CPU Utilization,os_linux.csv
+34e0b619-cf01-4c46-9c72-46ae36ff6372,1587583314000,os_017,CPU_util_pct,2.36835,Critical,High CPU Utilization,os_linux.csv
+c570ba78-0f19-4905-bdc6-65f553548dd9,1587583320000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+f961bd68-7c34-4c4f-9395-ffb656389d90,1587583320000,os_002,CPU_util_pct,1.655707,Critical,High CPU Utilization,os_linux.csv
+a8d3c954-3743-4981-a545-28809386d8a1,1587583323000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+749a76de-605e-483d-a1de-0be41a47cbfc,1587583326000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+758513ca-2233-4d6e-a564-3e42b0d0f7e7,1587583335000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+b3a9ec12-04ae-45f2-af08-9788b9637a7e,1587583335000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+d5a3d184-ffa4-454e-8a79-25de627c7802,1587583338000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+7080bfeb-0e67-4a21-bfa7-cdf72a1e86f7,1587583345000,os_001,CPU_util_pct,1.846239,Critical,High CPU Utilization,os_linux.csv
+6028c217-d86f-4d58-a68f-7b3aaa4a7309,1587583348000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+be8887d0-23f9-4052-916e-26b295a4b5ca,1587583348000,db_012,Sess_Connect,964.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+a5d9f846-b473-4314-9923-aeb5fd4b8959,1587583348000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+3840ea3d-5575-48f9-ae1f-282f70b647de,1587583350000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+c5f137f4-bd97-4131-b25b-6c9d82a2e2ef,1587583352000,os_019,CPU_util_pct,2.240565,Critical,High CPU Utilization,os_linux.csv
+6da7d480-24f0-4c2a-9aaf-d5d7f24b5dc2,1587583354000,db_011,MEM_real_util,57.53,Critical,High Memory Utilization,db_oracle_11g.csv
+837f52ce-1159-4346-bac9-df6685b00e8c,1587583358000,os_018,CPU_util_pct,2.696065,Critical,High CPU Utilization,os_linux.csv
+439b9ac4-d0cd-454b-8c07-2fc6376ff354,1587583365000,os_005,CPU_util_pct,4.870643,Critical,High CPU Utilization,os_linux.csv
+1ec0b792-a0cc-4d6f-8374-c031dc13ffa8,1587583365000,db_008,MEM_real_util,83.81,Critical,High Memory Utilization,db_oracle_11g.csv
+125e7715-7c0b-4588-a95c-79247a5ec690,1587583365000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+91ea3392-92ce-43aa-a353-e86c0e915fa5,1587583365000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+571a8518-d3ed-4249-b298-e5d4ecb29169,1587583366000,os_022,CPU_util_pct,5.003723,Critical,High CPU Utilization,os_linux.csv
+5e8a053e-9f12-4776-af27-abc405592157,1587583370000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+5341621a-95d8-4ce3-9cfa-0c04b39241f3,1587583373000,os_021,CPU_util_pct,5.900571,Critical,High CPU Utilization,os_linux.csv
+91caa274-9157-4de3-bc5e-9efbd27a2932,1587583373000,os_020,CPU_util_pct,2.253684,Critical,High CPU Utilization,os_linux.csv
+9fcc38c2-6d47-4518-81e1-9cca593bb689,1587583373000,os_003,CPU_util_pct,9.229277,Critical,High CPU Utilization,os_linux.csv
+c61244be-6dc6-49ae-96dd-6eedff079089,1587583377000,os_004,CPU_util_pct,1.188065,Critical,High CPU Utilization,os_linux.csv
+6fdeb2dd-1c38-4c78-99cf-1dc4abfa4ee5,1587583379000,os_017,CPU_util_pct,2.447813,Critical,High CPU Utilization,os_linux.csv
+d4cd42c8-2895-4238-bcd2-199e94476d3f,1587583380000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+0b36ddb2-b12b-4b11-8750-7e7c243b7d4f,1587583382000,os_002,CPU_util_pct,1.759335,Critical,High CPU Utilization,os_linux.csv
+760123d9-124d-4179-a0d7-8dc7e46c92e8,1587583383000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+20dff29d-eb26-4c93-aae7-b5be973f34ac,1587583396000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+7e46f673-29b8-427f-9b63-818d8792cd79,1587583396000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+982662f2-b96d-478e-a827-f62e9fc43fe6,1587583398000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+3d7ed788-4c49-485d-827d-59b9700f7542,1587583407000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+341a6d80-00f8-47db-bea6-38eabca1c614,1587583409000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+bbb47027-1eab-43c2-a3fc-cf450590dd26,1587583409000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+34ce48e0-4af4-4546-b3c1-87c72773199d,1587583409000,db_012,Sess_Connect,964.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+19271a2c-e4d5-4f44-8cee-9e52ce4ad181,1587583410000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+9098c527-c2a3-4d45-bf26-f3fd055a6283,1587583414000,db_011,MEM_real_util,57.53,Critical,High Memory Utilization,db_oracle_11g.csv
+3b41ae68-0b1a-42f4-a098-6472e1dee561,1587583426000,db_008,MEM_real_util,83.71,Critical,High Memory Utilization,db_oracle_11g.csv
+a5d39f9a-8927-471f-a3b4-d4f692c0526b,1587583426000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+3f4cd20d-15a4-4a68-a108-326b46cf01f1,1587583426000,db_003,MEM_real_util,45.33,Critical,High Memory Utilization,db_oracle_11g.csv
+23bfbb66-40cc-418e-a24c-90a98f7ecd62,1587583430000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+0115d146-f17e-434b-b8a3-480294c1e178,1587583440000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+6b56c132-0d23-4d33-a2f9-9c9cd933d176,1587583443000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+55d331a3-9a7b-4c4d-adf7-f39539123b51,1587583446000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+07bc7814-a600-4b85-bc60-a663ab018483,1587583455000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+48f43bba-52bd-464e-b99d-3d915689f6be,1587583455000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+d25ea9b5-e0c7-45f6-a545-98659dc3d22b,1587583458000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+86f87af5-ce31-4221-bd00-c8615e708c13,1587583468000,db_012,Sess_Connect,964.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+890d51f5-f008-4a15-ba1c-40aa75c42b28,1587583468000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+c24c6f0b-401f-4077-833a-ecd1b302ec52,1587583468000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+1ed6141a-986d-49a8-a7c7-9fad8ca82cb0,1587583470000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+760eaadf-bc2a-4e8a-903b-c90bf7cf2143,1587583474000,db_011,MEM_real_util,57.53,Critical,High Memory Utilization,db_oracle_11g.csv
+ab39e4ca-ae50-41ec-aa1d-81779c567df1,1587583485000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+ffffb7a6-9017-4f58-95bf-d0ba24f68b5b,1587583485000,db_008,MEM_real_util,83.71,Critical,High Memory Utilization,db_oracle_11g.csv
+a01bd303-aff2-414f-a77e-902733a2c1a2,1587583485000,db_003,MEM_real_util,45.33,Critical,High Memory Utilization,db_oracle_11g.csv
+7f18a28d-8fc1-4e44-be16-afdee7e31df4,1587583490000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+6bcd1b75-6766-4c5b-89b6-65a4ac9989f2,1587583499000,os_001,CPU_util_pct,2.023431,Critical,High CPU Utilization,os_linux.csv
+2d73e72a-157e-47ed-b28b-204f697f6314,1587583500000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+58e83837-121a-42b5-bed4-214643776084,1587583501000,os_019,CPU_util_pct,2.199812,Critical,High CPU Utilization,os_linux.csv
+61fcce57-5f33-4e2e-baa5-683a38db7082,1587583503000,os_018,CPU_util_pct,2.511895,Critical,High CPU Utilization,os_linux.csv
+f7fab841-b530-44cb-a6ea-e59aa5ae53bf,1587583503000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+dd4ee122-4566-4490-bfc5-be354f3bc7aa,1587583504000,os_005,CPU_util_pct,5.072998,Critical,High CPU Utilization,os_linux.csv
+c2c3e0e8-18a4-44d4-8fc7-5592ee770897,1587583504000,os_022,CPU_util_pct,4.385257,Critical,High CPU Utilization,os_linux.csv
+f996da42-1894-4d1d-8fe6-8e40c3206301,1587583506000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+a4852e55-4206-4eee-a368-32a0f1eb3382,1587583507000,os_020,CPU_util_pct,2.320407,Critical,High CPU Utilization,os_linux.csv
+565c2c7a-0f5c-4359-8fc1-6b23d4622c0a,1587583507000,os_021,CPU_util_pct,5.46847,Critical,High CPU Utilization,os_linux.csv
+fc11e67c-a9d8-46e0-8323-1a96ee486147,1587583507000,os_003,CPU_util_pct,9.298449,Critical,High CPU Utilization,os_linux.csv
+67c20281-0b55-4fb0-ade0-1489acb64bad,1587583511000,os_004,CPU_util_pct,1.147263,Critical,High CPU Utilization,os_linux.csv
+d72d59b3-8ae8-4238-91b1-9557aafc66ef,1587583512000,os_017,CPU_util_pct,2.471773,Critical,High CPU Utilization,os_linux.csv
+6bfb6507-69ef-42f2-b2ad-5f294753cb16,1587583513000,os_002,CPU_util_pct,1.739976,Critical,High CPU Utilization,os_linux.csv
+191fec71-76d0-4be3-bc00-7b0b8c472881,1587583515000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+95eacffc-884e-4ac9-986e-bb8a28d0719b,1587583515000,db_002,MEM_real_util,45.2,Critical,High Memory Utilization,db_oracle_11g.csv
+8da46fb2-0bc0-41b8-a801-3ec714ac172d,1587583518000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+5df6ada5-226b-4a6c-8081-4933bffadfc7,1587583518000,os_001,CPU_util_pct,2.180949,Critical,High CPU Utilization,os_linux.csv
+aec2bf10-e969-451f-9c75-7f89afad6c4e,1587583520000,os_019,CPU_util_pct,2.294398,Critical,High CPU Utilization,os_linux.csv
+13ffd8f8-e1e0-402f-ae1d-0999115f4bab,1587583524000,os_018,CPU_util_pct,2.603239,Critical,High CPU Utilization,os_linux.csv
+4fcd2992-4cee-4527-853d-a0ef41783a03,1587583528000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+c57d0662-f7ad-4f3c-89ee-02ad01668351,1587583528000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+34bbdd6c-6b6c-4c92-b394-8919cfef54be,1587583528000,db_012,Sess_Connect,964.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+a36a801c-308c-454e-a1cf-14f25f069e18,1587583530000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+82330a3d-77d4-4b0a-894d-ef22356e499f,1587583532000,os_005,CPU_util_pct,4.849276,Critical,High CPU Utilization,os_linux.csv
+955cd669-def0-4890-8ea5-e996dee53833,1587583532000,os_022,CPU_util_pct,4.461482,Critical,High CPU Utilization,os_linux.csv
+ce413529-5945-4faa-8a9d-1e48c9fc5f67,1587583534000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+1e771425-f556-43e0-9668-0e529b54e0b8,1587583540000,os_021,CPU_util_pct,5.043124,Critical,High CPU Utilization,os_linux.csv
+7d6362b5-645d-4309-9c35-ee39ebf2ee4d,1587583540000,os_020,CPU_util_pct,2.297492,Critical,High CPU Utilization,os_linux.csv
+f54b96f6-6e45-4778-94e9-ca70a5faaeed,1587583541000,os_003,CPU_util_pct,9.059094,Critical,High CPU Utilization,os_linux.csv
+a4059c3b-7930-4dc7-96f6-a008461c37bc,1587583545000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+38080c63-3756-49e0-88c6-d961d0316149,1587583545000,db_008,MEM_real_util,83.71,Critical,High Memory Utilization,db_oracle_11g.csv
+136d7a9d-246a-4321-8e24-1a412122d148,1587583545000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+c43e3911-59d2-4904-a48d-14bec705fe0e,1587583548000,os_004,CPU_util_pct,1.204694,Critical,High CPU Utilization,os_linux.csv
+1f673cf3-85b9-48f4-bfd3-1bcb256dfbac,1587583550000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+6ac6be93-6e7c-4b3a-883a-12dd82b53763,1587583552000,os_017,CPU_util_pct,2.486053,Critical,High CPU Utilization,os_linux.csv
+48e610ea-70c7-43b3-85a9-b6ad163101da,1587583560000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+093a4b12-9800-4dcf-9adf-d6cedf235d18,1587583560000,os_002,CPU_util_pct,1.714627,Critical,High CPU Utilization,os_linux.csv
+3627b5f6-a26e-47d2-a9ee-daeaeda224a4,1587583563000,db_009,MEM_real_util,8.45,Critical,High Memory Utilization,db_oracle_11g.csv
+e58b9da7-08d5-448a-b4d2-45f76d522ae7,1587583566000,db_010,MEM_real_util,57.8,Critical,High Memory Utilization,db_oracle_11g.csv
+415bcce3-4c91-411b-a981-fcae9fa24c0e,1587583575000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+28e59646-a557-43c4-9a29-d02c5d0401a8,1587583575000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+c5368877-3d96-414e-a8ca-f08bdd56e8a1,1587583576000,os_001,CPU_util_pct,1.853216,Critical,High CPU Utilization,os_linux.csv
+3102ee2f-f23c-4614-ac50-8da29ecc41c1,1587583578000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+f2e16b1d-e133-4c63-b461-bf4acdc0dafd,1587583581000,os_019,CPU_util_pct,2.247926,Critical,High CPU Utilization,os_linux.csv
+7c9ef278-5a88-43f0-aff3-1dc1101552b8,1587583584000,os_018,CPU_util_pct,2.60904,Critical,High CPU Utilization,os_linux.csv
+4da3cc15-decc-40a1-957d-9ba549ec306c,1587583588000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+a56be828-cd7a-4a3b-8d18-d8db3e06391d,1587583588000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+8e10c594-ba44-4c4d-9c2e-84850460aeb8,1587583588000,db_012,Sess_Connect,964.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+394d1066-8636-46e8-8591-607f63263d0d,1587583590000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+09d3a199-6436-4813-b6fc-94a1cfc1e8e6,1587583592000,os_022,CPU_util_pct,5.922386,Critical,High CPU Utilization,os_linux.csv
+095bca1c-7fec-4a72-8c9a-0120a53e9bf0,1587583592000,os_005,CPU_util_pct,5.062945,Critical,High CPU Utilization,os_linux.csv
+d58b0b2a-3977-4d80-b77f-ee1f6b8e6c1b,1587583594000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+b5e83d36-1e3b-406d-a030-9e8f2ece51c8,1587583600000,os_020,CPU_util_pct,2.319502,Critical,High CPU Utilization,os_linux.csv
+75a76890-6af0-40e2-99e7-2a7012b629de,1587583600000,os_003,CPU_util_pct,8.932825,Critical,High CPU Utilization,os_linux.csv
+857fdd99-9b0c-49ea-a590-735afc9d9906,1587583600000,os_021,CPU_util_pct,5.907834,Critical,High CPU Utilization,os_linux.csv
+44a129e3-33d3-481a-b128-f2b429fdd27b,1587583605000,db_003,MEM_real_util,45.33,Critical,High Memory Utilization,db_oracle_11g.csv
+6772988e-b9a5-4830-b192-f2288ad0261c,1587583605000,db_008,MEM_real_util,83.78,Critical,High Memory Utilization,db_oracle_11g.csv
+5e17b4ec-1349-4474-9411-2b85088dbb37,1587583605000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+17c05fac-23a0-4e89-97d9-b8c2aee23276,1587583608000,os_004,CPU_util_pct,1.09518,Critical,High CPU Utilization,os_linux.csv
+e4c977fc-103e-4e26-9eb0-39aee1598d84,1587583610000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+4057ac0b-b781-492f-b31e-e2a0eaad19d1,1587583613000,os_017,CPU_util_pct,2.393573,Critical,High CPU Utilization,os_linux.csv
+042dfded-fed2-4ec0-9995-52454936f4c8,1587583620000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+76e00e92-ce13-4a0e-be9d-29c8ca85c47a,1587583622000,os_002,CPU_util_pct,1.689922,Critical,High CPU Utilization,os_linux.csv
+bf57ddc6-fda9-4ff9-9328-8a26ee12a56f,1587583623000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+adbe17b5-6d60-4592-b25e-bcf09d1fb56d,1587583626000,db_010,MEM_real_util,57.8,Critical,High Memory Utilization,db_oracle_11g.csv
+4d818ef7-1066-4c91-8c52-b422b3391f2f,1587583635000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+bffc0932-1e4c-4b23-a2d3-04d8994b8040,1587583635000,db_002,MEM_real_util,45.2,Critical,High Memory Utilization,db_oracle_11g.csv
+a21f6656-10a3-432f-ba45-c695f089161d,1587583636000,os_001,CPU_util_pct,1.875695,Critical,High CPU Utilization,os_linux.csv
+c8f54f93-49c0-4dd1-ac47-c01d17e2b1a7,1587583638000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+0228254b-dc56-43a1-8534-cc446e081785,1587583641000,os_019,CPU_util_pct,2.211839,Critical,High CPU Utilization,os_linux.csv
+ece7d796-a3c0-4c35-add0-a42ccdde316c,1587583645000,os_018,CPU_util_pct,2.679367,Critical,High CPU Utilization,os_linux.csv
+867fcd4d-f05a-4dfe-843d-ead08247339c,1587583648000,db_012,Sess_Connect,964.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+aeb1fa4a-10c2-452c-8772-5a87edacd75d,1587583648000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+9611cdb7-2299-43e2-a6d3-5756f5a5b700,1587583648000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+af277428-0b33-40ea-aea0-082fcca5d2b5,1587583650000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+e8fb77b5-d1f1-4f30-b27c-2523aaf578ab,1587583652000,os_022,CPU_util_pct,4.249823,Critical,High CPU Utilization,os_linux.csv
+77e12d6b-c263-41e0-b605-e9842a73d7f6,1587583652000,os_005,CPU_util_pct,4.80207,Critical,High CPU Utilization,os_linux.csv
+969942b1-8959-44b8-b2e6-0fbd56419f22,1587583654000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+dc8e3cca-2568-4153-a1c9-b5a926f42efe,1587583661000,os_021,CPU_util_pct,4.550351,Critical,High CPU Utilization,os_linux.csv
+fe4a71c1-357e-4893-a9e8-3adc21740cdf,1587583661000,os_003,CPU_util_pct,8.572874,Critical,High CPU Utilization,os_linux.csv
+e0c93f4e-d78e-4a9c-b035-bb66c35f0ab5,1587583661000,os_020,CPU_util_pct,2.289179,Critical,High CPU Utilization,os_linux.csv
+de79524e-1066-4133-ba96-d6410f760d73,1587583665000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+d6d913b0-5c55-4a8a-9df2-57f773ef27bc,1587583665000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+41b5484b-abc7-4891-9476-4acbe9721bb7,1587583665000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+6c4f36f5-564e-4c35-9c87-3e7670c06cb4,1587583669000,os_004,CPU_util_pct,1.13176,Critical,High CPU Utilization,os_linux.csv
+79f00d61-fb75-4a1a-be24-6ccf27430422,1587583670000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+e1c12d7e-ab42-498c-840e-c6d03354aaad,1587583672000,os_017,CPU_util_pct,2.429812,Critical,High CPU Utilization,os_linux.csv
+a8cf692c-a9f5-4f1c-ba32-021872979c17,1587583680000,os_002,CPU_util_pct,1.712276,Critical,High CPU Utilization,os_linux.csv
+02fa55b6-861a-4d49-871e-083dbf4963f4,1587583680000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+1d493f7c-a016-4a7d-bc4d-5a15fbb23186,1587583683000,db_009,MEM_real_util,8.48,Critical,High Memory Utilization,db_oracle_11g.csv
+5609528a-f71e-4831-ba03-45e04cc9f0ff,1587583686000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+c7355a08-31b4-4ba3-862e-0f36642e9559,1587583695000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+fdeb4baf-0db1-4a8b-9b2e-032aecbfece5,1587583695000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+31afa8e2-11cd-4274-be3a-21755ac4d2a7,1587583696000,os_001,CPU_util_pct,1.802253,Critical,High CPU Utilization,os_linux.csv
+4bf7aae0-e0bd-4cc9-a4ed-ae2f9fa5b765,1587583698000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+b7f01719-1722-4131-8b2a-2cbcd9fa1c6a,1587583701000,os_019,CPU_util_pct,2.233056,Critical,High CPU Utilization,os_linux.csv
+0495df55-6d97-4e3e-9cff-a0ae2eb8dea8,1587583705000,os_018,CPU_util_pct,2.447068,Critical,High CPU Utilization,os_linux.csv
+b8aa4fb8-8e43-47d8-ad75-7bca26afafc2,1587583708000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+312066b5-9370-4749-99b2-77f72205c442,1587583708000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+9f3e9c53-5999-48a9-b383-7c02f7be01a2,1587583708000,db_012,Sess_Connect,964.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+decba5a7-d241-4bb4-aa6d-9f40a1074aad,1587583710000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+d9c234ee-531d-438a-b6f4-18f23af81f31,1587583712000,os_005,CPU_util_pct,4.606025,Critical,High CPU Utilization,os_linux.csv
+318d6818-6207-469b-8cf3-3fdb7fb479b5,1587583712000,os_022,CPU_util_pct,5.171381,Critical,High CPU Utilization,os_linux.csv
+e62b8bed-3808-4f1e-b9ca-326ae2c768c2,1587583714000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+679c118c-ec70-46c2-86f1-9037439f0df2,1587583721000,os_020,CPU_util_pct,2.268271,Critical,High CPU Utilization,os_linux.csv
+214c1ff6-61a8-437a-b3c9-3c9b59ad002e,1587583721000,os_021,CPU_util_pct,5.257131,Critical,High CPU Utilization,os_linux.csv
+73b8ec18-518c-4c64-a5b5-3ff540cfc9e0,1587583722000,os_003,CPU_util_pct,8.628309,Critical,High CPU Utilization,os_linux.csv
+aa125018-ef3f-4dcc-ab36-7508eb0b4706,1587583725000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+0f2ee750-f75d-4ed6-baaf-fd6b25f3e93b,1587583725000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+547a0ab4-00eb-49ec-af8b-8ba025df241a,1587583725000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+0ec3b1b6-cc78-4405-a645-09bb5b32c6be,1587583729000,os_004,CPU_util_pct,1.144767,Critical,High CPU Utilization,os_linux.csv
+3be5eda2-d6f5-4674-a967-4881fc1cb73d,1587583730000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+158660fa-ca8a-41c0-9189-810d50b97536,1587583732000,os_017,CPU_util_pct,2.574448,Critical,High CPU Utilization,os_linux.csv
+355aeca7-e5ed-431c-9e57-a98ba3ccbd57,1587583740000,os_002,CPU_util_pct,1.64593,Critical,High CPU Utilization,os_linux.csv
+a315cc5d-46e5-4ea8-9c1d-d15f2562744a,1587583740000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+df0ce885-26bf-4bc0-9915-4c170e4ce166,1587583743000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+16ffe32a-e53d-4658-8f0a-628dd68ab480,1587583746000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+b25c2237-535c-4ec2-9637-4b22401cf0cc,1587583755000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+53f26e8a-e6c3-4e1a-9e62-8709a3f81f34,1587583755000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+6f1ea381-06d7-40b6-a795-baa51e3cd004,1587583756000,os_001,CPU_util_pct,1.764469,Critical,High CPU Utilization,os_linux.csv
+c009f832-d799-4ff7-8600-149aacb915f1,1587583758000,db_013,MEM_real_util,54.6,Critical,High Memory Utilization,db_oracle_11g.csv
+2ff6cda7-d090-493d-80b1-dccf95908d7e,1587583761000,os_019,CPU_util_pct,2.224602,Critical,High CPU Utilization,os_linux.csv
+7b4e2823-65d7-4074-90d2-bde5238b0b12,1587583764000,os_018,CPU_util_pct,2.673187,Critical,High CPU Utilization,os_linux.csv
+1bf666e1-c152-428c-b3d7-57644e95cdf8,1587583768000,db_012,Sess_Connect,964.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+7a70e8f1-6c9a-4223-8d32-eafc875f038e,1587583768000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+dbe901a4-0f57-4180-85ce-878118249b8b,1587583768000,db_008,Sess_Connect,504.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+27eeb147-d8d9-4c0d-847a-fa3389c10113,1587583770000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+4378c16c-0475-471b-991f-53b48e9538db,1587583773000,os_022,CPU_util_pct,6.099758,Critical,High CPU Utilization,os_linux.csv
+190c4e4b-6f3b-4950-b163-e64469de0cee,1587583773000,os_005,CPU_util_pct,4.783661,Critical,High CPU Utilization,os_linux.csv
+4b5650eb-5e7e-49d9-8989-6933c6d25ed9,1587583774000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+db7f5f04-298f-4fed-ac74-e01239485020,1587583782000,os_003,CPU_util_pct,8.835975,Critical,High CPU Utilization,os_linux.csv
+c3fae4d5-5e2c-4ba3-a5a8-7b6323d8d313,1587583783000,os_021,CPU_util_pct,6.291318,Critical,High CPU Utilization,os_linux.csv
+a684fa9e-878e-4b72-bb6b-fc79bd3dcf87,1587583783000,os_020,CPU_util_pct,2.360967,Critical,High CPU Utilization,os_linux.csv
+25416cf6-216f-4273-89d7-0550fdebadd4,1587583785000,db_001,MEM_real_util,46.21,Critical,High Memory Utilization,db_oracle_11g.csv
+fac4f491-155c-4e34-b842-e48eb4cbb81a,1587583785000,db_003,MEM_real_util,45.33,Critical,High Memory Utilization,db_oracle_11g.csv
+251b2dc4-1823-4e06-a0c5-0c441e96b300,1587583785000,db_008,MEM_real_util,83.82,Critical,High Memory Utilization,db_oracle_11g.csv
+cb160096-6994-4290-8531-50a529953c73,1587583788000,os_004,CPU_util_pct,1.190625,Critical,High CPU Utilization,os_linux.csv
+5ed81055-0e89-477c-af6c-0ca006942232,1587583790000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+e531817a-1941-4258-b4ac-627095402596,1587583792000,os_017,CPU_util_pct,2.453412,Critical,High CPU Utilization,os_linux.csv
+b9f60b41-6c22-4886-9a4d-a329cdf906c1,1587583800000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+632aedc3-7b9e-4ebe-be13-11ffbb27b211,1587583802000,os_002,CPU_util_pct,1.679784,Critical,High CPU Utilization,os_linux.csv
+c2b87ebd-df59-4824-89f2-101f8f00a764,1587583803000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+7370c997-5072-4f3a-a885-51a0dbfb0505,1587583806000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+4dee5477-b607-4102-8a91-06295494ab3a,1587583815000,db_005,MEM_real_util,81.57,Critical,High Memory Utilization,db_oracle_11g.csv
+b667c9f9-80c7-41c6-9582-ec405ba81f60,1587583815000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+020787b7-2a60-452b-aab0-19e4a9f79610,1587583818000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+62e012b1-e937-4700-8bfd-2fd0197ea004,1587583820000,os_001,CPU_util_pct,1.808318,Critical,High CPU Utilization,os_linux.csv
+c4e3f066-4ca7-4099-bf8b-9f467c329076,1587583823000,os_019,CPU_util_pct,2.074498,Critical,High CPU Utilization,os_linux.csv
+6699f9c0-7c01-417d-bf04-0c412d4e0801,1587583826000,os_018,CPU_util_pct,2.39069,Critical,High CPU Utilization,os_linux.csv
+ebf5be86-0877-4827-a445-3bb8761affb0,1587583828000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+33411fef-3a09-48f6-be50-0f6faa4492ac,1587583828000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+bf520d8a-c11e-420d-80ed-e1e0535185cd,1587583828000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+89daf8d9-6fb5-4e48-b142-e9bbe821d58b,1587583830000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+0cfb869c-4a84-4ada-b67c-02d0d50ed6c0,1587583833000,os_022,CPU_util_pct,5.741151,Critical,High CPU Utilization,os_linux.csv
+6d7bada1-e385-4b4b-b93c-600cdeda6ccf,1587583833000,os_005,CPU_util_pct,4.626859,Critical,High CPU Utilization,os_linux.csv
+9b75a26b-73de-4259-9966-39afacae9d7d,1587583834000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+b7e92893-71a4-4e49-8f5b-e333f22f6e93,1587583840000,os_020,CPU_util_pct,2.326083,Critical,High CPU Utilization,os_linux.csv
+6e0c028b-a8ee-4826-b468-22d7d7962435,1587583840000,os_003,CPU_util_pct,8.651212,Critical,High CPU Utilization,os_linux.csv
+d1c69d72-7184-40e0-b18e-6e96b40bc0ef,1587583840000,os_021,CPU_util_pct,4.680165,Critical,High CPU Utilization,os_linux.csv
+4529bbd1-3fa4-4292-b151-acc613214616,1587583845000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+e27326e9-005d-471b-80a5-80b18404923a,1587583846000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+51dce3f3-6477-41c1-8c78-a932282e7fa4,1587583846000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+472ca123-98f8-49e7-b3fa-8cfa997eaf13,1587583848000,os_004,CPU_util_pct,1.19878,Critical,High CPU Utilization,os_linux.csv
+5ce514ae-9266-412f-ad42-e757b7381867,1587583850000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+d78f41b2-8d04-466e-94c0-b1bd19534484,1587583853000,os_017,CPU_util_pct,2.429761,Critical,High CPU Utilization,os_linux.csv
+aeab3e40-56dd-4d9f-9ac0-5d5824335eec,1587583860000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+43993862-31b6-4dbf-82bb-c38c991c7ed6,1587583862000,os_002,CPU_util_pct,1.749802,Critical,High CPU Utilization,os_linux.csv
+6c0997b0-b2ce-41b2-9c1d-5a32531aa411,1587583863000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+41d73406-8d4b-4661-bcd9-0aed7d87b617,1587583864000,os_012,CPU_util_pct,1.018109,Critical,High CPU Utilization,os_linux.csv
+97cf0127-95fc-4a77-8c22-afbb7dc649a7,1587583866000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+beff4711-70ab-417f-a843-9224bed56026,1587583875000,db_005,MEM_real_util,81.58,Critical,High Memory Utilization,db_oracle_11g.csv
+b77460b3-c30f-4c0c-b90f-cb13d010d3a7,1587583875000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+cbbdf30b-d059-40f5-bf32-c9a8f38ff9bd,1587583876000,os_001,CPU_util_pct,1.969484,Critical,High CPU Utilization,os_linux.csv
+5b9ba086-10c7-4a33-86ca-ffa03d6b714a,1587583878000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+b57a028a-bbe7-4095-bc49-663a959b2099,1587583880000,os_019,CPU_util_pct,2.404284,Critical,High CPU Utilization,os_linux.csv
+6dd6677f-9378-4e08-9dd7-3668fefc5477,1587583884000,os_018,CPU_util_pct,2.745892,Critical,High CPU Utilization,os_linux.csv
+456999c2-f6e8-487a-a145-10551fee656a,1587583888000,db_008,Sess_Connect,501.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+2b9b71c6-5529-4af8-9941-75d0bfb2c1e6,1587583888000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+55dea0c8-dde8-448d-9cb6-3809bd785a3d,1587583888000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+b1b9cd08-6cef-4fae-ace7-6d6dda002970,1587583890000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+76dfdd7c-0b15-4297-ac2b-dc6272c2b475,1587583892000,os_022,CPU_util_pct,5.883916,Critical,High CPU Utilization,os_linux.csv
+34d902b4-53b2-426a-922e-df7d34d08d1a,1587583892000,os_005,CPU_util_pct,4.63244,Critical,High CPU Utilization,os_linux.csv
+bff58b34-0bea-4030-a0ef-19117518e784,1587583894000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+01ba827a-3c93-4110-8472-201b9b11856b,1587583900000,os_003,CPU_util_pct,8.828301,Critical,High CPU Utilization,os_linux.csv
+e763ed74-8e19-4472-aa0d-07040ecc280d,1587583901000,os_020,CPU_util_pct,2.258504,Critical,High CPU Utilization,os_linux.csv
+7f32aaf8-9da3-4d03-8d8b-48d008fcb16d,1587583901000,os_021,CPU_util_pct,5.175093,Critical,High CPU Utilization,os_linux.csv
+fb1859b7-e5e7-42e1-a558-24e8ea01680f,1587583905000,db_001,MEM_real_util,46.21,Critical,High Memory Utilization,db_oracle_11g.csv
+7d251f0c-aab2-4271-a04e-c198f96f4c29,1587583905000,db_003,MEM_real_util,45.33,Critical,High Memory Utilization,db_oracle_11g.csv
+a1469e0d-a631-4280-a481-cefefc9add51,1587583905000,db_008,MEM_real_util,83.71,Critical,High Memory Utilization,db_oracle_11g.csv
+bb1a87f9-3445-4110-a705-377c4e615e39,1587583908000,os_004,CPU_util_pct,1.10944,Critical,High CPU Utilization,os_linux.csv
+dfbdbdec-dfac-41db-87d6-179f0ac35efb,1587583910000,db_012,MEM_real_util,81.0,Critical,High Memory Utilization,db_oracle_11g.csv
+013d1cf4-9756-450a-8760-1e40908a0556,1587583912000,os_017,CPU_util_pct,2.44817,Critical,High CPU Utilization,os_linux.csv
+10ad5a35-501f-47ec-92de-ba3133158fd9,1587583920000,os_002,CPU_util_pct,1.603505,Critical,High CPU Utilization,os_linux.csv
+ed7ac2a2-dab6-44d4-ac82-04f413d14902,1587583920000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+e96ff000-5697-4658-bb2f-4de8e0f0e383,1587583923000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+c8948b37-c2e6-48f0-abd5-2d0d74833ea6,1587583926000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+e7795485-885f-4583-a3b9-b65d820e63ec,1587583935000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+24b284ec-9307-4fa7-bce2-bd002ba93404,1587583935000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+18240988-5066-4930-bc1f-7fb074356f45,1587583936000,os_001,CPU_util_pct,1.850925,Critical,High CPU Utilization,os_linux.csv
+0dad47fb-2bd3-452c-bddc-5c98d7b7f839,1587583938000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+4dd4bd3e-499f-453f-a093-c647e66d9781,1587583941000,os_019,CPU_util_pct,2.359248,Critical,High CPU Utilization,os_linux.csv
+7837bbf7-5ad2-4d85-b92a-0321f7006c9d,1587583944000,os_018,CPU_util_pct,2.671397,Critical,High CPU Utilization,os_linux.csv
+e946e214-dc66-40ba-b542-fdfea0d2c769,1587583948000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+bbfcc801-1309-46b9-8a2b-5d6fc5f84b9e,1587583948000,db_008,Sess_Connect,501.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+e737df80-f9ea-4b5b-98a8-38c959e3bbc1,1587583948000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+8aac2540-1160-4987-b769-6c17f8b84997,1587583950000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+0f0dddbd-c1e1-41f0-bd06-9d1812e0e9c1,1587583952000,os_005,CPU_util_pct,4.848651,Critical,High CPU Utilization,os_linux.csv
+d2671f20-2955-4657-a1d4-12a7c4fe8f31,1587583952000,os_022,CPU_util_pct,5.947866,Critical,High CPU Utilization,os_linux.csv
+d2947d6b-f8ad-4b67-95f2-60b365922403,1587583954000,db_011,MEM_real_util,57.53,Critical,High Memory Utilization,db_oracle_11g.csv
+bf0ed520-8b34-4685-8157-7cb50f53d0f5,1587583960000,os_020,CPU_util_pct,2.144213,Critical,High CPU Utilization,os_linux.csv
+f5113d0a-f721-48f1-ac84-b4ee2347af84,1587583960000,os_021,CPU_util_pct,6.754576,Critical,High CPU Utilization,os_linux.csv
+42a10e9a-97be-4e95-b913-cf64764bcd4a,1587583960000,os_003,CPU_util_pct,8.849875,Critical,High CPU Utilization,os_linux.csv
+a4308da6-627e-4507-8def-b58eb433d518,1587583965000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+e7afb45f-3c03-4f8e-af36-7168d9fab514,1587583965000,db_001,MEM_real_util,46.21,Critical,High Memory Utilization,db_oracle_11g.csv
+0398437d-952f-4e12-93c7-221a7d518d29,1587583965000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+26f04db9-f520-458a-b67a-4b3ad7c332b5,1587583968000,os_004,CPU_util_pct,1.142941,Critical,High CPU Utilization,os_linux.csv
+84608be3-b4ca-4564-9c82-a79583144626,1587583970000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+3aa7e9fa-1a23-4d12-90b6-f75c3ac54538,1587583972000,os_017,CPU_util_pct,2.23947,Critical,High CPU Utilization,os_linux.csv
+a4ba4f0d-6aff-4863-8c8d-4e92b91ff43e,1587583980000,os_002,CPU_util_pct,1.611625,Critical,High CPU Utilization,os_linux.csv
+0b52f091-bed4-4a9f-b7dd-e6011dad49bd,1587583980000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+8b655ba6-ba01-43fa-b09c-20d04ad83777,1587583983000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+8297c706-73c9-4a1c-9124-92a8ca9cd6ef,1587583986000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+31ca930a-9a1a-437b-b6e0-f579f490d119,1587583995000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+f90072ef-d51b-4c45-91e2-11c86f12f776,1587583995000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+d7901597-f303-4261-91d9-cc078e847628,1587583996000,os_001,CPU_util_pct,1.861783,Critical,High CPU Utilization,os_linux.csv
+14894b4e-abef-4f1e-aaab-927ad55ba251,1587583998000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+9baa3406-ad48-4124-9049-a4cfbaff98e1,1587584000000,os_019,CPU_util_pct,1.940445,Critical,High CPU Utilization,os_linux.csv
+095321ec-4565-4d5e-a2d0-74427f11834f,1587584005000,os_018,CPU_util_pct,2.478477,Critical,High CPU Utilization,os_linux.csv
+afdfb8d6-c7e4-4513-871d-ab459082c786,1587584008000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+e2db9f46-3b44-44c9-a0b5-ee4b283a2250,1587584008000,db_008,Sess_Connect,501.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+5f0f64bf-e19c-4f62-95f0-e8a0ec9ecd7e,1587584008000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+52318e89-1ff4-40d7-bafd-a5eea9079f59,1587584010000,db_004,MEM_real_util,4.87,Critical,High Memory Utilization,db_oracle_11g.csv
+69f2cab6-6191-4890-8174-5de6cdcd5ade,1587584012000,os_022,CPU_util_pct,4.390013,Critical,High CPU Utilization,os_linux.csv
+52ce03cf-3ac9-4a5d-bba0-d3651b7ee2fd,1587584012000,os_005,CPU_util_pct,4.76361,Critical,High CPU Utilization,os_linux.csv
+de83c0a7-cd57-4b19-8c82-817d6bb52c99,1587584014000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+3f439bb9-249a-4e59-94b8-1c6635db8c11,1587584021000,os_020,CPU_util_pct,2.313373,Critical,High CPU Utilization,os_linux.csv
+0eeefdf3-65ee-4684-82ea-9b94636d6c88,1587584021000,os_021,CPU_util_pct,5.754769,Critical,High CPU Utilization,os_linux.csv
+d9ce35bb-96b0-46dd-8e4d-68f1842db124,1587584021000,os_003,CPU_util_pct,8.783499,Critical,High CPU Utilization,os_linux.csv
+de59edc5-8c65-48ad-b0f8-7c921303fba3,1587584025000,db_008,MEM_real_util,83.81,Critical,High Memory Utilization,db_oracle_11g.csv
+eb051501-a7e3-46dc-965e-f83fa0df7b52,1587584025000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+0b1388c2-dda2-48a0-88cf-af19d00f96dd,1587584025000,db_003,MEM_real_util,45.46,Critical,High Memory Utilization,db_oracle_11g.csv
+01c589a7-de75-455a-b1f6-4a754b6031a6,1587584029000,os_004,CPU_util_pct,1.123995,Critical,High CPU Utilization,os_linux.csv
+5eb938b1-ed48-448d-8b77-52da4e0d110e,1587584030000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+526be0fd-775a-4125-9fee-dbcebc04c516,1587584032000,os_017,CPU_util_pct,2.337567,Critical,High CPU Utilization,os_linux.csv
+1f8435c3-c65f-4696-9a38-ee48a21f1b49,1587584040000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+924990dc-e823-44fa-aeeb-6be46e7d0069,1587584040000,os_002,CPU_util_pct,1.937413,Critical,High CPU Utilization,os_linux.csv
+ad9b2e46-3118-4dae-b9bb-91a8efbdd003,1587584043000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+9fa12b8a-c27a-45c4-b888-436546ff0591,1587584046000,db_010,MEM_real_util,57.8,Critical,High Memory Utilization,db_oracle_11g.csv
+b597ed44-dce0-4717-8ae4-f5aaffc76768,1587584055000,db_002,MEM_real_util,45.2,Critical,High Memory Utilization,db_oracle_11g.csv
+41b5663c-8763-407c-9f26-92acb1b2a51c,1587584055000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+83e87cee-8b45-4296-8341-53164445e45b,1587584057000,os_001,CPU_util_pct,1.942139,Critical,High CPU Utilization,os_linux.csv
+f7b4eabf-82eb-43c3-9f0b-f5e6369f323e,1587584058000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+6e4dd5aa-4c91-4d74-bbe4-f012ac575d19,1587584061000,os_019,CPU_util_pct,2.280977,Critical,High CPU Utilization,os_linux.csv
+7fa2744a-8aa8-467f-8d10-56e10d861281,1587584064000,os_018,CPU_util_pct,2.63297,Critical,High CPU Utilization,os_linux.csv
+5fb24ca3-abf1-486b-93ea-68db46ffa927,1587584068000,db_008,Sess_Connect,501.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+745fd67e-b3de-4456-baf1-889d5d591472,1587584068000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+86f777f5-f058-451a-a79f-df0c0162c675,1587584068000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+7eea6888-5f10-48e4-aa25-bd5135e855b0,1587584070000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+4dee0b94-adb3-4c1a-9690-2a02c8b901a6,1587584074000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+2285af80-1433-4b1e-b166-e9effdb58282,1587584080000,os_022,CPU_util_pct,4.863679,Critical,High CPU Utilization,os_linux.csv
+94086e42-65b2-4f42-bac1-196a890d6339,1587584081000,os_005,CPU_util_pct,4.58675,Critical,High CPU Utilization,os_linux.csv
+6ce273b6-7b59-405c-adf5-2654783e7d0e,1587584085000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+eebfcd28-d965-4b66-a272-02ac320c7a22,1587584085000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+d88b2aca-f8ca-4137-a167-36f2aa68c343,1587584085000,db_003,MEM_real_util,45.33,Critical,High Memory Utilization,db_oracle_11g.csv
+6bce750f-b42e-486e-bd76-620907372066,1587584086000,os_020,CPU_util_pct,2.151936,Critical,High CPU Utilization,os_linux.csv
+e9804000-59df-42aa-95dd-5576e705a5f6,1587584086000,os_003,CPU_util_pct,8.578173,Critical,High CPU Utilization,os_linux.csv
+b59efd35-5270-4021-8510-43c12534cb5c,1587584086000,os_021,CPU_util_pct,4.924986,Critical,High CPU Utilization,os_linux.csv
+dccd0c4a-04b1-4f7c-a945-ddc035700b95,1587584090000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+4a81ca88-7030-4d6f-9a5a-57e878f8958a,1587584092000,os_004,CPU_util_pct,1.159923,Critical,High CPU Utilization,os_linux.csv
+3ba7dfaf-ee06-4d14-a66a-72c25695b855,1587584094000,os_017,CPU_util_pct,2.485479,Critical,High CPU Utilization,os_linux.csv
+19faf0a2-0e09-494b-b6b7-f791175e5cbc,1587584100000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+bb63c0d9-2052-425b-b0a3-440fb68e1f6e,1587584101000,os_002,CPU_util_pct,1.727517,Critical,High CPU Utilization,os_linux.csv
+55051dc2-7c02-4c7c-8e27-e17572a8247e,1587584103000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+8162730c-4538-4ac2-8c66-4795558f068c,1587584106000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+b2216934-13a3-470e-bb0d-524da6e73462,1587584115000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+1332e489-3467-450e-9b5e-b116a020e401,1587584115000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+01d94c81-66f3-49b7-97d5-fcb9c813a4a2,1587584116000,os_001,CPU_util_pct,2.170015,Critical,High CPU Utilization,os_linux.csv
+93e338c1-9594-4986-a698-3a749e14e0f9,1587584118000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+b16939ab-edd9-459b-aa36-d2cd78d2ef71,1587584128000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+1f44f218-9c59-4afe-b605-bbace466a8a9,1587584128000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+7affc143-021c-4fe4-8699-788086db1e5a,1587584128000,db_008,Sess_Connect,501.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+31f583c6-d939-4bdd-b331-8e9c7036e4b1,1587584131000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+c3f96f9a-1efc-497a-8efd-7b9833f0cf80,1587584135000,db_011,MEM_real_util,57.53,Critical,High Memory Utilization,db_oracle_11g.csv
+d2719265-e88b-4946-95b0-ca06382c40fb,1587584145000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+79f1387c-5675-40b5-bbe2-174732fd9735,1587584145000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+cbc58573-fc03-4b55-8aa6-f187d364af92,1587584145000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+e49f568b-2097-4cab-9e1d-eb0291282d94,1587584150000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+0e38edd5-56a0-4874-8d51-f64277c668a3,1587584160000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+d9774147-c8ff-4271-b75c-e48e66c41d1e,1587584163000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+9f6486a1-a4b0-4ffa-af63-b1dc8bd10ae0,1587584166000,db_010,MEM_real_util,57.8,Critical,High Memory Utilization,db_oracle_11g.csv
+e55fe0fc-6bd8-4cac-828a-1df88447beb3,1587584174000,os_019,CPU_util_pct,2.204916,Critical,High CPU Utilization,os_linux.csv
+127112b2-2ff2-48f7-a013-4b090ce0b067,1587584175000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+f59eccb2-bcd0-42be-9c8e-6dddfe455249,1587584175000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+a4c13c02-0145-4ffb-9bda-03b8587bad6f,1587584178000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+58025eec-1780-49c5-9d3b-af3cc72da940,1587584188000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+370fb794-2f2d-4c9a-8315-28444e6f95c1,1587584188000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+1ebc9e76-5edc-444f-bcf6-7cdbec9ff324,1587584188000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+353d49c2-719e-4f87-a9f5-d6560dc75977,1587584190000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+1b1d9202-e1c4-4010-9f0f-4628a1f76825,1587584194000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+446b1150-8bf2-4e16-b219-a440f8733b58,1587584205000,os_018,CPU_util_pct,2.403161,Critical,High CPU Utilization,os_linux.csv
+3143ceba-5e8a-4a0c-a0f9-e4771783313e,1587584205000,db_003,MEM_real_util,45.33,Critical,High Memory Utilization,db_oracle_11g.csv
+cb946485-bc0b-46a8-9752-a37a755542db,1587584205000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+3fc5a965-82f0-4b3d-84c2-64c75216dd9d,1587584205000,db_001,MEM_real_util,46.21,Critical,High Memory Utilization,db_oracle_11g.csv
+1ae6572e-d53c-4b49-b127-91ebd9b512e2,1587584210000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+5f089a3c-8cbb-4413-b4d1-7cd8c727b0c0,1587584212000,os_005,CPU_util_pct,4.653707,Critical,High CPU Utilization,os_linux.csv
+9de4c96f-979d-4e8a-b601-18cbfade8727,1587584212000,os_022,CPU_util_pct,4.86071,Critical,High CPU Utilization,os_linux.csv
+a3cd0b4e-7878-459d-9ea5-47e673b94e65,1587584214000,os_003,CPU_util_pct,8.718921,Critical,High CPU Utilization,os_linux.csv
+9dec52fc-953a-4286-a430-9e377b132b4a,1587584214000,os_020,CPU_util_pct,2.328816,Critical,High CPU Utilization,os_linux.csv
+70963fc1-6c7d-49b8-9f7b-1318ab63a8c0,1587584214000,os_021,CPU_util_pct,4.936191,Critical,High CPU Utilization,os_linux.csv
+1f4be86b-4b20-4362-858f-d64993d04963,1587584217000,os_004,CPU_util_pct,1.115801,Critical,High CPU Utilization,os_linux.csv
+b7da9073-e7a1-472e-afa3-a92548a640db,1587584218000,os_017,CPU_util_pct,2.469041,Critical,High CPU Utilization,os_linux.csv
+2a635760-d020-4307-ae02-55fc9c2a9dcf,1587584220000,os_002,CPU_util_pct,1.64192,Critical,High CPU Utilization,os_linux.csv
+194640cb-efe0-4bd0-b050-3b5ad8e1f6f6,1587584220000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+f30bf155-8d20-402c-a9f1-c2846f0fcb24,1587584223000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+5b8a91bc-0774-45ed-81f9-dad3286ff4a3,1587584225000,os_001,CPU_util_pct,1.794551,Critical,High CPU Utilization,os_linux.csv
+3d701184-1edd-4f18-9046-14337bd43cab,1587584226000,os_019,CPU_util_pct,2.177269,Critical,High CPU Utilization,os_linux.csv
+c0190134-cbdf-424e-80ea-5a95e1110933,1587584226000,db_010,MEM_real_util,57.8,Critical,High Memory Utilization,db_oracle_11g.csv
+898dfd24-b40c-4a5e-bb61-670b34ae2f67,1587584235000,db_002,MEM_real_util,45.2,Critical,High Memory Utilization,db_oracle_11g.csv
+5725d402-6076-41f0-84ac-18a7fdfc7a0f,1587584235000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+b0e7fcbb-5b14-430d-965a-e81eb3d0fbff,1587584236000,os_001,CPU_util_pct,1.78867,Critical,High CPU Utilization,os_linux.csv
+1538aebb-07eb-4a85-822c-5e6c396f82d6,1587584238000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+c1b39cef-fd3e-4710-ae77-5bc67046e6f2,1587584240000,os_019,CPU_util_pct,2.237104,Critical,High CPU Utilization,os_linux.csv
+8202fd97-346f-494a-84a4-08ee5581f13d,1587584244000,os_018,CPU_util_pct,2.617939,Critical,High CPU Utilization,os_linux.csv
+ecc59511-5a8a-4267-830c-ab812a3decd1,1587584248000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+fd14a960-7f0a-4ae4-bee2-bd8e15eaf1b0,1587584248000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+933a6913-c62e-4932-82f1-f28e38c5b391,1587584248000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+f5a156b8-41d2-4e17-a5ef-aea8e4cdbdfe,1587584250000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+44b8f8b7-5d27-4183-baab-a7e5f1ebc8a8,1587584253000,os_005,CPU_util_pct,4.728137,Critical,High CPU Utilization,os_linux.csv
+5325c802-3f10-4977-ab98-d6f42f412e9b,1587584253000,os_022,CPU_util_pct,4.460821,Critical,High CPU Utilization,os_linux.csv
+20b63ad6-0d66-465f-8202-6be23d06048e,1587584254000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+a65117d3-0944-4676-b4fc-0ca17439d46a,1587584260000,os_003,CPU_util_pct,8.828601,Critical,High CPU Utilization,os_linux.csv
+556066b5-277f-46a3-af8e-b4919558e7c8,1587584260000,os_020,CPU_util_pct,2.238604,Critical,High CPU Utilization,os_linux.csv
+1248b277-8c90-4620-91ed-ab7c5aa44531,1587584260000,os_021,CPU_util_pct,5.026008,Critical,High CPU Utilization,os_linux.csv
+84ed1c49-6fa1-40a2-840d-bbb619b76c02,1587584265000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+762d2014-c2dd-4b50-85a0-3bc53ad1c36e,1587584265000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+c9b44fe4-c48e-47f2-8567-c76836fcbf6f,1587584265000,db_001,MEM_real_util,46.21,Critical,High Memory Utilization,db_oracle_11g.csv
+14083eeb-3034-41f0-800c-9d1b52868a6f,1587584268000,os_004,CPU_util_pct,1.15101,Critical,High CPU Utilization,os_linux.csv
+2889fa9c-fa66-41ca-8132-e69e013a8e31,1587584270000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+2161f389-5cb8-46ad-8064-74a0d06a6420,1587584273000,os_017,CPU_util_pct,2.346902,Critical,High CPU Utilization,os_linux.csv
+6b86a4d1-3eeb-4fa9-befb-558c2e687dfd,1587584280000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+b75642c8-89bb-4f69-93e8-792a07edde80,1587584280000,os_002,CPU_util_pct,1.623878,Critical,High CPU Utilization,os_linux.csv
+94a729e9-82c8-4273-b1b2-85978a9f3b62,1587584283000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+552afcbe-d0bd-4b23-92b3-6fb603854a96,1587584286000,db_010,MEM_real_util,57.8,Critical,High Memory Utilization,db_oracle_11g.csv
+f156a126-3dae-4fc6-92c8-b7970bfa31dd,1587584295000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+47b52269-74cd-4fad-b478-4f3dbfda4bdd,1587584295000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+5d5e3ff8-d8ee-45b6-8432-5999e6a4dfc3,1587584297000,os_001,CPU_util_pct,1.77886,Critical,High CPU Utilization,os_linux.csv
+ded06e39-f64b-4341-834f-9f8680a5b78f,1587584298000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+4d19998a-4510-4469-9082-9a908795e25c,1587584301000,os_019,CPU_util_pct,2.19473,Critical,High CPU Utilization,os_linux.csv
+a48ef09b-217e-466b-a99d-fc993347d654,1587584305000,os_018,CPU_util_pct,2.610692,Critical,High CPU Utilization,os_linux.csv
+6dcb38ba-95af-4b14-8b2e-23d09ffa093e,1587584308000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+6b661219-acac-46a9-a734-564b7565137c,1587584308000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+8aafc837-b308-4a03-a508-eb760760f85f,1587584308000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+4fde376a-b73f-43f5-a3ac-cba181d37374,1587584310000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+d0abd3fe-0394-47f1-87cb-4b0e4916a82b,1587584312000,os_022,CPU_util_pct,5.54407,Critical,High CPU Utilization,os_linux.csv
+e9265182-6811-4571-b721-78def2eacd54,1587584312000,os_005,CPU_util_pct,4.818314,Critical,High CPU Utilization,os_linux.csv
+b3744384-9349-4521-b81b-cf1bd323552f,1587584314000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+d3ad7626-49d6-4338-a139-079718aa4dd9,1587584322000,os_021,CPU_util_pct,6.56828,Critical,High CPU Utilization,os_linux.csv
+edf09ee2-965a-442e-9632-a61e57167986,1587584322000,os_020,CPU_util_pct,2.376648,Critical,High CPU Utilization,os_linux.csv
+2fb0eec8-764d-4853-a6ce-1d832fb48344,1587584322000,os_003,CPU_util_pct,8.656012,Critical,High CPU Utilization,os_linux.csv
+1a106f40-3e45-4292-9aa3-293069937325,1587584325000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+c5016906-dc08-4640-8ac9-ead006171f0b,1587584325000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+5fd2a7f3-7103-4f48-a28c-f6d2547d6a59,1587584325000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+70facb1d-38e9-4649-aa1f-b24afc7453f0,1587584328000,os_004,CPU_util_pct,1.156794,Critical,High CPU Utilization,os_linux.csv
+d76338e2-0cc5-4991-8474-f64f27f75c1f,1587584330000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+8d22bc3f-ed9e-42e7-92e7-144d146b0ac4,1587584332000,os_017,CPU_util_pct,2.477148,Critical,High CPU Utilization,os_linux.csv
+d13a5589-1a4c-4059-8822-17aa9d7b0d9f,1587584340000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+20d3a9a4-7b32-469d-823d-6464d7712bb0,1587584340000,os_002,CPU_util_pct,1.658557,Critical,High CPU Utilization,os_linux.csv
+e258a040-cad3-4eb5-8865-30a17a85aec2,1587584343000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+aff52f7d-18ad-4c73-9e5e-c5180913a447,1587584346000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+4908ea08-3eaf-4da9-a80a-a438508365a7,1587584355000,db_005,MEM_real_util,81.56,Critical,High Memory Utilization,db_oracle_11g.csv
+ea3c8bb8-8538-48d1-89af-d822f46b418c,1587584355000,db_002,MEM_real_util,45.2,Critical,High Memory Utilization,db_oracle_11g.csv
+a5b670ee-aa0b-42e2-8585-16a58fb16085,1587584356000,os_001,CPU_util_pct,1.87798,Critical,High CPU Utilization,os_linux.csv
+51e87760-9e6f-412c-8fd4-3b9aa7bee5c7,1587584358000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+8c2b46fc-f4d4-4af7-aee0-f3ae5eed241d,1587584360000,os_019,CPU_util_pct,2.20918,Critical,High CPU Utilization,os_linux.csv
+3d2e9e3d-682f-4052-8f20-6d2c5923cffe,1587584364000,os_018,CPU_util_pct,2.64152,Critical,High CPU Utilization,os_linux.csv
+4df18d80-c583-46f6-83b0-baf197e4eaec,1587584368000,db_013,Sess_Connect,1330.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+8c2c84b0-9149-4200-82c3-7e4bc7dfda7f,1587584368000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+fbb7ee4b-7bf7-49f5-8424-2f198c40b07b,1587584368000,db_008,Sess_Connect,504.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+27eedb18-c7ef-493d-8b08-3bb99b8ea101,1587584370000,db_004,MEM_real_util,4.85,Critical,High Memory Utilization,db_oracle_11g.csv
+59c0f61f-bddb-4e2f-95ae-75dde5e1f92b,1587584373000,os_005,CPU_util_pct,4.781547,Critical,High CPU Utilization,os_linux.csv
+25e602dc-7e08-479d-809d-fced34c7aa9d,1587584373000,os_022,CPU_util_pct,4.702929,Critical,High CPU Utilization,os_linux.csv
+78f8b1d8-faa8-44c7-89a0-b6f4bc8ed03c,1587584374000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+487afc64-6442-41bd-8051-8fe313400bc0,1587584382000,os_020,CPU_util_pct,2.337661,Critical,High CPU Utilization,os_linux.csv
+ef5eb073-50b2-4eb8-9755-052077210460,1587584382000,os_003,CPU_util_pct,8.833736,Critical,High CPU Utilization,os_linux.csv
+15b171bb-3f9a-404f-a24e-0b321642ccc0,1587584382000,os_021,CPU_util_pct,4.944301,Critical,High CPU Utilization,os_linux.csv
+212e5530-ff18-4ae0-9bc4-56c1af28b15c,1587584385000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+c5bb01c9-6fca-4858-809e-567ee0851030,1587584385000,db_003,MEM_real_util,45.35,Critical,High Memory Utilization,db_oracle_11g.csv
+98d99479-7a95-4d26-a130-247a10bdfe0b,1587584385000,db_001,MEM_real_util,46.21,Critical,High Memory Utilization,db_oracle_11g.csv
+0d09a5e2-558e-4333-bc98-557a999d5221,1587584388000,os_004,CPU_util_pct,1.174013,Critical,High CPU Utilization,os_linux.csv
+28698fd0-0312-4aa9-8afa-b5ed3f745a36,1587584390000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+bc7c13f4-75ad-4cac-abc1-ac30e8470253,1587584392000,os_017,CPU_util_pct,2.342245,Critical,High CPU Utilization,os_linux.csv
+68bafd16-81cc-4226-b04b-b528c7db7229,1587584400000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+0e13b0e3-9ae0-4ae1-8f40-7d88ba40e445,1587584400000,os_002,CPU_util_pct,1.701371,Critical,High CPU Utilization,os_linux.csv
+405719ba-ae0e-4d7a-9d88-deb1bb17affc,1587584403000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+23d0c70a-0220-4575-ae3e-7d03c1d7b1ff,1587584406000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+33c3831c-683d-47ad-a4b8-8d8888abfed8,1587584415000,db_005,MEM_real_util,81.57,Critical,High Memory Utilization,db_oracle_11g.csv
+af08a918-e312-43b0-8467-4ac2339a3f2d,1587584415000,db_002,MEM_real_util,45.2,Critical,High Memory Utilization,db_oracle_11g.csv
+edc41bcd-2868-4bc0-8927-3ddd4358ba13,1587584418000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+778b8d03-a84b-4e21-99d1-c485c8c6bcae,1587584419000,os_001,CPU_util_pct,1.785118,Critical,High CPU Utilization,os_linux.csv
+086021ac-6163-4053-9792-d064a34d9fe4,1587584422000,os_019,CPU_util_pct,2.268255,Critical,High CPU Utilization,os_linux.csv
+51f80386-67a3-4176-826a-14abe5d111fb,1587584424000,os_018,CPU_util_pct,2.621163,Critical,High CPU Utilization,os_linux.csv
+a28c65f3-788d-46a4-911d-7a64f9dc2a37,1587584428000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+93f76014-a5e8-4a0b-8876-232cf9a4e119,1587584428000,db_013,Sess_Connect,1330.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+003d0081-278e-415e-b081-b8d12b0516de,1587584428000,db_012,Sess_Connect,964.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+2a00b9d9-5897-4f48-9f18-c61607f62252,1587584430000,db_004,MEM_real_util,4.85,Critical,High Memory Utilization,db_oracle_11g.csv
+e920415a-2fde-4921-b2fd-b9993464f5cd,1587584432000,os_005,CPU_util_pct,4.699838,Critical,High CPU Utilization,os_linux.csv
+2ca9b54a-e916-4aed-b7d0-7be67f9ae470,1587584432000,os_022,CPU_util_pct,5.492382,Critical,High CPU Utilization,os_linux.csv
+c0ee0d0a-d045-4b59-b0e4-38e682787b27,1587584434000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+c901d7ea-9bd2-4050-82ae-b3199f31cf3a,1587584440000,os_003,CPU_util_pct,8.753053,Critical,High CPU Utilization,os_linux.csv
+83901c8e-6de9-40a2-a814-912056b77d37,1587584440000,os_020,CPU_util_pct,2.239361,Critical,High CPU Utilization,os_linux.csv
+cec7c194-ee2d-460b-891d-368fe01a8148,1587584441000,os_021,CPU_util_pct,5.171081,Critical,High CPU Utilization,os_linux.csv
+866cecfa-0f5b-4c5b-97eb-067d0d904271,1587584445000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+74f13b5e-8b20-487a-8795-eff8aa74283b,1587584445000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+c08af427-61f0-4c35-9cb5-d6fb88ac34d8,1587584445000,db_003,MEM_real_util,45.34,Critical,High Memory Utilization,db_oracle_11g.csv
+11c26c4a-e7e4-4a3f-a08f-0c0cc7a209f1,1587584449000,os_004,CPU_util_pct,1.117774,Critical,High CPU Utilization,os_linux.csv
+9fb57f5e-c310-43bb-8968-347d609b4335,1587584450000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+0cc676ab-e650-444f-ba27-360c38d33de8,1587584452000,os_017,CPU_util_pct,2.275794,Critical,High CPU Utilization,os_linux.csv
+bbc1f900-7863-4101-b251-ca5c2ec20471,1587584460000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+d4db8e79-f426-411b-9766-c70b0486d3d1,1587584460000,os_002,CPU_util_pct,1.683043,Critical,High CPU Utilization,os_linux.csv
+048fb20d-f724-4ef1-86f6-8952b3c18917,1587584463000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+eb9b59bb-4db0-496f-bde7-b7dab3e7cf36,1587584466000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+872665c1-5d65-4802-aee3-b7f96e8b1a45,1587584475000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+4a9e76ce-ab1a-41b4-ab2a-dc7b050e4bcf,1587584475000,db_005,MEM_real_util,81.57,Critical,High Memory Utilization,db_oracle_11g.csv
+5c836c5f-8e87-4e54-827f-452b2985882d,1587584477000,os_001,CPU_util_pct,1.803042,Critical,High CPU Utilization,os_linux.csv
+7512ae15-5919-409a-967d-01066da8faa0,1587584478000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+48213869-9d17-4a0c-a7d9-97e570de673f,1587584480000,os_019,CPU_util_pct,2.21278,Critical,High CPU Utilization,os_linux.csv
+ab905a1d-4dca-433f-ae8b-56856ecc0ca7,1587584484000,os_018,CPU_util_pct,2.462352,Critical,High CPU Utilization,os_linux.csv
+464a441e-2963-4d32-98da-420fe2f3547e,1587584488000,db_012,Sess_Connect,964.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+f502a767-2e90-4361-80d5-fc78318773ec,1587584488000,db_013,Sess_Connect,1330.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+996ed9d3-6633-42a9-acd5-a201b96fd4ad,1587584488000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+96aba784-4176-4c25-8f59-82c9baf6650c,1587584490000,db_004,MEM_real_util,4.85,Critical,High Memory Utilization,db_oracle_11g.csv
+016b6382-da28-4b92-a6da-decdf84953b7,1587584492000,os_022,CPU_util_pct,5.735587,Critical,High CPU Utilization,os_linux.csv
+c15c202d-d02a-4701-bc53-ea614506ce46,1587584493000,os_005,CPU_util_pct,4.741878,Critical,High CPU Utilization,os_linux.csv
+13e1d7c0-5459-4b31-985f-50a8ea5403b0,1587584494000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+b1ae6665-2014-46db-862b-6cd834f62f7c,1587584500000,os_003,CPU_util_pct,8.964676,Critical,High CPU Utilization,os_linux.csv
+bd88c924-a3f3-47b2-b5f1-36330ee3a893,1587584500000,os_020,CPU_util_pct,2.186548,Critical,High CPU Utilization,os_linux.csv
+d474f762-bca2-43f9-af4c-ae41d3dfdac6,1587584502000,os_021,CPU_util_pct,5.946868,Critical,High CPU Utilization,os_linux.csv
+9e0fd3e4-547f-4448-88b9-5da023161419,1587584505000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+38f9961f-6485-4bf8-abeb-f85f1e32cadf,1587584505000,db_008,MEM_real_util,83.71,Critical,High Memory Utilization,db_oracle_11g.csv
+6297ccbb-73dd-4901-819d-1e6814c41c78,1587584505000,db_003,MEM_real_util,45.35,Critical,High Memory Utilization,db_oracle_11g.csv
+4b88d939-3911-4e20-9923-bb9aa0b4f3af,1587584509000,os_004,CPU_util_pct,1.169664,Critical,High CPU Utilization,os_linux.csv
+83c7010f-1997-4a4a-a8f9-d17fb49b56a1,1587584510000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+2dbfa022-423a-4a69-95fb-f37ed4daab9a,1587584514000,os_017,CPU_util_pct,2.306462,Critical,High CPU Utilization,os_linux.csv
+af7a3c08-a688-45fc-a3d8-12795fcbedc1,1587584520000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+36abae6a-c2c5-4826-a520-4066ebb3906a,1587584521000,os_002,CPU_util_pct,1.710126,Critical,High CPU Utilization,os_linux.csv
+1109b329-336d-448a-8012-b79ab5d979e6,1587584523000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+9fe2cb2d-4bbc-4009-b4dd-f47515de901f,1587584526000,db_010,MEM_real_util,57.81,Critical,High Memory Utilization,db_oracle_11g.csv
+80677226-1cf3-48cc-8769-7940a641c67e,1587584535000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+94f0a224-f48f-488b-b288-e041efc6c81d,1587584535000,db_005,MEM_real_util,81.57,Critical,High Memory Utilization,db_oracle_11g.csv
+13ea71e8-bd8c-40d6-af2a-f2088398dbba,1587584536000,os_001,CPU_util_pct,1.841429,Critical,High CPU Utilization,os_linux.csv
+cc5a333a-e8f2-4dd1-805d-7131d8171216,1587584538000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+1082ed98-5b5d-4feb-8d0b-db1a76e94a9c,1587584540000,os_019,CPU_util_pct,2.209999,Critical,High CPU Utilization,os_linux.csv
+93bf9235-794e-438a-a362-535851455133,1587584545000,os_018,CPU_util_pct,2.561481,Critical,High CPU Utilization,os_linux.csv
+ac7a8b17-dec2-4d3c-9f02-6900060f1f39,1587584548000,db_012,Sess_Connect,964.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+d421132f-624a-4697-a6f0-eb45c1dc2c66,1587584548000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+3dce41de-117b-49a3-8975-5dd607c696ab,1587584548000,db_013,Sess_Connect,1330.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+d16bf23c-b11c-4789-a60e-7e9f6ab4cba9,1587584550000,db_004,MEM_real_util,4.85,Critical,High Memory Utilization,db_oracle_11g.csv
+90d07536-1a45-4fd4-a839-a7ed1b5bf8c2,1587584552000,os_022,CPU_util_pct,4.479967,Critical,High CPU Utilization,os_linux.csv
+c1b12322-736d-497d-8312-f4469d8ce9bf,1587584552000,os_005,CPU_util_pct,4.862588,Critical,High CPU Utilization,os_linux.csv
+d0068288-5672-4948-930e-047e62ebba10,1587584554000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+9d034716-0a9e-42e4-9cab-8d8cfbfa2cd9,1587584560000,os_020,CPU_util_pct,2.350209,Critical,High CPU Utilization,os_linux.csv
+41531972-7db8-498c-8099-358d661d42b7,1587584560000,os_021,CPU_util_pct,4.193909,Critical,High CPU Utilization,os_linux.csv
+f62940bc-8972-4d8b-8a05-02238bc342ec,1587584560000,os_003,CPU_util_pct,8.990938,Critical,High CPU Utilization,os_linux.csv
+ca6f2334-ef80-4836-8b4e-67afc91aab5e,1587584565000,db_001,MEM_real_util,46.21,Critical,High Memory Utilization,db_oracle_11g.csv
+1531a2ba-f52b-4dad-b2ca-7ae4f4f2f3a8,1587584565000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+592ea6ff-6cc3-41e9-bb93-abeea41ffb49,1587584565000,db_003,MEM_real_util,45.35,Critical,High Memory Utilization,db_oracle_11g.csv
+2e088590-60a9-43a4-9fa6-1ec0ec7c1d39,1587584568000,os_004,CPU_util_pct,1.232144,Critical,High CPU Utilization,os_linux.csv
+74f4889c-896a-4a22-8ed3-a890044e3d9f,1587584570000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+aa70e3d3-95de-4e48-b736-ac25a0c24a17,1587584572000,os_017,CPU_util_pct,2.307109,Critical,High CPU Utilization,os_linux.csv
+e9469243-ce8e-458e-bb54-d69fb2e06c56,1587584580000,os_002,CPU_util_pct,1.693644,Critical,High CPU Utilization,os_linux.csv
+6e62ba32-52b8-48e2-a5be-4e2cb14ef14f,1587584580000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+fc294fe7-afcb-4f4c-b920-057539688307,1587584583000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+7bcdd4f2-2e2d-464a-8290-c89f5e09580e,1587584586000,db_010,MEM_real_util,57.82,Critical,High Memory Utilization,db_oracle_11g.csv
+f5b1fac8-2a8b-416d-b5a7-c9fc92514522,1587584595000,db_005,MEM_real_util,81.57,Critical,High Memory Utilization,db_oracle_11g.csv
+90cf9de8-867a-4ad0-9a5b-3ab3a4803584,1587584595000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+e176b071-c7d8-4c4f-a932-e0fef4d26bf5,1587584596000,os_001,CPU_util_pct,1.749896,Critical,High CPU Utilization,os_linux.csv
+be50fb4f-5715-499d-a7c7-778047e371b2,1587584598000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+24549736-9b84-47db-8bf3-ee658c2bad6d,1587584601000,os_019,CPU_util_pct,2.16164,Critical,High CPU Utilization,os_linux.csv
+44f88b59-746d-4150-b302-f68d97fa6805,1587584605000,os_018,CPU_util_pct,2.567402,Critical,High CPU Utilization,os_linux.csv
+e1b5bf31-d067-423e-928c-8b5263e2f461,1587584608000,db_013,Sess_Connect,1330.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+0929602c-86ad-4e36-a443-4c2700782807,1587584608000,db_012,Sess_Connect,964.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+b9247a50-0669-4e71-bb4b-e1608cf3fbec,1587584608000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+415b81e9-27af-4749-bd79-cb557c5b1357,1587584610000,db_004,MEM_real_util,4.85,Critical,High Memory Utilization,db_oracle_11g.csv
+6843a8df-cc37-4c2a-8533-f9b4a4da5aa2,1587584613000,os_022,CPU_util_pct,5.708988,Critical,High CPU Utilization,os_linux.csv
+3bf67803-98a2-4e01-bcd3-041ef03ab339,1587584613000,os_005,CPU_util_pct,4.803116,Critical,High CPU Utilization,os_linux.csv
+2ea6a866-b9e7-4ad5-af53-419cf7c13833,1587584614000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+e0ed4bed-85b6-4aef-ba03-5223c4459962,1587584620000,os_003,CPU_util_pct,8.724959,Critical,High CPU Utilization,os_linux.csv
+d1393600-eb99-4143-b3b3-d0ada2167b85,1587584622000,os_020,CPU_util_pct,2.265948,Critical,High CPU Utilization,os_linux.csv
+9754c932-0ee8-4a57-8391-0e9b54ae0a5d,1587584622000,os_021,CPU_util_pct,5.213297,Critical,High CPU Utilization,os_linux.csv
+2f284e82-3ddc-48bb-ae97-468c7926ecfd,1587584625000,db_008,MEM_real_util,83.73,Critical,High Memory Utilization,db_oracle_11g.csv
+2d70301f-1371-4587-93e9-bcb91c756f16,1587584625000,db_001,MEM_real_util,46.21,Critical,High Memory Utilization,db_oracle_11g.csv
+88d9f9db-2530-4c85-9c98-38dbc158003e,1587584625000,db_003,MEM_real_util,45.34,Critical,High Memory Utilization,db_oracle_11g.csv
+092fad08-3bc7-478f-80f3-c6287e1df4ab,1587584628000,os_004,CPU_util_pct,1.146952,Critical,High CPU Utilization,os_linux.csv
+ce5f1aa7-7344-4924-b570-be3d3ef66df0,1587584630000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+06a44895-d214-418f-8b1d-c4df62b89b6e,1587584632000,os_017,CPU_util_pct,2.352139,Critical,High CPU Utilization,os_linux.csv
+c6271bc6-3eb0-41a3-b854-98765c2b49d6,1587584640000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+7a9a5605-cd7f-44c6-b43b-05f26361db50,1587584640000,os_002,CPU_util_pct,1.922863,Critical,High CPU Utilization,os_linux.csv
+1a938255-f551-478d-a2a6-98afeb4f7537,1587584643000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+bf12b519-df31-4d6f-9f75-03aac077de3a,1587584646000,db_010,MEM_real_util,57.82,Critical,High Memory Utilization,db_oracle_11g.csv
+27218e86-ea0d-42e6-a87f-09aaa23b4f72,1587584655000,db_002,MEM_real_util,45.35,Critical,High Memory Utilization,db_oracle_11g.csv
+e8caa12f-b274-475c-8a66-d86e136d2010,1587584655000,db_005,MEM_real_util,81.57,Critical,High Memory Utilization,db_oracle_11g.csv
+f271d706-4490-41ac-bf52-b20f922b4420,1587584656000,os_001,CPU_util_pct,1.866989,Critical,High CPU Utilization,os_linux.csv
+a481c50d-b055-466c-8128-5f6a9c97715d,1587584658000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+77811c02-689e-4d1c-b0ec-8938abc65dc2,1587584660000,os_019,CPU_util_pct,2.218158,Critical,High CPU Utilization,os_linux.csv
+d4823bf7-acd8-41f0-ba41-d5538123be3b,1587584664000,os_018,CPU_util_pct,2.594692,Critical,High CPU Utilization,os_linux.csv
+4901f68e-9f1d-4e87-afaf-79d91b9f621e,1587584668000,db_012,Sess_Connect,964.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+69963a5c-1114-4256-821f-d9d2e72c8557,1587584668000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+4f87915c-a6da-4b55-8706-ffc49602a137,1587584668000,db_013,Sess_Connect,1330.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+89f02b02-9cd7-404b-9df0-f204efd5ea2f,1587584670000,db_004,MEM_real_util,4.85,Critical,High Memory Utilization,db_oracle_11g.csv
+f76c0468-0b2d-4f9b-91b0-5dadaecf8e8c,1587584673000,os_022,CPU_util_pct,5.209012,Critical,High CPU Utilization,os_linux.csv
+c774b288-a0d3-4716-b474-a0e854c9306a,1587584673000,os_005,CPU_util_pct,4.791062,Critical,High CPU Utilization,os_linux.csv
+51c4726d-5a70-47b1-b3a8-ac18cd705d37,1587584674000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+4ed7ccfe-2791-4559-a770-780a76b11d17,1587584680000,os_003,CPU_util_pct,8.67919,Critical,High CPU Utilization,os_linux.csv
+044e301e-0673-4b26-8f63-897aa5c1c11d,1587584681000,os_020,CPU_util_pct,2.22627,Critical,High CPU Utilization,os_linux.csv
+c154d258-5638-492c-afef-227522296e41,1587584681000,os_021,CPU_util_pct,7.103788,Critical,High CPU Utilization,os_linux.csv
+5195e7ed-b988-478b-ad71-bcf55da30321,1587584685000,db_003,MEM_real_util,45.33,Critical,High Memory Utilization,db_oracle_11g.csv
+ca0717d8-4cfc-4b5f-ab0f-1cb98199059f,1587584686000,db_008,MEM_real_util,83.73,Critical,High Memory Utilization,db_oracle_11g.csv
+905291f8-e17a-4ab2-b2f5-8e03c04a02c2,1587584686000,db_001,MEM_real_util,46.21,Critical,High Memory Utilization,db_oracle_11g.csv
+b9ac7370-2a1a-45f6-82f7-4a3b0c6a039d,1587584688000,os_004,CPU_util_pct,1.206303,Critical,High CPU Utilization,os_linux.csv
+da68ad01-772e-407c-b749-9a7bb57d649d,1587584690000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+a96289a9-2a13-4935-8ca6-7b4fe304d346,1587584692000,os_017,CPU_util_pct,2.392894,Critical,High CPU Utilization,os_linux.csv
+41bb50e4-3cb6-4118-9a8c-af5259588ff5,1587584700000,os_002,CPU_util_pct,1.950732,Critical,High CPU Utilization,os_linux.csv
+fc6ac42e-ffb1-4829-b564-37dc36111ce3,1587584700000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+9fc52f70-c870-4590-9364-25fc418d7339,1587584703000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+d2110da6-bff8-437e-81ce-e4b6e78ec513,1587584706000,db_010,MEM_real_util,57.82,Critical,High Memory Utilization,db_oracle_11g.csv
+870c98f0-2496-4ae0-a05b-8144f9cc8182,1587584715000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+e40e466f-cdd8-4945-ab67-19f05808a0a0,1587584715000,db_005,MEM_real_util,81.58,Critical,High Memory Utilization,db_oracle_11g.csv
+b085f8fe-fc99-4283-9c4a-4c0717db39e9,1587584717000,os_001,CPU_util_pct,2.175334,Critical,High CPU Utilization,os_linux.csv
+53724e76-1a9d-4221-8461-079edad055fa,1587584718000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+907ef4a0-e9a7-4826-bdc2-1037f53b5b22,1587584720000,os_019,CPU_util_pct,2.327587,Critical,High CPU Utilization,os_linux.csv
+96590f84-9c5a-417f-9ba8-c81f875164e9,1587584724000,os_018,CPU_util_pct,2.658124,Critical,High CPU Utilization,os_linux.csv
+27da0233-7019-45ab-a9d3-a145dc8b7f9c,1587584728000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+9e94c594-04e0-41ba-a908-f94686a7d33e,1587584728000,db_013,Sess_Connect,1330.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+98d87394-9937-46e4-8e93-ebdcc39ffe75,1587584728000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+f5c1bf59-5632-4eb3-805d-235dedac7ba0,1587584730000,db_004,MEM_real_util,4.85,Critical,High Memory Utilization,db_oracle_11g.csv
+39136bc5-020b-4dae-a9ee-168bcd27ea82,1587584732000,os_022,CPU_util_pct,4.669449,Critical,High CPU Utilization,os_linux.csv
+86b4c106-5982-4080-80f7-b214df8fcae1,1587584732000,os_005,CPU_util_pct,4.645538,Critical,High CPU Utilization,os_linux.csv
+3d1d0b3a-f1be-4e62-9f4d-f319f8ca1e8b,1587584734000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+fa8d341f-5708-4af8-b6b8-1e1aed86cab9,1587584740000,os_021,CPU_util_pct,4.532782,Critical,High CPU Utilization,os_linux.csv
+663e9485-0d65-42a6-afcb-3f12b35c2c32,1587584740000,os_003,CPU_util_pct,8.73672,Critical,High CPU Utilization,os_linux.csv
+6f4df015-581b-468a-819e-227305caa24b,1587584740000,os_020,CPU_util_pct,2.319679,Critical,High CPU Utilization,os_linux.csv
+0378b0df-868c-44de-9f74-50287ffd0105,1587584745000,db_001,MEM_real_util,46.21,Critical,High Memory Utilization,db_oracle_11g.csv
+57d0f317-d142-4ddf-943a-843c768f893c,1587584745000,db_008,MEM_real_util,83.73,Critical,High Memory Utilization,db_oracle_11g.csv
+451b9e7e-2371-410c-be3a-fe3e86705d0a,1587584745000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+ba209673-9601-41e2-80ae-4cef476bb4bd,1587584748000,os_004,CPU_util_pct,1.152954,Critical,High CPU Utilization,os_linux.csv
+6afd9890-5bbd-4e80-9d61-a7f0d9d3f5bf,1587584750000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+6dd2e6eb-2d23-49bc-bbe3-0cdb95fa04e5,1587584752000,os_017,CPU_util_pct,2.437345,Critical,High CPU Utilization,os_linux.csv
+c92a4b65-bdc3-451d-856b-dc94e74df3dc,1587584760000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+de10028f-c8bb-4d22-be91-2d599f9f180e,1587584760000,os_002,CPU_util_pct,1.775567,Critical,High CPU Utilization,os_linux.csv
+7494e14e-12ac-4a38-83ba-062fe95a55c0,1587584763000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+f1a0c515-bde6-4974-b1b9-374f7a09b814,1587584766000,db_010,MEM_real_util,57.82,Critical,High Memory Utilization,db_oracle_11g.csv
+d294230d-79bd-4d14-aa6f-d7e4996896da,1587584775000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+e793f67d-57fe-45e7-a839-3b6da3385dfd,1587584775000,db_005,MEM_real_util,81.57,Critical,High Memory Utilization,db_oracle_11g.csv
+b4110850-b4f9-4477-bf90-1487352577e5,1587584776000,os_001,CPU_util_pct,1.762366,Critical,High CPU Utilization,os_linux.csv
+f6f2963f-1646-4d1d-b1fd-4bb7d349e785,1587584778000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+94837428-d4f3-4d37-bc58-ec523beb94b9,1587584780000,os_019,CPU_util_pct,2.322767,Critical,High CPU Utilization,os_linux.csv
+e684ed5b-c42d-4e10-b115-893063d3920a,1587584785000,os_018,CPU_util_pct,2.627551,Critical,High CPU Utilization,os_linux.csv
+66a523a4-b85b-40da-8bfb-274614ffc2c5,1587584788000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+72d62c99-e62c-43e4-9498-6cc655219434,1587584788000,db_013,Sess_Connect,1330.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+1d5227ff-af98-4f97-ba67-88b2765b0704,1587584788000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+b1df90fc-f600-4dd0-ab6e-b601c737907f,1587584790000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+8aa6d80e-4aca-4195-bd4f-4271602b9334,1587584792000,os_022,CPU_util_pct,4.807898,Critical,High CPU Utilization,os_linux.csv
+b03e2a92-a221-4d69-abed-bf7126fe793d,1587584792000,os_005,CPU_util_pct,4.653413,Critical,High CPU Utilization,os_linux.csv
+f543d742-3c2d-43bd-9abe-4cda7fe30848,1587584794000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+748ac9f7-34ae-49ae-8b93-c8e0cf1f8217,1587584805000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+0356c5dc-89ad-4221-9ab7-d3e693fdb691,1587584805000,db_003,MEM_real_util,45.33,Critical,High Memory Utilization,db_oracle_11g.csv
+239fab95-7b39-4d25-bd7c-bdb068bbcbc0,1587584805000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+6e70d163-7a14-403d-a910-a334b0ecd769,1587584806000,os_003,CPU_util_pct,8.709643,Critical,High CPU Utilization,os_linux.csv
+34a38d7e-4a08-46a6-9c52-3030362457c6,1587584806000,os_020,CPU_util_pct,2.314667,Critical,High CPU Utilization,os_linux.csv
+54b5863b-eee0-4817-82c5-6be701364e80,1587584806000,os_021,CPU_util_pct,5.19828,Critical,High CPU Utilization,os_linux.csv
+ae01fadd-32d9-4eae-b8cd-85bdc98de5a2,1587584809000,os_004,CPU_util_pct,1.148825,Critical,High CPU Utilization,os_linux.csv
+df355277-d22d-49ca-8bd6-b8425c5b10f2,1587584810000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+bfb2e5df-0718-48bd-801e-1ff998b69f3f,1587584812000,os_017,CPU_util_pct,2.279983,Critical,High CPU Utilization,os_linux.csv
+98e0c95c-f1fb-447d-834c-5374ce0a1dfb,1587584820000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+360c2410-2a52-42e5-8f28-686e1e11d758,1587584821000,os_002,CPU_util_pct,1.733767,Critical,High CPU Utilization,os_linux.csv
+43898ec1-1004-4264-84bd-6ca669de81af,1587584823000,db_009,MEM_real_util,8.45,Critical,High Memory Utilization,db_oracle_11g.csv
+09a27c3b-259f-431a-98e6-94499c2f2a17,1587584826000,db_010,MEM_real_util,57.82,Critical,High Memory Utilization,db_oracle_11g.csv
+3eebb91b-7eba-4517-a514-bc3f77e54149,1587584835000,db_002,MEM_real_util,45.2,Critical,High Memory Utilization,db_oracle_11g.csv
+9f70d83c-bf2b-4ca0-8c3d-448c965c0263,1587584835000,db_005,MEM_real_util,81.57,Critical,High Memory Utilization,db_oracle_11g.csv
+50b13277-9fda-4397-ac78-518c40710f91,1587584836000,os_001,CPU_util_pct,1.81098,Critical,High CPU Utilization,os_linux.csv
+b346058b-ad67-4d96-add4-5078432f27a3,1587584838000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+96999288-7249-4996-9943-e20d9359c095,1587584840000,os_019,CPU_util_pct,2.001669,Critical,High CPU Utilization,os_linux.csv
+7f45741e-8787-4b2d-93f6-9ad1b2bea7f8,1587584844000,os_018,CPU_util_pct,2.314165,Critical,High CPU Utilization,os_linux.csv
+c30a5653-13ab-464a-bb62-377442fdc367,1587584848000,db_013,Sess_Connect,1330.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+df0c4321-bf1d-4829-bbd5-c19b1aa00bd0,1587584848000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+c5f46576-c04d-444f-8b3d-12a2d2d1dd0c,1587584848000,db_008,Sess_Connect,501.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+2b13a9e1-e1cb-4231-b347-5c766abc1ac8,1587584850000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+9037024a-c32b-4b54-ab47-ec4dc6d35257,1587584852000,os_022,CPU_util_pct,5.550464,Critical,High CPU Utilization,os_linux.csv
+46cb7547-2a45-4a7f-a836-439b41b4115a,1587584852000,os_005,CPU_util_pct,4.739366,Critical,High CPU Utilization,os_linux.csv
+b1490235-a8bb-4564-a7f4-1be8a18ac2ee,1587584854000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+a37256c8-b505-4da7-8046-c31d195d9374,1587584860000,os_021,CPU_util_pct,5.49018,Critical,High CPU Utilization,os_linux.csv
+2f49454b-d945-423d-8bbd-666c2a4b05a6,1587584860000,os_020,CPU_util_pct,1.758556,Critical,High CPU Utilization,os_linux.csv
+6a75ce12-e82a-4abe-926d-86b4a0503c59,1587584860000,os_003,CPU_util_pct,8.818576,Critical,High CPU Utilization,os_linux.csv
+a7bfe2dc-03cc-4597-bec5-948bb58113d3,1587584865000,db_001,MEM_real_util,46.21,Critical,High Memory Utilization,db_oracle_11g.csv
+7573a6f6-b8bf-48b4-ae3a-3bbd03c68941,1587584865000,db_003,MEM_real_util,45.33,Critical,High Memory Utilization,db_oracle_11g.csv
+1a9811c3-3108-4ef0-9b1a-24703f6b99b4,1587584865000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+5ee2fb3a-e72c-43e9-93d1-1b0628198e1b,1587584870000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+3eb2170f-6fbd-4e61-ab30-676f80958723,1587584881000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+b8fa7218-7d49-4938-adb9-1fcd3b143a11,1587584883000,db_009,MEM_real_util,8.45,Critical,High Memory Utilization,db_oracle_11g.csv
+5f913579-fe23-4038-9091-575bfad74afe,1587584886000,db_010,MEM_real_util,57.82,Critical,High Memory Utilization,db_oracle_11g.csv
+5654a96d-d823-4a30-9bc1-7c939d6a356c,1587584895000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+52548940-eee2-44ff-aedb-6064155e7ce3,1587584895000,db_005,MEM_real_util,81.57,Critical,High Memory Utilization,db_oracle_11g.csv
+754f05e4-1613-4c7c-8772-e3086ccf6edb,1587584898000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+1f4be078-734d-47c1-83ac-969aa39486ee,1587584908000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+d1be482d-903c-4597-9ecc-d04927ffbbee,1587584908000,db_008,Sess_Connect,501.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+e533fa92-7cba-43b1-9d02-7f809b8eee34,1587584908000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+32a0a906-cd77-4c70-a922-7072df1fd62e,1587584910000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+169e6f2f-1ec2-45cd-be99-8b67e399e313,1587584914000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+9c077823-e22a-4376-9146-a3c27ed6cfe5,1587584925000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+c45e6e65-923d-4663-938b-45ef96496977,1587584925000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+f11187a2-078c-4ca7-8be5-b0a7b87c10b7,1587584925000,db_001,MEM_real_util,46.21,Critical,High Memory Utilization,db_oracle_11g.csv
+47618f80-0def-4b5c-bc30-9340229673d9,1587584930000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+1fe9f617-83a9-460a-9bfe-d947a16f71e0,1587584940000,db_007,MEM_real_util,81.82,Critical,High Memory Utilization,db_oracle_11g.csv
+7ac271e4-4a31-4483-9468-529d7f0ee311,1587584943000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+7e7689aa-409c-4bc0-a7f3-a70f6680ddc2,1587584946000,db_010,MEM_real_util,57.82,Critical,High Memory Utilization,db_oracle_11g.csv
+34d0718a-965e-492d-88b2-927dbeae11c5,1587584955000,db_005,MEM_real_util,81.57,Critical,High Memory Utilization,db_oracle_11g.csv
+6ed0f1ac-05bc-40e1-b945-e51abf695ab8,1587584955000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+a0fcafbc-fe6d-46e5-bb09-a3546e6e2734,1587584958000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+fbdccad9-1a02-4ded-b482-02f6b4893842,1587584968000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+0b2a9166-d303-4274-919a-e77bf13d92dc,1587584968000,db_008,Sess_Connect,502.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+94c254c9-9f1f-426e-a1aa-715edb274523,1587584968000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+876e83d1-af25-4be9-9887-26808045fb79,1587584970000,db_004,MEM_real_util,4.87,Critical,High Memory Utilization,db_oracle_11g.csv
+c9850b7c-a990-482a-8b71-0ed70a855504,1587584974000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+d621fd58-08a3-40e0-beba-6df7acefb92f,1587584984000,os_004,CPU_util_pct,4.017298,Critical,High CPU Utilization,os_linux.csv
+06c5135c-d4b4-4f19-b743-023d53ad7b27,1587584985000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+9576deb0-09c0-4ec4-bdfe-0ba68bec1022,1587584985000,db_001,MEM_real_util,46.21,Critical,High Memory Utilization,db_oracle_11g.csv
+758d519b-6976-4ae4-8117-ee65eceb8ffb,1587584985000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+82f87953-7b1e-483d-92b6-aabcc5c80dbc,1587584988000,os_017,CPU_util_pct,2.002114,Critical,High CPU Utilization,os_linux.csv
+2a13cf57-a3c7-4d37-b62f-dbd18cefc599,1587584990000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+6fa915f2-63c6-4c3c-bff1-38cad4e0c741,1587584991000,os_002,CPU_util_pct,1.63629,Critical,High CPU Utilization,os_linux.csv
+9e469804-d750-4993-bb87-6a909a9d2c1d,1587584993000,os_012,CPU_util_pct,1.248887,Critical,High CPU Utilization,os_linux.csv
+91721f43-1ae5-4753-a007-fc50b20875e9,1587584994000,os_001,CPU_util_pct,1.851389,Critical,High CPU Utilization,os_linux.csv
+baba6995-017d-42c1-9ff7-49372cb7948b,1587584995000,os_019,CPU_util_pct,1.853255,Critical,High CPU Utilization,os_linux.csv
+b619e3f1-6032-453e-8e73-3ab89387c623,1587584997000,os_018,CPU_util_pct,2.193882,Critical,High CPU Utilization,os_linux.csv
+e5a6676f-9218-4831-beac-a9f1da0e1b84,1587584999000,os_022,CPU_util_pct,4.531201,Critical,High CPU Utilization,os_linux.csv
+715aa896-37e0-4a6d-abbb-a40ab1129850,1587584999000,os_005,CPU_util_pct,4.65498,Critical,High CPU Utilization,os_linux.csv
+84218aeb-b6aa-4f20-9cbb-050382eba768,1587585000000,os_021,CPU_util_pct,5.623332,Critical,High CPU Utilization,os_linux.csv
+ade79924-b678-42dc-b014-4d7a785d18cf,1587585000000,db_007,MEM_real_util,81.83,Critical,High Memory Utilization,db_oracle_11g.csv
+755dcac3-e172-470b-9f7e-29a82f7eaa26,1587585000000,os_020,CPU_util_pct,1.913786,Critical,High CPU Utilization,os_linux.csv
+4cc4df9d-c5ec-4f8b-aa9e-3c1bb2dbade5,1587585000000,os_003,CPU_util_pct,8.949851,Critical,High CPU Utilization,os_linux.csv
+b267cb16-5213-44ea-9c4d-496dc0101b48,1587585003000,os_004,CPU_util_pct,4.017298,Critical,High CPU Utilization,os_linux.csv
+b03f7675-f204-46e0-8e29-2ff37768801e,1587585003000,db_009,MEM_real_util,8.45,Critical,High Memory Utilization,db_oracle_11g.csv
+1edecdcf-100f-4caa-8664-bd027725a4cb,1587585004000,os_017,CPU_util_pct,2.041966,Critical,High CPU Utilization,os_linux.csv
+af0a6fc5-c46e-4cb9-9dff-fda9fd218104,1587585006000,db_010,MEM_real_util,57.82,Critical,High Memory Utilization,db_oracle_11g.csv
+819d5a09-d8ee-441f-8632-45e7aa8d9ad2,1587585007000,os_002,CPU_util_pct,1.757994,Critical,High CPU Utilization,os_linux.csv
+83e76750-cc37-4b85-90d2-94b1978e67ac,1587585015000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+e957444e-22bd-4e07-9812-533a286b6b8a,1587585015000,db_005,MEM_real_util,81.57,Critical,High Memory Utilization,db_oracle_11g.csv
+8d3d5388-9c26-4949-b51e-0c789ffd9bc6,1587585017000,os_001,CPU_util_pct,2.157993,Critical,High CPU Utilization,os_linux.csv
+05203082-f302-4e04-97ca-dcfa56ad7019,1587585018000,db_013,MEM_real_util,54.59,Critical,High Memory Utilization,db_oracle_11g.csv
+93f7cce4-d448-44de-aeb3-cce055ee5cbe,1587585021000,os_019,CPU_util_pct,1.898954,Critical,High CPU Utilization,os_linux.csv
+7c7be7f5-6913-4a8e-ba61-267f7d1fccb8,1587585024000,os_018,CPU_util_pct,2.238469,Critical,High CPU Utilization,os_linux.csv
+a1070d86-6fea-439d-9b1b-bd86373471ec,1587585028000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+831f589d-f7ee-4790-b497-14fd740dedc7,1587585028000,db_013,Sess_Connect,1331.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+ae58dcfa-c19f-4651-a20a-f3c3226eff7d,1587585028000,db_008,Sess_Connect,501.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+8d4e0c67-b08e-4900-8b23-acf9e682a3fa,1587585030000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+9fa349c3-9659-4be1-a3c1-20670214b1cc,1587585032000,os_022,CPU_util_pct,5.195759,Critical,High CPU Utilization,os_linux.csv
+b9f024af-8b7c-4962-8d19-1ac720ae48be,1587585032000,os_005,CPU_util_pct,4.714202,Critical,High CPU Utilization,os_linux.csv
+04edaea8-c025-41fe-ac5b-cddcd21a6128,1587585034000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+437de6c8-b8a1-44b4-a31a-2fbe725c81bd,1587585040000,os_003,CPU_util_pct,9.086706,Critical,High CPU Utilization,os_linux.csv
+4b3218e1-541e-4d7a-8ede-423057922d62,1587585040000,os_020,CPU_util_pct,2.042079,Critical,High CPU Utilization,os_linux.csv
+d4419881-7237-4ccc-b69e-dc6566c51375,1587585040000,os_021,CPU_util_pct,6.335129,Critical,High CPU Utilization,os_linux.csv
+da152ce4-68cc-4219-aae6-5febe961ee0b,1587585045000,db_001,MEM_real_util,46.21,Critical,High Memory Utilization,db_oracle_11g.csv
+173aa8b9-f17c-43c1-8800-2a9d8cb035d6,1587585045000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+e3a05567-94b4-468f-aa54-5c726a850ec4,1587585045000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+816558c4-228f-409e-9137-03f7f9004302,1587585048000,os_004,CPU_util_pct,1.097041,Critical,High CPU Utilization,os_linux.csv
+276eb0cb-bedf-4a6f-85f0-6de188e7152b,1587585050000,db_012,MEM_real_util,81.07,Critical,High Memory Utilization,db_oracle_11g.csv
+d4959b16-f663-4975-85c3-388ab24ba116,1587585052000,os_017,CPU_util_pct,2.056428,Critical,High CPU Utilization,os_linux.csv
+f0b0ec9d-31ad-45ad-b9d8-0aca0a0b5d6b,1587585060000,os_002,CPU_util_pct,1.647389,Critical,High CPU Utilization,os_linux.csv
+2a640c3c-9f3d-4c5c-9914-0a29b6b36a3e,1587585060000,db_007,MEM_real_util,81.85,Critical,High Memory Utilization,db_oracle_11g.csv
+5def180b-17bf-44a4-9e43-a7e495a67493,1587585063000,db_009,MEM_real_util,8.45,Critical,High Memory Utilization,db_oracle_11g.csv
+4bc0a0a6-a554-4d57-816b-18df113e6b1d,1587585066000,db_010,MEM_real_util,57.82,Critical,High Memory Utilization,db_oracle_11g.csv
+ab1aa948-00fe-4d4a-ae25-cadc56bfd65e,1587585075000,db_005,MEM_real_util,81.57,Critical,High Memory Utilization,db_oracle_11g.csv
+50d5585b-38ab-440e-b3ba-1bfe313d759d,1587585075000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+381d0bb0-c742-450e-bd61-769e5587694e,1587585077000,os_001,CPU_util_pct,1.690532,Critical,High CPU Utilization,os_linux.csv
+4545b303-51d3-41df-a9e0-7355fe7f09be,1587585078000,db_013,MEM_real_util,54.58,Critical,High Memory Utilization,db_oracle_11g.csv
+9ffb269e-faf9-4804-96fe-260ffa79a9f3,1587585081000,os_019,CPU_util_pct,1.945926,Critical,High CPU Utilization,os_linux.csv
+4474cea0-f958-46fa-a9c6-d1f1c4c227d9,1587585084000,os_018,CPU_util_pct,2.236611,Critical,High CPU Utilization,os_linux.csv
+f88b6b7a-2273-4819-822e-13a585408b37,1587585088000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+340cde2a-d82f-44b0-ad0c-3006e5012571,1587585088000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+3570cd2e-7632-492d-a91d-115c81f3dd23,1587585088000,db_008,Sess_Connect,503.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+4bc27e48-dd3a-488f-995d-1c451c5ae0d6,1587585090000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+7a212f12-0588-4523-a830-25e9d6896e44,1587585092000,os_005,CPU_util_pct,4.671342,Critical,High CPU Utilization,os_linux.csv
+82c1e193-a532-4236-a0f1-54b8c9ebb4af,1587585092000,os_022,CPU_util_pct,4.597659,Critical,High CPU Utilization,os_linux.csv
+2d9020ac-5b8a-4e39-ab20-eb0e1faf1172,1587585094000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+9500a048-4670-423e-9838-45e0e64736bd,1587585100000,os_021,CPU_util_pct,5.145472,Critical,High CPU Utilization,os_linux.csv
+7ffe6384-f117-4c74-8e40-d2299ea7bb99,1587585100000,os_020,CPU_util_pct,2.001488,Critical,High CPU Utilization,os_linux.csv
+98dca72e-d507-486d-9217-c4ab0f163853,1587585100000,os_003,CPU_util_pct,8.88917,Critical,High CPU Utilization,os_linux.csv
+651ec2eb-f8dc-41e4-ba4e-c09566a655c6,1587585105000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+029e110c-9895-4c1c-82b4-f4472d1cb534,1587585105000,db_001,MEM_real_util,46.22,Critical,High Memory Utilization,db_oracle_11g.csv
+59dedc06-f3bc-4a76-9895-bca7b90fcc39,1587585105000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+ef51640b-b421-4af7-b1d9-386197a77396,1587585108000,os_004,CPU_util_pct,1.207512,Critical,High CPU Utilization,os_linux.csv
+f420a0f1-8a39-4276-8dd2-6944e6ef7b2c,1587585110000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+4bb85b50-d719-41fd-a545-0bd676dacd2e,1587585113000,os_017,CPU_util_pct,2.079725,Critical,High CPU Utilization,os_linux.csv
+9f88204f-4ccc-4b95-a66f-73ceb8386c22,1587585120000,os_002,CPU_util_pct,1.656867,Critical,High CPU Utilization,os_linux.csv
+6996e4d1-c1b5-47fb-8140-b5b088fcb6ea,1587585120000,db_007,MEM_real_util,81.86,Critical,High Memory Utilization,db_oracle_11g.csv
+0f9d17b2-1a09-49bc-844d-63cdd1b8dd2f,1587585123000,db_009,MEM_real_util,8.45,Critical,High Memory Utilization,db_oracle_11g.csv
+3aa5b0c8-92d7-4831-bb46-d4afb63b9128,1587585126000,db_010,MEM_real_util,57.82,Critical,High Memory Utilization,db_oracle_11g.csv
+d3bd42d0-7e0a-4f43-ae15-f0ead3854153,1587585135000,db_005,MEM_real_util,81.57,Critical,High Memory Utilization,db_oracle_11g.csv
+833cf3e7-e956-4042-b123-810b508bace1,1587585135000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+34417ff6-1028-4f98-9096-75356f07235d,1587585136000,os_001,CPU_util_pct,1.7256,Critical,High CPU Utilization,os_linux.csv
+d5f33f8b-4cf9-4a18-a3fe-aec41d4c8f3f,1587585138000,db_013,MEM_real_util,54.58,Critical,High Memory Utilization,db_oracle_11g.csv
+05b768bb-c836-485b-865d-cf406b716dad,1587585140000,os_019,CPU_util_pct,2.217232,Critical,High CPU Utilization,os_linux.csv
+309be0fb-51db-4c14-9dc6-2b3a217223e8,1587585144000,os_018,CPU_util_pct,2.627166,Critical,High CPU Utilization,os_linux.csv
+b249b747-0d20-4cb8-9e0e-4a85169304b5,1587585148000,db_008,Sess_Connect,505.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+9455ac94-4e8e-4582-af8b-bf58b9f6be3d,1587585148000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+ea651d06-f0e0-4e1f-8e0f-38e7ea940914,1587585148000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+1d32ee44-3002-4e2c-9cf6-3afa36d2bb30,1587585150000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+e3c02cde-2893-442d-8d24-362d3d0fc074,1587585153000,os_005,CPU_util_pct,4.683358,Critical,High CPU Utilization,os_linux.csv
+30eaedd6-f2b1-46df-abf3-2238c3cd5e59,1587585153000,os_022,CPU_util_pct,4.899296,Critical,High CPU Utilization,os_linux.csv
+c65b3df9-4c3e-4aed-9316-b5d92466e6ad,1587585154000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+6fa05110-a950-45c7-90d7-0a846a1f9934,1587585160000,os_003,CPU_util_pct,8.629698,Critical,High CPU Utilization,os_linux.csv
+ef5b6f73-029c-4f65-a8a0-2b0cfac8862c,1587585160000,os_020,CPU_util_pct,2.463195,Critical,High CPU Utilization,os_linux.csv
+6458067a-4a5d-4b00-83e2-87dc0387fb3c,1587585160000,os_021,CPU_util_pct,5.044347,Critical,High CPU Utilization,os_linux.csv
+5c89e49c-dd6b-4427-b74d-469dfc026bac,1587585166000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+a16f8638-1f6d-4a32-8882-99e1f82974d2,1587585166000,db_001,MEM_real_util,46.21,Critical,High Memory Utilization,db_oracle_11g.csv
+9155d687-a631-49ed-a128-5480ffb6808c,1587585166000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+642e4953-dd94-4337-9816-f702ecfb2e80,1587585168000,os_004,CPU_util_pct,1.12789,Critical,High CPU Utilization,os_linux.csv
+bf8cb4da-77d2-4210-9a48-72937ef9438f,1587585170000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+587bd95c-6e0c-46f1-aed9-dc548a41cc79,1587585172000,os_017,CPU_util_pct,2.639708,Critical,High CPU Utilization,os_linux.csv
+b9852118-f473-472c-88c0-04d3a4af97f8,1587585180000,db_007,MEM_real_util,81.87,Critical,High Memory Utilization,db_oracle_11g.csv
+8d7bd9b2-b568-46b1-a508-1813d3c021e4,1587585180000,os_002,CPU_util_pct,1.654846,Critical,High CPU Utilization,os_linux.csv
+be833373-b035-46ce-b3e3-7c83132abc3c,1587585183000,db_009,MEM_real_util,8.45,Critical,High Memory Utilization,db_oracle_11g.csv
+965e2f53-dd38-4970-86f8-0296ff984bac,1587585186000,db_010,MEM_real_util,57.82,Critical,High Memory Utilization,db_oracle_11g.csv
+756b8c62-a855-4f61-b645-5bbac318af7f,1587585195000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+61e8472b-92c0-44b9-8889-362666b8cd76,1587585195000,db_005,MEM_real_util,81.57,Critical,High Memory Utilization,db_oracle_11g.csv
+cfdbecf3-1687-4190-875d-4af42fe91d98,1587585196000,os_001,CPU_util_pct,1.844875,Critical,High CPU Utilization,os_linux.csv
+723e887d-1cc8-4d4a-a9e2-11a8d8ce4dd4,1587585198000,db_013,MEM_real_util,54.58,Critical,High Memory Utilization,db_oracle_11g.csv
+4b51c041-9777-4cd5-b8e7-4ea513d43cdc,1587585200000,os_019,CPU_util_pct,2.288548,Critical,High CPU Utilization,os_linux.csv
+bc119d29-b4af-4abd-95b6-cafca2e68e16,1587585205000,os_018,CPU_util_pct,2.592371,Critical,High CPU Utilization,os_linux.csv
+9e5efc6c-75d0-49b0-9cc4-262a08bc8692,1587585208000,db_013,Sess_Connect,1329.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+42a59c64-12b1-4f0c-a394-2db7aa658b55,1587585208000,db_008,Sess_Connect,505.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+0cb297b8-2505-403d-ac40-0c497aa88ee9,1587585208000,db_012,Sess_Connect,966.0,Warning,Too Many Database Sessions,db_oracle_11g.csv
+9d49b26c-26a7-4c12-982f-ab6214a2e059,1587585210000,db_004,MEM_real_util,4.86,Critical,High Memory Utilization,db_oracle_11g.csv
+e5a18292-cc22-4da2-93c7-51502ea6102c,1587585212000,os_022,CPU_util_pct,5.122637,Critical,High CPU Utilization,os_linux.csv
+7c438eb1-a9bb-4b8d-9ddc-ac4d5203fde4,1587585213000,os_005,CPU_util_pct,4.809919,Critical,High CPU Utilization,os_linux.csv
+7b1e0d66-98c7-48d7-976c-6a489a28246b,1587585214000,db_011,MEM_real_util,57.52,Critical,High Memory Utilization,db_oracle_11g.csv
+6ec765d4-8a7d-48bb-8073-f33807272f78,1587585220000,os_003,CPU_util_pct,8.894499,Critical,High CPU Utilization,os_linux.csv
+eb3caef2-90c2-4dc2-85db-261dd736c35a,1587585221000,os_021,CPU_util_pct,6.44664,Critical,High CPU Utilization,os_linux.csv
+ba1f1adc-2885-442a-825e-3063fbd856fc,1587585221000,os_020,CPU_util_pct,2.423286,Critical,High CPU Utilization,os_linux.csv
+2cdcbd10-0701-4e8c-85c6-344168b525ce,1587585225000,db_003,MEM_real_util,45.32,Critical,High Memory Utilization,db_oracle_11g.csv
+98fd51ee-2ccd-4e90-b753-795178b3dfa8,1587585225000,db_001,MEM_real_util,46.21,Critical,High Memory Utilization,db_oracle_11g.csv
+3ded5edf-63fe-4f35-9a60-65e4914b068e,1587585225000,db_008,MEM_real_util,83.72,Critical,High Memory Utilization,db_oracle_11g.csv
+254f22bb-587f-4576-80fe-e30cf7035f1f,1587585229000,os_004,CPU_util_pct,1.134725,Critical,High CPU Utilization,os_linux.csv
+8dc6400e-a37f-4bc0-9acd-a457d306eed7,1587585230000,db_012,MEM_real_util,80.99,Critical,High Memory Utilization,db_oracle_11g.csv
+f34d171c-555b-476b-9a8c-45b54148925d,1587585232000,os_017,CPU_util_pct,2.514765,Critical,High CPU Utilization,os_linux.csv
+2aab6ebb-0666-4192-8b42-1ade1826a49a,1587585240000,os_002,CPU_util_pct,1.740955,Critical,High CPU Utilization,os_linux.csv
+876ccbde-d9db-421a-ae97-67b142da966e,1587585240000,db_007,MEM_real_util,81.87,Critical,High Memory Utilization,db_oracle_11g.csv
+cb9a38e4-cf53-4a23-ad21-a3f373e9065a,1587585243000,db_009,MEM_real_util,8.46,Critical,High Memory Utilization,db_oracle_11g.csv
+962dcd56-2070-48d7-9f77-cadb0cd07922,1587585246000,db_010,MEM_real_util,57.82,Critical,High Memory Utilization,db_oracle_11g.csv
+e946c21a-d756-4ad2-8700-456e8a4de6d0,1587585255000,db_005,MEM_real_util,81.57,Critical,High Memory Utilization,db_oracle_11g.csv
+a40d3908-97ec-49da-a329-34c86e9c478c,1587585255000,db_002,MEM_real_util,45.21,Critical,High Memory Utilization,db_oracle_11g.csv
+2dc55f49-00b8-4871-b9fb-4e72919bd317,1587585256000,os_001,CPU_util_pct,1.967354,Critical,High CPU Utilization,os_linux.csv

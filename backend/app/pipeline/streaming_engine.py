@@ -142,11 +142,16 @@ def _root_cause_score(row, incident_df: pd.DataFrame) -> float:
     return round(score, 4)
 
 
-def run_engine(alerts_df: pd.DataFrame) -> dict:
+def run_engine(alerts_df: pd.DataFrame, include_members: bool = False) -> dict:
     """Run the full streaming correlation + root-cause pipeline over
     `alerts_df` (columns: alert_id, timestamp[ms epoch], host, metric,
     value, severity, source). No file I/O -- returns incident summaries and
-    reduction metrics directly."""
+    reduction metrics directly.
+
+    include_members=True attaches every raw alert folded into each incident
+    (not just the aggregate counts) so a UI can show "what's in this
+    cluster" on click -- opt-in since it multiplies response size by
+    roughly raw_count for large runs (the 100k-alert benchmark doesn't need it)."""
     df = alerts_df.copy()
     df["timestamp"] = pd.to_datetime(df["timestamp"], unit="ms")
     df = df.sort_values("timestamp").reset_index(drop=True)
@@ -160,7 +165,7 @@ def run_engine(alerts_df: pd.DataFrame) -> dict:
             _root_cause_score(row, incident_df) for _, row in incident_df.iterrows()
         ]
         root = incident_df.sort_values("root_score", ascending=False).iloc[0]
-        incidents.append({
+        incident = {
             "incident_id": int(incident_id),
             "host": str(root["host"]),
             "root_metric": str(root["metric"]),
@@ -171,7 +176,26 @@ def run_engine(alerts_df: pd.DataFrame) -> dict:
             "root_score": float(root["root_score"]),
             "alert_count": int(len(incident_df)),
             "suppressed_count": int(len(incident_df) - 1),
-        })
+            "members": [],
+        }
+        if include_members:
+            # incident_df is already timestamp-sorted above; itertuples() instead
+            # of iterrows() avoids a per-row Series allocation, which matters a
+            # lot once this runs over the full 132,927-row dataset.
+            incident["members"] = [
+                {
+                    "alert_id": str(member.alert_id),
+                    "timestamp": member.timestamp.isoformat(),
+                    "host": str(member.host),
+                    "metric": str(member.metric),
+                    "severity": str(member.severity),
+                    "value": float(member.value),
+                    "root_score": float(member.root_score),
+                    "is_root": str(member.alert_id) == str(root["alert_id"]),
+                }
+                for member in incident_df.itertuples(index=False)
+            ]
+        incidents.append(incident)
 
     incidents.sort(key=lambda i: i["root_timestamp"])
 

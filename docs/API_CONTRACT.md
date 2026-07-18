@@ -12,31 +12,50 @@ endpoints — the dataset is a bundled, read-only CSV
 ## `GET /api/aiops/summary`
 
 Cheap metadata about the full dataset — lets the frontend show "132,927
-alerts loaded" without running the engine or shipping the whole dataset
-over the wire.
+alerts loaded" and render a host-status grid without running the engine or
+shipping the whole dataset over the wire.
 
 ### Response
 
 ```json
 {
   "raw_count": 132927,
-  "host_count": 29
+  "host_count": 29,
+  "hosts": ["db_001", "db_002", "..."]
 }
 ```
+
+`hosts` is the full sorted list of real host IDs in the dataset.
 
 ---
 
 ## `GET /api/aiops/sample`
 
-A random sample of individual raw alerts, chronologically sorted. Powers
-the frontend's "Simulate incoming alerts" demo animation — it's a preview,
-not the full dataset.
+Serves from one of four **fixed**, *contiguous* real slices of the dataset
+(`app/data/demo_sample_{100,1000,10000,100000}.csv`), chronologically
+sorted. Powers the frontend's "Simulate incoming alerts" demo animation
+(always `size=100`) and the "Compare scale" view. Same alerts on every
+call for a given `size`, not a fresh draw — so the demo is identical and
+reproducible across runs, and it's the exact same alerts that
+`POST /api/aiops/run-sample` below correlates for that size, so the "flood
+in -> incidents out" story is directly traceable rather than two unrelated
+datasets.
+
+Each size is a contiguous slice rather than a random draw on purpose: a
+random sample scattered across the dataset's ~50-day span has nothing
+temporally close enough to correlate (verified — a random 1,000-alert draw
+only reduces ~3%), while these contiguous slices reduce 80–99%+ because
+they're dense enough in time for the engine's correlation window to
+actually do something. See the comment in `app/data/aiops_full_loader.py`
+for the full comparison and the exact reduction at each size, and
+`app/data/example_random_1000.csv` for the random counterexample.
 
 ### Query parameters
 
-| Param   | Type | Default | Range   | Notes |
-|---------|------|---------|---------|-------|
-| `limit` | int  | `250`   | `1–1000` | how many alerts to sample |
+| Param   | Type | Default | Range/values                 | Notes |
+|---------|------|---------|-------------------------------|-------|
+| `limit` | int  | `100`   | `1–100`                       | how many alerts to return from the front of the slice |
+| `size`  | int  | `100`   | `100, 1000, 10000, 100000`    | which fixed demo slice to serve from |
 
 ### Response
 
@@ -44,15 +63,56 @@ not the full dataset.
 {
   "alerts": [
     {
-      "alert_id": "9a05b984-c08f-427d-b8d3-1cb69b38b8f7",
-      "timestamp": "2020-04-22T16:39:28",
-      "host": "db_008",
-      "metric": "Sess_Connect",
-      "severity": "Warning",
-      "message": "Too Many Database Sessions"
+      "alert_id": "d0e04277-de4d-486a-9c80-78fd6a764ef7",
+      "timestamp": "2020-05-28T17:32:18",
+      "host": "db_013",
+      "metric": "MEM_real_util",
+      "value": 54.73,
+      "severity": "Critical",
+      "message": "High Memory Utilization"
     }
   ],
-  "count": 250
+  "count": 100
+}
+```
+
+`value` is the real metric reading that triggered the alert (e.g. percent
+utilization, session count) — the frontend uses this to animate live
+CPU/Memory/Sessions gauges with genuine numbers as the flood streams in,
+rather than a static "Healthy" label.
+
+---
+
+## `POST /api/aiops/run-sample`
+
+Runs the streaming correlation + root-cause engine
+(`app/pipeline/streaming_engine.py`) over one of the same fixed demo
+slices `GET /api/aiops/sample` serves. `size=100` (well under a second) is
+what the frontend's "Run Nucleus" button calls, so the demo flood and the
+reduced result it collapses into are the same 100 alerts, easy to verify
+by eye; the larger sizes power the "Compare scale" view (100,000 takes
+~45s locally — a contiguous slice is denser in time than the full
+spread-out dataset, so it's proportionally slower than you'd expect from
+size alone). Same response shape as `/run` below, just scoped to `size`
+alerts instead of 132,927.
+
+### Query parameters
+
+| Param             | Type | Default | Range/values               | Notes |
+|-------------------|------|---------|------------------------------|-------|
+| `size`            | int  | `100`   | `100, 1000, 10000, 100000`  | which fixed demo slice to correlate |
+| `include_members` | bool | `false` | —                            | attach each incident's raw member alerts (see below) |
+
+```json
+{
+  "incidents": ["... 20 incidents ..."],
+  "metrics": {
+    "raw_count": 100,
+    "incident_count": 20,
+    "suppressed_count": 80,
+    "reduction_pct": 80.0,
+    "host_count": 16
+  }
 }
 ```
 
@@ -60,10 +120,18 @@ not the full dataset.
 
 ## `POST /api/aiops/run`
 
-Runs the full streaming correlation + root-cause engine
-(`app/pipeline/streaming_engine.py`) over all 132,927 alerts and returns
-every incident it found, plus aggregate metrics. Takes ~20 seconds — this
-is a real computation on every call, not a cached/canned response.
+Runs the full streaming correlation + root-cause engine over all 132,927
+alerts and returns every incident it found, plus aggregate metrics. Takes
+~60–90 seconds locally (much longer on a resource-constrained deploy
+target — see the README's Deployment section) — this is a real
+computation on every call, not a cached/canned response. The root-cause
+scoring pass is the dominant cost, not the single-pass correlation itself.
+
+### Query parameters
+
+| Param             | Type | Default | Notes |
+|-------------------|------|---------|-------|
+| `include_members` | bool | `false` | attach each incident's raw member alerts (see below) |
 
 ### Response
 
@@ -80,7 +148,8 @@ is a real computation on every call, not a cached/canned response.
       "root_value": 78.56,
       "root_score": 0.84,
       "alert_count": 360,
-      "suppressed_count": 359
+      "suppressed_count": 359,
+      "members": []
     }
   ],
   "metrics": {
@@ -100,11 +169,32 @@ is a real computation on every call, not a cached/canned response.
   within the incident (20%) + a fixed metric-priority table (20%). See
   `_root_cause_score` in `streaming_engine.py`.
 - `metrics.reduction_pct = 100 * (1 - incident_count / raw_count)`.
+- `members` is `[]` unless `include_members=true` was passed. When
+  populated, it's every raw alert folded into that incident (timestamp
+  order), each shaped like:
+  ```json
+  {
+    "alert_id": "5d8d6d11-8d14-48de-8e12-de186e965cda",
+    "timestamp": "2020-04-10T16:00:00",
+    "host": "db_007",
+    "metric": "MEM_real_util",
+    "severity": "Critical",
+    "value": 78.56,
+    "root_score": 0.84,
+    "is_root": true
+  }
+  ```
+  This is opt-in because it multiplies response size by roughly
+  `raw_count` — the frontend passes it for the 100-alert Operations Center
+  demo and the full-dataset drill-down, but leaves it off for the larger
+  Compare Scale benchmark sizes, which don't render per-incident detail.
 
 ---
 
 ## Errors
 
-`limit` outside `1–1000` on `/api/aiops/sample` returns a standard FastAPI
-validation error (HTTP 422). The dataset CSV is bundled in the repo, so
-there's no "dataset missing" failure mode to handle.
+`limit` outside `1–100` on `/api/aiops/sample` and `size` outside
+`{100, 1000, 10000, 100000}` on `/api/aiops/sample` or `/api/aiops/run-sample`
+return a standard FastAPI/HTTP error (422 and 400 respectively). The
+dataset CSVs are bundled in the repo, so there's no "dataset missing"
+failure mode to handle.
