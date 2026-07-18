@@ -118,12 +118,13 @@ script.
 **Frontend** (`frontend/`): React 19 + TypeScript + Vite + Tailwind CSS v4 +
 Zustand, plain `fetch` (no extra data-fetching library, no WebSockets).
 
-> A second, independent correlation approach also lives in this repo —
-> semantic + temporal + service-topology distance with HDBSCAN clustering
-> and sentence-transformer embeddings (`backend/app/pipeline/clustering.py`).
-> It's not wired into the live UI right now (see [What's next](#whats-next)),
-> but the endpoints and pipeline are fully implemented and testable via
-> `/docs`.
+An earlier iteration also had a second correlation approach — semantic
+embeddings (sentence-transformers) + HDBSCAN clustering over a small
+synthetic/sample dataset. It was cut from this repo: it never ran against
+the real dataset, doubled the dependency footprint (`torch` alone was
+most of the Render deploy failures), and wasn't reachable from the UI. The
+streaming engine below is the one thing this repo does, done against real
+data end to end.
 
 ## Results, honestly
 
@@ -165,14 +166,14 @@ output of running those rules, which is what the engine actually runs on.
 <table>
 <tr><td><b>Backend</b></td><td>
 
-`FastAPI` · `pandas` · `uvicorn` · `pydantic` — plus `scikit-learn` /
-`HDBSCAN` / `sentence-transformers` for the secondary semantic pipeline
+`FastAPI` · `pandas` · `uvicorn` · `pydantic` — four dependencies, no ML
+runtime, no database
 
 </td></tr>
 <tr><td><b>Frontend</b></td><td>
 
 `React 19` · `TypeScript` · `Vite` · `Tailwind CSS v4` · `Zustand` ·
-`Framer Motion` · `Recharts` · `lucide-react`
+`Framer Motion` · `lucide-react`
 
 </td></tr>
 <tr><td><b>Data</b></td><td>
@@ -224,41 +225,39 @@ The live demo runs on three endpoints:
 | `/api/aiops/sample?limit=220` | `GET` | A random sample of individual raw alerts, chronologically sorted — powers the "Simulate incoming alerts" animation. |
 | `/api/aiops/run` | `POST` | Runs the full correlation + root-cause engine over all 132,927 alerts. Returns every incident (host, root metric, severity, root-cause alert, confidence score, alert/suppressed counts) plus aggregate metrics. Takes ~20s — it's a real computation, not a canned response. |
 
-The original semantic/HDBSCAN pipeline's endpoints
-(`/api/alerts/raw`, `/api/alerts/correlated`) are also live — see
-[`API_CONTRACT.md`](API_CONTRACT.md) for the full contract.
+See [`docs/API_CONTRACT.md`](docs/API_CONTRACT.md) for the full request/response contract.
 
 ## Repo layout
 
 ```
 backend/
   app/
-    main.py                    FastAPI app + all endpoints
-    config.py                  tunable constants (HDBSCAN pipeline)
+    main.py                    FastAPI app + all three endpoints
     schemas.py                 Pydantic response models
-    store.py                   in-memory cache for the synthetic/sample pipeline
     data/
       aiops_full_alerts.csv    the 132,927-alert real dataset
       aiops_full_loader.py     cached loader + sampler for it
-      synthetic.py, sample_loghub.csv, aiops_loader.py, ...  (secondary pipeline's data)
     pipeline/
-      streaming_engine.py      the live demo's correlation + root-cause engine
-      clustering.py, distance.py, embeddings.py, windows.py  (HDBSCAN pipeline)
-  scripts/
-    sanity_check.py, tune_reduction.py
+      streaming_engine.py      the correlation + root-cause engine
+  requirements.txt             fastapi, uvicorn, pydantic, pandas -- that's it
 frontend/
   src/
-    App.tsx                    all views (current UI: AiopsFullView)
-    store/useOpsStore.ts        Zustand store — state + API calls
-    lib/api.ts                  fetch wrappers
+    App.tsx                    the whole UI (one view: the engine demo)
+    store/useOpsStore.ts       Zustand store -- state + API calls
+    lib/api.ts                 fetch wrappers
+    lib/mockData.ts            shared Alert type + time formatter
 logic/
   src/
-    alert_generator.py          real AIOps2020 metrics -> alerts.csv
-    correlation_engine.py       original prototype the streaming engine is ported from
-    root_cause.py                original prototype for root-cause scoring
-  data/alerts/                  generated CSVs (gitignored)
+    alert_generator.py         real AIOps2020 metrics -> aiops_full_alerts.csv
+    correlation_engine.py      original prototype the streaming engine is ported from
+    root_cause.py              original prototype for root-cause scoring
+    utils.py                   threshold-rule evaluation helper
+  config.py, rules.py          dataset paths + AIOps2020 threshold-rule definitions
+  data/, outputs/              generated CSVs (gitignored, reproducible via the scripts above)
+docs/
+  API_CONTRACT.md              full request/response contract
+  screenshots/                 the three screenshots at the top of this README
 render.yaml                    Render deployment blueprint
-API_CONTRACT.md
 README.md
 ```
 
@@ -266,9 +265,12 @@ README.md
 
 - **Frontend** — live on Vercel: **https://frontend-xi-orpin-21.vercel.app**
 - **Backend** — targets Render via the included `render.yaml` blueprint
-  (`New → Blueprint` on render.com, point at this repo). Once deployed,
-  set `VITE_NUCLEUS_API_URL` in the Vercel project to the Render URL and
-  redeploy the frontend to connect them.
+  (`New → Blueprint` on render.com, point at this repo). An earlier deploy
+  attempt failed under the old dependency set (`hdbscan`/`torch` failing
+  to build on the free tier); the backend now has four dependencies total
+  (`fastapi`, `uvicorn`, `pydantic`, `pandas`), which should resolve that.
+  Once deployed, set `VITE_NUCLEUS_API_URL` in the Vercel project to the
+  Render URL and redeploy the frontend to connect them.
 
 For a hackathon judge without either deployed: the [Quickstart](#quickstart)
 above gets both running locally in two commands, and is the most reliable
@@ -280,11 +282,7 @@ platform being up at demo time.
 - Wire `VITE_NUCLEUS_API_URL` once the backend is deployed, so the live
   Vercel frontend talks to a live backend instead of only working
   locally.
-- Bring the semantic/HDBSCAN pipeline (embeddings + composite distance +
-  cross-window clustering) back into the UI as a second mode, alongside
-  the streaming engine — they answer different questions (semantic
-  similarity vs. host/metric/time correlation) and the repo already has
-  both fully implemented.
-- Persist engine runs somewhere queryable (currently CSV/in-memory only —
-  see the design discussion this repo's history captures) if this moves
-  beyond a demo.
+- Persist engine runs somewhere queryable (currently CSV/in-memory only)
+  if this moves beyond a demo — a real deployment would want Postgres for
+  the incident table and, if the raw alert volume keeps growing,
+  something time-series-shaped for the firehose.
