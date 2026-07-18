@@ -264,18 +264,20 @@ README.md
 ## Deployment
 
 - **Frontend** — live on Vercel: **https://frontend-xi-orpin-21.vercel.app**
-- **Backend** — targets Render via the included `render.yaml` blueprint
-  (`New → Blueprint` on render.com, point at this repo). An earlier deploy
-  attempt failed under the old dependency set (`hdbscan`/`torch` failing
-  to build on the free tier); the backend now has four dependencies total
-  (`fastapi`, `uvicorn`, `pydantic`, `pandas`), which should resolve that.
-  Once deployed, set `VITE_NUCLEUS_API_URL` in the Vercel project to the
-  Render URL and redeploy the frontend to connect them.
+- **Backend** — live on Render: **https://nucleus-backend-agvp.onrender.com**
+  (`render.yaml` blueprint, plan: free). `VITE_NUCLEUS_API_URL` is set on
+  the Vercel project, so the two are connected — the live frontend talks
+  to the live backend, not just localhost.
 
-For a hackathon judge without either deployed: the [Quickstart](#quickstart)
-above gets both running locally in two commands, and is the most reliable
-path — no cold-start, no cross-origin config, no dependency on either
-platform being up at demo time.
+**Known caveat:** `POST /api/aiops/run` takes ~20 seconds locally but
+**~6.5 minutes on Render's free tier** — the correlation loop is a
+single-threaded Python pass over 132,927 rows, and the free tier's shared
+CPU is heavily throttled compared to a real machine. The result is
+byte-for-byte identical either way (verified), it's just slow. For a live
+judged demo, click "Run engine" *before* you start talking, or use the
+[Quickstart](#quickstart) locally — the free tier is fine for "the deploy
+works," not for "watch it run live in 20 seconds." Upgrading the Render
+plan would fix this if it matters more than the hackathon budget.
 
 ## What's next
 
