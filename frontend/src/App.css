@@ -49,3 +49,22 @@ main{padding:30px 32px}
 
 /* Full-screen clustering workspace uses a presentation-scale type system. */
 .tuning.maximized .panel-head{height:64px;padding:0 24px}.tuning.maximized .panel-head h2{font-size:18px;gap:10px}.tuning.maximized .panel-head>span{font-size:13px;gap:14px}.tuning.maximized .maximize-tuning{width:38px;height:38px}.tuning.maximized .slider-label{padding:32px 28px 14px}.tuning.maximized .slider-label span{font-size:16px}.tuning.maximized .slider-label b{font-size:22px}.tuning.maximized>input{width:calc(100% - 56px);margin:0 28px;height:22px}.tuning.maximized .range-hints{font-size:12px;padding:8px 28px 24px}.tuning.maximized .impact{margin:0 28px 22px;grid-template-columns:1fr 180px 210px;padding:18px 20px}.tuning.maximized .impact>span{font-size:12px}.tuning.maximized .impact div{padding-left:20px}.tuning.maximized .impact b{font-size:28px}.tuning.maximized .impact small{font-size:12px}.tuning.maximized .metric{padding:20px 28px}.tuning.maximized .metric>b{font-size:14px;margin-bottom:13px}.tuning.maximized .metric>div{grid-template-columns:110px 1fr 48px;gap:12px;font-size:12px;margin:9px 0}.tuning.maximized .metric i{height:6px;border-radius:4px;overflow:hidden}.tuning.maximized .metric em{border-radius:4px}
+
+/* Full-dataset streaming engine (manual run, no auto-poll). */
+.run-engine-panel{margin-bottom:14px}
+.run-engine-body{display:flex;align-items:center;gap:14px;padding:16px}
+.run-engine-btn{height:36px;border:1px solid #285744;background:#17382d;color:#68c79f;font-size:11px;font-weight:600;padding:0 16px;display:flex;align-items:center;gap:7px;border-radius:4px}
+.run-engine-btn:disabled{opacity:.55;cursor:default}
+.run-engine-btn:not(:disabled):hover{border-color:#347a5f}
+.run-engine-btn.secondary{background:#182533;color:#75b9e7;border-color:#2c4a63}
+.run-engine-btn.secondary:not(:disabled):hover{border-color:#3d6486}
+.sim-panel{height:460px;margin-bottom:14px}
+.run-engine-error{color:var(--red);font-size:10px}
+.run-engine-done{color:var(--muted);font-size:10px;display:flex;align-items:center;gap:5px}
+.run-engine-done svg{color:var(--green)}
+.spin{animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.engine-table-body{max-height:600px;overflow:auto}
+.engine-table-body::-webkit-scrollbar{width:5px}
+.engine-table-body::-webkit-scrollbar-thumb{background:#293544}
+.engine-incidents-table .table-head,.engine-incidents-table .table-row{grid-template-columns:120px 90px 130px 90px 70px 90px 80px}

@@ -8,6 +8,23 @@ type CorrelatedResponse={clusters:ApiCluster[];noise:ApiAlert[];metrics:NucleusM
 type RawResponse={alerts:ApiAlert[];count:number}
 async function get<T>(path:string):Promise<T>{const response=await fetch(`${API_BASE}${path}`);if(!response.ok)throw new Error(`Nucleus API returned ${response.status}`);return response.json() as Promise<T>}
 const mapAlert=(a:ApiAlert,clusterId:string|null=null,isRootCause=false):Alert=>({id:a.id,timestamp:a.timestamp,service:a.service,host:`${a.service.replace(/-service$|-api$/,'')}-prod-01`,severity:a.severity,message:a.message,clusterId,isRootCause})
+export type AiopsSummary={raw_count:number;host_count:number}
+export type EngineIncident={incident_id:number;host:string;root_metric:string;severity:string;root_alert_id:string;root_timestamp:string;root_value:number;root_score:number;alert_count:number;suppressed_count:number}
+export type EngineMetrics={raw_count:number;incident_count:number;suppressed_count:number;reduction_pct:number;host_count:number}
+export type EngineResult={incidents:EngineIncident[];metrics:EngineMetrics}
+
+export async function fetchAiopsSummary(){return get<AiopsSummary>('/api/aiops/summary')}
+
+export type SampleAlert={alert_id:string;timestamp:string;host:string;metric:string;severity:string;message:string}
+
+export async function fetchAiopsSample(limit=220){return get<{alerts:SampleAlert[];count:number}>(`/api/aiops/sample?limit=${limit}`)}
+
+export async function runAiopsEngine(){
+  const response=await fetch(`${API_BASE}/api/aiops/run`,{method:'POST'})
+  if(!response.ok)throw new Error(`Engine run failed: ${response.status}`)
+  return response.json() as Promise<EngineResult>
+}
+
 export async function fetchNucleus(source:ApiSource,sensitivity=72){
   const semantic=.15+(sensitivity/100)*.25,temporal=.55-(sensitivity/100)*.2,topology=1-semantic-temporal
   const weights=`alpha=${semantic.toFixed(3)}&beta=${temporal.toFixed(3)}&gamma=${topology.toFixed(3)}`
