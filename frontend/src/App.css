@@ -1,3 +1,6 @@
+@import "tailwindcss";
+*{box-sizing:border-box}html,body,#root{margin:0;min-width:1180px;min-height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif}button,input,select{font:inherit}button{cursor:pointer}code,kbd{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}body{background:#080c12}
+
 /* Theme tokens */
 :root{
   --bg:#07080b;--side:#0a0c10;
@@ -235,11 +238,12 @@ main.panel-open{padding-right:412px}
 .bench-card-body{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .bench-card-body>div span{display:block;color:var(--muted);font-size:11px}
 .bench-card-body>div b{display:block;font-size:16px;margin-top:2px;font-variant-numeric:tabular-nums}
-.bench-table .table-head,.bench-table .table-row{grid-template-columns:90px 1fr 1fr 1fr 80px 90px}
+.bench-table .table-head,.bench-table .table-row{grid-template-columns:80px 1fr 1fr 1fr 70px 90px 100px 80px}
 .bench-table .table-row b{font-size:12px}
 .good{color:var(--green)}
 
-.scale-chart{padding:18px}
+.scale-chart{padding:18px;display:flex;justify-content:center}
+.scale-chart svg{max-width:520px}
 .chart-grid{stroke:var(--line);stroke-width:1}
 .chart-axis-label{fill:var(--faint);font-size:10px;font-family:inherit}
 .chart-point-label{fill:var(--text);font-size:11px;font-weight:700;font-variant-numeric:tabular-nums}

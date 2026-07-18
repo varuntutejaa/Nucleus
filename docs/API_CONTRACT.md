@@ -46,7 +46,7 @@ random sample scattered across the dataset's ~50-day span has nothing
 temporally close enough to correlate (verified — a random 1,000-alert draw
 only reduces ~3%), while these contiguous slices reduce 80–99%+ because
 they're dense enough in time for the engine's correlation window to
-actually do something. See the comment in `app/data/aiops_full_loader.py`
+actually do something. See the comment in `app/aiops_full_loader.py`
 for the full comparison and the exact reduction at each size, and
 `app/data/example_random_1000.csv` for the random counterexample.
 
@@ -86,7 +86,7 @@ rather than a static "Healthy" label.
 ## `POST /api/aiops/run-sample`
 
 Runs the streaming correlation + root-cause engine
-(`app/pipeline/streaming_engine.py`) over one of the same fixed demo
+(`app/streaming_engine.py`) over one of the same fixed demo
 slices `GET /api/aiops/sample` serves. `size=100` (well under a second) is
 what the frontend's "Run Nucleus" button calls, so the demo flood and the
 reduced result it collapses into are the same 100 alerts, easy to verify

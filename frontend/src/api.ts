@@ -1,6 +1,10 @@
 const API_BASE=(import.meta.env.VITE_NUCLEUS_API_URL as string|undefined)?.replace(/\/$/,'')??''
 async function get<T>(path:string):Promise<T>{const response=await fetch(`${API_BASE}${path}`);if(!response.ok)throw new Error(`Nucleus API returned ${response.status}`);return response.json() as Promise<T>}
 
+export type Severity='critical'|'warning'|'info'
+export type Alert={id:string;timestamp:string;service:string;host:string;severity:Severity;message:string;clusterId:string|null;isRootCause:boolean}
+export const fmtTime=(iso:string)=>new Date(iso).toLocaleTimeString([], {hour12:false,hour:'2-digit',minute:'2-digit',second:'2-digit'})
+
 export type AiopsSummary={raw_count:number;host_count:number;hosts:string[]}
 export type EngineIncidentMember={alert_id:string;timestamp:string;host:string;metric:string;severity:string;value:number;root_score:number;is_root:boolean}
 export type EngineIncident={incident_id:number;host:string;root_metric:string;severity:string;root_alert_id:string;root_timestamp:string;root_value:number;root_score:number;alert_count:number;suppressed_count:number;members:EngineIncidentMember[]}

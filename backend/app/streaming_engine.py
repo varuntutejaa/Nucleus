@@ -1,27 +1,45 @@
 """
 Streaming correlation + root-cause engine.
 
-This is a straight port of logic/src/correlation_engine.py and
-logic/src/root_cause.py -- the engine already validated against the full
-132,927-row AIOps2020 alert dataset (99.24% reduction). Unlike the
-HDBSCAN/embedding pipeline in pipeline/clustering.py (windowed, semantic
-similarity, built for the small synthetic/sample batches), this engine
-scales to the full real dataset because it's a single pass over
+This is a rewrite of an original prototype (correlation engine + root-cause
+scoring, developed and validated separately before being consolidated here
+as pure functions) -- validated against the full 132,927-row AIOps2020 alert
+dataset (99.24% reduction). An earlier iteration of this project also had a
+second correlation approach (HDBSCAN + semantic embeddings, windowed,
+built for small synthetic/sample batches); it was cut entirely since it
+never ran against the real dataset and wasn't reachable from the UI. This
+engine scales to the full real dataset because it's a single pass over
 chronologically-sorted alerts with a per-(host, source) active-incident
 window -- no O(n^2) distance matrix.
 
-Ported as pure functions (input DataFrame -> output dict, no file I/O, no
+Written as pure functions (input DataFrame -> output dict, no file I/O, no
 module-level execution) so it's safe to call from a request handler instead
 of running as a standalone script.
 """
 from collections import defaultdict
 from dataclasses import dataclass, field
+from typing import Callable, Optional
 
 import pandas as pd
 
-TIME_WINDOW_SECONDS = 300
+TIME_WINDOW_SECONDS = 600  # was 300 (5 min); widened after an empirical sweep
+# against the full 132,927-alert dataset showed 10 min cuts incident count from
+# 1,012 to 820 (~19%, zero extra cost) with no loss of coherence -- every
+# incident, at both settings, stayed single-metric/single-severity/single-host
+# (0% mixed in either case). INCIDENT_TIMEOUT_SECONDS and CORRELATION_THRESHOLD
+# were tested too; timeout had zero effect on this dataset (alert gaps don't
+# land in the 10-30 min range it would affect), and lowering the threshold
+# was riskier for a similar-sized win, so left alone.
 INCIDENT_TIMEOUT_SECONDS = 600
 CORRELATION_THRESHOLD = 0.60
+
+# Optional AI-scoring blend (see docs/ARCHITECTURE.md "Future compatibility").
+# Off by default: when disabled, _score() never touches these, never calls
+# into preprocessing.py, and returns exactly what it always has -- this is
+# not just numerically equivalent, it's the same code path unchanged.
+ENABLE_AI_SCORING = False
+AI_SCORE_WEIGHT_EXISTING = 0.75
+AI_SCORE_WEIGHT_AI = 0.25
 
 METRIC_PRIORITY = {
     "cpu_usage": 5, "memory_usage": 4, "disk_usage": 3, "disk_io": 3,
@@ -41,12 +59,14 @@ class _Incident:
     severities: set = field(default_factory=set)
     values: list = field(default_factory=list)
     count: int = 0
+    last_alert_id: Optional[str] = None  # only read when AI scoring is enabled
 
     def add_alert(self, row):
         self.metrics.add(row.metric)
         self.severities.add(row.severity)
         self.values.append(row.value)
         self.end_time = row.timestamp
+        self.last_alert_id = row.alert_id
         self.count += 1
 
     @property
@@ -55,10 +75,14 @@ class _Incident:
 
 
 class _CorrelationEngine:
-    def __init__(self):
+    def __init__(self, ai_similarity: Optional[Callable[[str, str], float]] = None,
+                 ai_weight_existing: float = AI_SCORE_WEIGHT_EXISTING, ai_weight_ai: float = AI_SCORE_WEIGHT_AI):
         self.next_incident = 0
         self.active = defaultdict(list)
         self.correlated = []
+        self.ai_similarity = ai_similarity
+        self.ai_weight_existing = ai_weight_existing
+        self.ai_weight_ai = ai_weight_ai
 
     def _create_incident(self, row):
         incident = _Incident(self.next_incident, row.host, row.source, row.timestamp, row.timestamp)
@@ -89,6 +113,16 @@ class _CorrelationEngine:
                 score += 0.15
             elif diff <= 10:
                 score += 0.08
+
+        # Optional AI-scoring blend -- only reached once the alert has already
+        # passed the hard time-window gate above (gap < 0 or gap > TIME_WINDOW_SECONDS
+        # both return 0.0 before this point, and the AI similarity below has no
+        # ability to reverse that). self.ai_similarity is None unless the caller
+        # explicitly opted in, so this is a no-op on the default path.
+        if self.ai_similarity is not None and incident.last_alert_id is not None:
+            ai_score = self.ai_similarity(row.alert_id, incident.last_alert_id)
+            score = self.ai_weight_existing * score + self.ai_weight_ai * ai_score
+
         return score
 
     def _expire(self, current_time):
@@ -142,7 +176,11 @@ def _root_cause_score(row, incident_df: pd.DataFrame) -> float:
     return round(score, 4)
 
 
-def run_engine(alerts_df: pd.DataFrame, include_members: bool = False) -> dict:
+def run_engine(alerts_df: pd.DataFrame, include_members: bool = False,
+                enable_ai_scoring: Optional[bool] = None,
+                ai_weight_existing: Optional[float] = None,
+                ai_weight_ai: Optional[float] = None,
+                ai_disk_cache_key: Optional[str] = None) -> dict:
     """Run the full streaming correlation + root-cause pipeline over
     `alerts_df` (columns: alert_id, timestamp[ms epoch], host, metric,
     value, severity, source). No file I/O -- returns incident summaries and
@@ -151,12 +189,37 @@ def run_engine(alerts_df: pd.DataFrame, include_members: bool = False) -> dict:
     include_members=True attaches every raw alert folded into each incident
     (not just the aggregate counts) so a UI can show "what's in this
     cluster" on click -- opt-in since it multiplies response size by
-    roughly raw_count for large runs (the 100k-alert benchmark doesn't need it)."""
+    roughly raw_count for large runs (the 100k-alert benchmark doesn't need it).
+
+    enable_ai_scoring=True blends an AI-similarity score (sentence-transformer
+    embeddings + semantic/temporal/host distance, via app.preprocessing) into
+    the correlation score -- see docs/ARCHITECTURE.md "Future compatibility".
+    None (default) falls back to the module-level ENABLE_AI_SCORING constant
+    (False). When it resolves False, app.preprocessing is never imported and
+    _score()'s behavior is unchanged -- not just numerically equivalent, the
+    same code path. ai_weight_existing/ai_weight_ai similarly fall back to
+    AI_SCORE_WEIGHT_EXISTING/AI_SCORE_WEIGHT_AI when omitted.
+
+    ai_disk_cache_key (e.g. "demo_10000"), when given, persists the embedding
+    step to disk so it's paid once ever for that dataset, not once per process
+    -- see app.embeddings.load_cached_embeddings."""
+    use_ai = ENABLE_AI_SCORING if enable_ai_scoring is None else enable_ai_scoring
+    w_existing = AI_SCORE_WEIGHT_EXISTING if ai_weight_existing is None else ai_weight_existing
+    w_ai = AI_SCORE_WEIGHT_AI if ai_weight_ai is None else ai_weight_ai
+
+    ai_similarity = None
+    if use_ai:
+        # Deferred import: sentence-transformers/torch only get pulled in on
+        # this path, never when AI scoring is off (the default).
+        from app.preprocessing import build_ai_similarity_lookup
+        ai_similarity = build_ai_similarity_lookup(alerts_df, disk_cache_key=ai_disk_cache_key)
+
     df = alerts_df.copy()
     df["timestamp"] = pd.to_datetime(df["timestamp"], unit="ms")
     df = df.sort_values("timestamp").reset_index(drop=True)
 
-    correlated_df = _CorrelationEngine().correlate(df)
+    engine = _CorrelationEngine(ai_similarity=ai_similarity, ai_weight_existing=w_existing, ai_weight_ai=w_ai)
+    correlated_df = engine.correlate(df)
 
     incidents = []
     for incident_id, incident_df in correlated_df.groupby("incident_id"):
@@ -212,5 +275,6 @@ def run_engine(alerts_df: pd.DataFrame, include_members: bool = False) -> dict:
             "suppressed_count": suppressed_count,
             "reduction_pct": reduction_pct,
             "host_count": int(df["host"].nunique()),
+            "ai_scoring_enabled": use_ai,
         },
     }

@@ -1,6 +1,5 @@
 import {create} from 'zustand'
-import type {Alert} from '../lib/mockData'
-import {DEMO_SIZES,fetchAiopsSample,fetchAiopsSummary,runAiopsEngine,runAiopsSampleEngine,type AiopsSummary,type DemoSize,type EngineResult} from '../lib/api'
+import {DEMO_SIZES,fetchAiopsSample,fetchAiopsSummary,runAiopsEngine,runAiopsSampleEngine,type Alert,type AiopsSummary,type DemoSize,type EngineResult} from './api'
 
 type EngineStatus='idle'|'running'|'done'|'error'
 type SimPhase='idle'|'streaming'|'done'

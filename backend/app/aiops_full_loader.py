@@ -1,11 +1,18 @@
-"""Loaders for the AIOps2020-derived alert data used by the streaming
-engine and the demo UI.
+"""Loaders for the AIOps2020-derived alert data.
+
+This is the shared alert loader (see docs/ARCHITECTURE.md): both runtime
+pipelines -- the streaming correlation engine (streaming_engine.py) and the
+AI preprocessing pipeline (embeddings.py/distance.py/preprocessing.py) --
+call load_demo_sample()/load_full_dataset() independently and get back the
+same plain DataFrame. Nothing here decides how alerts get correlated or
+embedded; it only reads CSVs and caches them.
 
 - `aiops_full_alerts.csv` (132,927 rows) is the real dataset `POST
   /api/aiops/run` operates on by default. Bundled as a CSV since the raw
   AIOps2020 challenge data itself is multi-gigabyte and never shipped --
   this file is that raw data's already-materialized alert stream (see
-  logic/src/alert_generator.py for how it was produced).
+  data_pipeline/generate_alerts.py, the offline data pipeline, for how it
+  was produced).
 - `demo_sample_{100,1000,10000,100000}.csv` are a graduated series of
   fixed, reproducible *contiguous* slices of the same dataset -- used by
   the frontend's "Simulate incoming alerts" flood (always size=100, so
@@ -36,9 +43,10 @@ from typing import Dict, Optional
 
 import pandas as pd
 
-CSV_PATH = Path(__file__).parent / "aiops_full_alerts.csv"
+DATA_DIR = Path(__file__).parent / "data"
+CSV_PATH = DATA_DIR / "aiops_full_alerts.csv"
 DEMO_SIZES = [100, 1000, 10000, 100000]
-DEMO_PATHS = {n: Path(__file__).parent / f"demo_sample_{n}.csv" for n in DEMO_SIZES}
+DEMO_PATHS = {n: DATA_DIR / f"demo_sample_{n}.csv" for n in DEMO_SIZES}
 
 _cache: Optional[pd.DataFrame] = None
 _demo_caches: Dict[int, pd.DataFrame] = {}

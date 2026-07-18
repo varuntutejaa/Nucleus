@@ -41,6 +41,7 @@ class EngineMetricsOut(BaseModel):
     suppressed_count: int
     reduction_pct: float
     host_count: int
+    ai_scoring_enabled: bool = Field(default=False, description="whether the optional AI-similarity blend contributed to correlation scoring on this run")
 
 
 class EngineRunResponse(BaseModel):
@@ -61,3 +62,59 @@ class SampleAlertOut(BaseModel):
 class AiopsSampleResponse(BaseModel):
     alerts: List[SampleAlertOut]
     count: int
+
+
+class PreprocessWeightsOut(BaseModel):
+    alpha: float
+    beta: float
+    gamma: float
+
+
+class CompositeDistanceStatsOut(BaseModel):
+    min: float
+    max: float
+    mean: float
+
+
+class PreprocessSummaryOut(BaseModel):
+    preprocessing_id: str
+    alert_count: int
+    embedding_backend: str = Field(description="sentence-transformers/all-MiniLM-L6-v2, or tfidf-fallback")
+    embedding_dimensions: int
+    weights: PreprocessWeightsOut
+    composite_distance_stats: CompositeDistanceStatsOut
+
+
+class PreprocessMatricesOut(BaseModel):
+    preprocessing_id: str
+    alert_count: int
+    embeddings: List[List[float]]
+    semantic_distance: List[List[float]]
+    temporal_distance: List[List[float]]
+    host_distance: List[List[float]]
+    composite_distance: List[List[float]]
+    weights: PreprocessWeightsOut
+
+
+class PreprocessAlertOut(BaseModel):
+    alert_id: str
+    timestamp: int = Field(description="ms epoch, as stored in the demo slice CSV")
+    host: str
+    metric: str
+    value: float
+    severity: str
+    message: str
+    source: str
+
+
+class SimilarAlertEntryOut(BaseModel):
+    alert: PreprocessAlertOut
+    semantic_similarity: float = Field(description="1 - semantic_distance")
+    temporal_score: float = Field(description="1 - temporal_distance")
+    host_score: float = Field(description="1 - host_distance")
+    composite_score: float = Field(description="1 - composite_distance; what a future clustering step would consume")
+
+
+class SimilarAlertsResponse(BaseModel):
+    alert: PreprocessAlertOut
+    most_similar: List[SimilarAlertEntryOut]

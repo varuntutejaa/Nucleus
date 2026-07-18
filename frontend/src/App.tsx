@@ -2,9 +2,8 @@ import {memo,useEffect,useRef,useState} from 'react'
 import {AnimatePresence,motion} from 'framer-motion'
 import {Activity,BarChart3,ChevronDown,ChevronRight,Cpu,Database,GitCompare,HardDrive,Layers,Loader2,MemoryStick,Menu,Network,PanelRight,Play,RotateCcw,Server,ShieldAlert,ShieldCheck,Sun,Moon,Zap} from 'lucide-react'
 import {useShallow} from 'zustand/react/shallow'
-import {lastOf,useOpsStore} from './store/useOpsStore'
-import {DEMO_SIZES,type DemoSize,type EngineIncident} from './lib/api'
-import {fmtTime,type Alert} from './lib/mockData'
+import {lastOf,useOpsStore} from './useOpsStore'
+import {DEMO_SIZES,fmtTime,type Alert,type DemoSize,type EngineIncident} from './api'
 import './App.css'
 
 type OpsState='healthy'|'incident'|'resolved'
@@ -25,7 +24,7 @@ function Sidebar(){
   const now=useNow(1000)
   const connected=!!aiopsSummary
   const syncedAgo=lastSyncedAt?Math.max(0,Math.round((now-lastSyncedAt)/1000)):null
-  return <aside className={`sidebar ${sidebarOpen?'':'closed'}`}><div className="brand"><span><Network size={18}/></span><b>Nucleus</b></div><nav><button className={view==='operations'?'active':''} onClick={()=>setView('operations')}><Database size={17}/><span>Operations</span></button><button className={view==='benchmark'?'active':''} onClick={()=>setView('benchmark')}><GitCompare size={17}/><span>Compare scale</span></button><button className={view==='dataset'?'active':''} onClick={()=>setView('dataset')}><HardDrive size={17}/><span>AIOps Dataset</span></button></nav><div className="side-bottom"><div className="engine"><div><Zap size={14}/> Backend API</div><strong className={connected?'':'down'}><i/>{connected?'Connected':'Unreachable'}</strong><small>{connected?`${aiopsSummary.raw_count.toLocaleString()} alerts indexed`:engineError??'Retrying…'}</small>{syncedAgo!==null&&<small className="sync-line">Last sync: {syncedAgo===0?'just now':`${syncedAgo}s ago`}</small>}</div></div></aside>
+  return <aside className={`sidebar ${sidebarOpen?'':'closed'}`}><div className="brand"><span><Network size={18}/></span><b>Nucleus</b></div><nav><button className={view==='operations'?'active':''} onClick={()=>setView('operations')}><Database size={17}/><span>Operations</span></button><button className={view==='benchmark'?'active':''} onClick={()=>setView('benchmark')}><GitCompare size={17}/><span>Benchmark</span></button><button className={view==='dataset'?'active':''} onClick={()=>setView('dataset')}><HardDrive size={17}/><span>AIOps Dataset</span></button></nav><div className="side-bottom"><div className="engine"><div><Zap size={14}/> Backend API</div><strong className={connected?'':'down'}><i/>{connected?'Connected':'Unreachable'}</strong><small>{connected?`${aiopsSummary.raw_count.toLocaleString()} alerts indexed`:engineError??'Retrying…'}</small>{syncedAgo!==null&&<small className="sync-line">Last sync: {syncedAgo===0?'just now':`${syncedAgo}s ago`}</small>}</div></div></aside>
 }
 function LiveClock(){const now=useNow(1000);return <div className="live-clock"><i/>{new Date(now).toLocaleTimeString([],{hour12:false})}</div>}
 function Topbar(){
@@ -234,6 +233,8 @@ function BenchmarkCard({size}:{size:DemoSize}){
       <div><span>Reduction</span><b className="good">{entry.result.metrics.reduction_pct.toFixed(2)}%</b></div>
       <div><span>Suppressed</span><b>{entry.result.metrics.suppressed_count.toLocaleString()}</b></div>
       <div><span>Time</span><b>{((entry.elapsedMs??0)/1000).toFixed(2)}s</b></div>
+      <div><span>Avg incident size</span><b>{(entry.result.metrics.raw_count/entry.result.metrics.incident_count).toFixed(1)}</b></div>
+      <div><span>Throughput</span><b>{Math.round(entry.result.metrics.raw_count/((entry.elapsedMs??1)/1000)).toLocaleString()}/s</b></div>
     </div>}
     {entry.status==='error'&&<span className="run-engine-error">{entry.error}</span>}
     {entry.status==='idle'&&<span className="sim-hint">Not run yet.</span>}
@@ -269,32 +270,23 @@ function ScaleChart(){
 }
 function BenchmarkView(){
   const benchmarks=useOpsStore(s=>s.benchmarks)
-  const runBenchmark=useOpsStore(s=>s.runBenchmark)
-  const anyRunning=DEMO_SIZES.some(sz=>benchmarks[sz].status==='running')
   const allDone=DEMO_SIZES.every(sz=>benchmarks[sz].status==='done')
   return <>
-    <div className="page-title compact"><div><span>NUCLEUS</span><h1>Compare Scale</h1><p>Run the real correlation engine on the same graduated, real dataset at four sizes and compare the results side by side.</p></div></div>
-    <section className="panel run-engine-panel">
-      <PanelHead title="Run all sizes" icon={<Layers size={15}/>} meta="100 · 1,000 · 10,000 · 100,000 real contiguous alerts"/>
-      <div className="run-engine-body">
-        <button className="run-engine-btn" disabled={anyRunning} onClick={()=>DEMO_SIZES.forEach(sz=>void runBenchmark(sz))}>
-          {anyRunning?<><Loader2 size={15} className="spin"/>Running…</>:<><Play size={15}/>Run all</>}
-        </button>
-        <span className="sim-hint">Each size runs independently -- click "Run" on a single card below, or "Run all" to fire all four at once. 100,000 alone takes ~45s locally.</span>
-      </div>
-    </section>
+    <div className="page-title compact"><div><span>NUCLEUS</span><h1>Benchmark</h1><p>Run the real correlation engine on the same graduated, real dataset at four sizes and compare the results side by side.</p></div></div>
     <div className="card-grid bench-grid">{DEMO_SIZES.map(sz=><BenchmarkCard key={sz} size={sz}/>)}</div>
     <ScaleChart/>
     {allDone&&<section className="panel">
       <PanelHead title="Comparison" icon={<GitCompare size={15}/>} meta="all four sizes"/>
       <div className="table-panel bench-table">
-        <div className="table-head"><span>SIZE</span><span>INCIDENTS</span><span>REDUCTION</span><span>SUPPRESSED</span><span>HOSTS</span><span>TIME</span></div>
+        <div className="table-head"><span>SIZE</span><span>INCIDENTS</span><span>REDUCTION</span><span>SUPPRESSED</span><span>HOSTS</span><span>AVG SIZE</span><span>THROUGHPUT</span><span>TIME</span></div>
         {DEMO_SIZES.map(sz=>{const e=benchmarks[sz];if(!e.result)return null;return <div className="table-row" key={sz}>
           <b>{SIZE_LABEL[sz]}</b>
           <span>{e.result.metrics.incident_count.toLocaleString()}</span>
           <span className="good">{e.result.metrics.reduction_pct.toFixed(2)}%</span>
           <span>{e.result.metrics.suppressed_count.toLocaleString()}</span>
           <span>{e.result.metrics.host_count}</span>
+          <span>{(e.result.metrics.raw_count/e.result.metrics.incident_count).toFixed(1)}</span>
+          <span>{Math.round(e.result.metrics.raw_count/((e.elapsedMs??1)/1000)).toLocaleString()}/s</span>
           <code>{((e.elapsedMs??0)/1000).toFixed(2)}s</code>
         </div>})}
       </div>

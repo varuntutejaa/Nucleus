@@ -18,6 +18,7 @@ dist-ssr/
 !frontend/.env.example
 
 # Generated data / outputs
-logic/data/
-logic/outputs/
+data_pipeline/data/
+data_pipeline/outputs/
 backend/app/data/raw/
+backend/app/data/embeddings_cache/
