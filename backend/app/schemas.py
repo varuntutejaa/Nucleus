@@ -1,7 +1,7 @@
 """Pydantic response models -- these drive the auto-generated /docs schema
 and are the single source of truth for the API contract (see API_CONTRACT.md,
 which documents exactly this shape)."""
-from typing import List
+from typing import List, Literal
 
 from pydantic import BaseModel, Field
 class AiopsSummary(BaseModel):
@@ -47,6 +47,19 @@ class EngineMetricsOut(BaseModel):
 class EngineRunResponse(BaseModel):
     incidents: List[EngineIncidentOut]
     metrics: EngineMetricsOut
+
+
+class CopilotRequest(BaseModel):
+    incident: EngineIncidentOut
+    question: Literal["cause", "evidence", "action"]
+
+
+class CopilotResponse(BaseModel):
+    summary: str
+    answer: str
+    actions: List[str]
+    model: str
+    source: Literal["groq"]
 
 
 class SampleAlertOut(BaseModel):

@@ -10,3 +10,7 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_COPILOT_MODEL
+        value: openai/gpt-oss-20b
