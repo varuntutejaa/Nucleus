@@ -10,6 +10,8 @@ export type EngineIncidentMember={alert_id:string;timestamp:string;host:string;m
 export type EngineIncident={incident_id:number;host:string;root_metric:string;severity:string;root_alert_id:string;root_timestamp:string;root_value:number;root_score:number;alert_count:number;suppressed_count:number;members:EngineIncidentMember[]}
 export type EngineMetrics={raw_count:number;incident_count:number;suppressed_count:number;reduction_pct:number;host_count:number}
 export type EngineResult={incidents:EngineIncident[];metrics:EngineMetrics}
+export type CopilotQuestion='cause'|'evidence'|'action'
+export type CopilotResponse={summary:string;answer:string;actions:string[];model:string;source:'groq'}
 export type SampleAlert={alert_id:string;timestamp:string;host:string;metric:string;value:number;severity:string;message:string}
 
 export async function fetchAiopsSummary(){return get<AiopsSummary>('/api/aiops/summary')}
@@ -25,3 +27,8 @@ export const DEMO_SIZES=[100,1000,10000,100000] as const
 export type DemoSize=typeof DEMO_SIZES[number]
 export async function runAiopsSampleEngine(size:DemoSize=100,includeMembers=false){return postEngine(`/api/aiops/run-sample?size=${size}&include_members=${includeMembers}`)}
 export async function runAiopsEngine(includeMembers=false){return postEngine(`/api/aiops/run?include_members=${includeMembers}`)}
+export async function askIncidentCopilot(incident:EngineIncident,question:CopilotQuestion){
+  const response=await fetch(`${API_BASE}/api/aiops/copilot`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({incident,question})})
+  if(!response.ok)throw new Error(`Copilot unavailable: ${response.status}`)
+  return response.json() as Promise<CopilotResponse>
+}

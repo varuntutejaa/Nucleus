@@ -1,9 +1,9 @@
 import {memo,useEffect,useRef,useState} from 'react'
 import {AnimatePresence,motion} from 'framer-motion'
-import {Activity,BarChart3,ChevronDown,ChevronRight,Cpu,Database,GitCompare,HardDrive,Layers,Loader2,MemoryStick,Menu,Network,PanelRight,Play,RotateCcw,Server,ShieldAlert,ShieldCheck,Sun,Moon,Zap} from 'lucide-react'
+import {Activity,ArrowRight,BarChart3,Bot,CheckCircle2,ChevronDown,ChevronRight,Cpu,Database,GitBranch,GitCompare,HardDrive,Layers,Loader2,MemoryStick,Menu,MessageSquare,Network,PanelRight,Play,RotateCcw,Server,ShieldAlert,ShieldCheck,Sun,Moon,Timer,Wrench,Zap} from 'lucide-react'
 import {useShallow} from 'zustand/react/shallow'
 import {lastOf,useOpsStore} from './useOpsStore'
-import {DEMO_SIZES,fmtTime,type Alert,type DemoSize,type EngineIncident} from './api'
+import {askIncidentCopilot,DEMO_SIZES,fmtTime,type Alert,type CopilotQuestion,type CopilotResponse,type DemoSize,type EngineIncident,type EngineResult} from './api'
 import './App.css'
 
 type OpsState='healthy'|'incident'|'resolved'
@@ -182,13 +182,154 @@ function IncidentRow({i,expanded,onToggle}:{i:EngineIncident;expanded:boolean;on
     </div>}
   </>
 }
+
+function RootCauseGraph({incident}:{incident:EngineIncident}){
+  const members=incident.members
+  const root=members.find(m=>m.is_root)??members[0]
+  const symptoms=members.filter(m=>!m.is_root).slice(0,5)
+  const [selectedId,setSelectedId]=useState(root?.alert_id??'incident')
+  useEffect(()=>setSelectedId(root?.alert_id??'incident'),[incident.incident_id,root?.alert_id])
+  const selected=members.find(m=>m.alert_id===selectedId)
+  const symptomY=(index:number)=>symptoms.length===1?50:14+(index*(72/Math.max(1,symptoms.length-1)))
+  const hidden=Math.max(0,incident.suppressed_count-symptoms.length)
+  return <section className="panel root-graph-panel">
+    <PanelHead title="Root-cause propagation" icon={<GitBranch size={15}/>} meta={<><i className="graph-live-dot"/>Incident #{incident.incident_id} · click any node</>}/>
+    <div className="root-graph-stage">
+      <svg className="root-graph-edges" viewBox="0 0 1000 320" preserveAspectRatio="none" aria-hidden="true">
+        <defs><linearGradient id="root-path" x1="0" x2="1"><stop stopColor="#ff5c72"/><stop offset="1" stopColor="#5b9dff"/></linearGradient></defs>
+        <path d="M 215 160 C 300 160, 340 160, 435 160" className="graph-edge root-edge"/>
+        {symptoms.map((m,index)=><path key={m.alert_id} d={`M 565 160 C 650 160, 650 ${symptomY(index)*3.2}, 775 ${symptomY(index)*3.2}`} className="graph-edge symptom-edge"/>)}
+      </svg>
+      {root&&<button className={`graph-node graph-root ${selectedId===root.alert_id?'selected':''}`} style={{left:'14%',top:'50%'}} onClick={()=>setSelectedId(root.alert_id)}>
+        <span className="graph-node-kicker">ROOT CAUSE</span><b>{root.metric}</b><code>{root.host}</code><em>{root.root_score.toFixed(2)} confidence</em>
+      </button>}
+      <button className={`graph-node graph-hub ${selectedId==='incident'?'selected':''}`} style={{left:'43.5%',top:'50%'}} onClick={()=>setSelectedId('incident')}>
+        <span className="graph-node-kicker">CORRELATED</span><b>Incident #{incident.incident_id}</b><code>{incident.alert_count} alerts</code><em>{incident.suppressed_count} suppressed</em>
+      </button>
+      {symptoms.map((m,index)=><button key={m.alert_id} className={`graph-node graph-symptom ${selectedId===m.alert_id?'selected':''}`} style={{left:'77.5%',top:`${symptomY(index)}%`}} onClick={()=>setSelectedId(m.alert_id)}>
+        <span className="graph-node-kicker">SYMPTOM</span><b>{m.metric}</b><code>{new Date(m.timestamp).toLocaleTimeString([],{hour12:false})}</code>
+      </button>)}
+      {hidden>0&&<span className="graph-hidden-count">+{hidden} more suppressed alerts</span>}
+    </div>
+    <div className="graph-evidence">
+      <div><span>Selected evidence</span><b>{selected?selected.is_root?'Root-cause alert':'Correlated symptom':`Incident #${incident.incident_id}`}</b></div>
+      <div><span>Host</span><code>{selected?.host??incident.host}</code></div>
+      <div><span>Metric</span><b>{selected?.metric??incident.root_metric}</b></div>
+      <div><span>Observed value</span><b>{selected?fmtMetric(selected.metric,selected.value):incident.alert_count}</b></div>
+      <div><span>Confidence</span><b className="good">{selected?selected.root_score.toFixed(2):incident.root_score.toFixed(2)}</b></div>
+      <div><span>Detected</span><code>{new Date(selected?.timestamp??incident.root_timestamp).toLocaleTimeString([],{hour12:false})}</code></div>
+    </div>
+  </section>
+}
+
+const metricName=(metric:string)=>metric==='MEM_real_util'?'memory utilization':metric==='CPU_util_pct'?'CPU utilization':metric==='Sess_Connect'?'database sessions':metric.replaceAll('_',' ').toLowerCase()
+function remediationFor(metric:string,host:string){
+  if(metric==='MEM_real_util')return [`Inspect top memory-consuming processes on ${host}.`,`Check for memory leaks or a recent workload spike.`,`Reclaim memory or scale the host after validating impact.`]
+  if(metric==='CPU_util_pct')return [`Inspect top CPU-consuming processes on ${host}.`,`Compare load with recent deployments and scheduled jobs.`,`Throttle the offending workload or scale compute capacity.`]
+  if(metric==='Sess_Connect')return [`Inspect active and blocked sessions on ${host}.`,`Identify connection leaks or long-running queries.`,`Terminate unsafe sessions only after validating application impact.`]
+  return [`Inspect ${metricName(metric)} telemetry on ${host}.`,`Compare the first alert with recent changes and dependencies.`,`Validate recovery before closing the incident.`]
+}
+function IncidentCopilot({incident}:{incident:EngineIncident}){
+  const [question,setQuestion]=useState<CopilotQuestion>('cause')
+  const [copilot,setCopilot]=useState<CopilotResponse|null>(null)
+  const [loading,setLoading]=useState(false)
+  const [usingFallback,setUsingFallback]=useState(false)
+  const root=incident.members.find(m=>m.is_root)??incident.members[0]
+  const first=new Date(root?.timestamp??incident.root_timestamp)
+  const last=new Date(incident.members.at(-1)?.timestamp??incident.root_timestamp)
+  const duration=Math.max(0,Math.round((last.getTime()-first.getTime())/1000))
+  const metric=metricName(incident.root_metric)
+  const fallbackActions=remediationFor(incident.root_metric,incident.host)
+  const answers:Record<CopilotQuestion,string>={
+    cause:`${incident.host} is the most likely origin. Its ${metric} alert appeared first at ${first.toLocaleTimeString([],{hour12:false})} and received the highest root-cause score (${incident.root_score.toFixed(2)}).`,
+    evidence:`Nucleus correlated ${incident.alert_count} alerts on ${incident.host} over ${duration} seconds. ${incident.suppressed_count} later alerts matched the incident's host, source, timing, severity and metric pattern.`,
+    action:`Start by checking ${metric} on ${incident.host}. ${fallbackActions[0]} Then validate whether the remaining ${incident.suppressed_count} symptoms stop before closing the incident.`,
+  }
+  const ask=(nextQuestion:CopilotQuestion)=>{
+    setQuestion(nextQuestion);setLoading(true);setCopilot(null);setUsingFallback(false)
+    void askIncidentCopilot(incident,nextQuestion).then(result=>setCopilot(result)).catch(()=>setUsingFallback(true)).finally(()=>setLoading(false))
+  }
+  useEffect(()=>{
+    let active=true
+    setQuestion('cause');setLoading(true);setCopilot(null);setUsingFallback(false)
+    void askIncidentCopilot(incident,'cause').then(result=>{if(active)setCopilot(result)}).catch(()=>{if(active)setUsingFallback(true)}).finally(()=>{if(active)setLoading(false)})
+    return()=>{active=false}
+  },[incident])
+  const actions=copilot?.actions??fallbackActions
+  return <section className="panel copilot-panel">
+    <PanelHead title="Nucleus Incident Copilot" icon={<Bot size={16}/>} meta={<span className={`copilot-grounded ${usingFallback?'fallback':''}`}>{loading?<><Loader2 size={12} className="spin"/>Groq is analysing…</>:copilot?<><CheckCircle2 size={12}/>Groq · {copilot.model}</>:<><CheckCircle2 size={12}/>Evidence fallback</>}</span>}/>
+    <div className="copilot-body">
+      <div className="copilot-summary">
+        <div className="copilot-avatar"><Bot size={20}/></div>
+        <div><span className="copilot-label">INCIDENT BRIEF · #{incident.incident_id}</span><p>{copilot?.summary?? <><b>{incident.severity} {metric}</b> on <code>{incident.host}</code> is the probable root cause. It triggered {incident.alert_count-1} correlated symptoms over {duration} seconds; Nucleus suppressed {incident.suppressed_count} duplicate alerts with <strong>{Math.round(incident.root_score*100)}% confidence</strong>.</>}</p></div>
+      </div>
+      <div className="copilot-columns">
+        <div className="copilot-why"><h3><MessageSquare size={14}/>Ask about this incident</h3><div className="copilot-prompts">
+          <button disabled={loading} className={question==='cause'?'active':''} onClick={()=>ask('cause')}>What caused this?</button>
+          <button disabled={loading} className={question==='evidence'?'active':''} onClick={()=>ask('evidence')}>Show the evidence</button>
+          <button disabled={loading} className={question==='action'?'active':''} onClick={()=>ask('action')}>What should I do?</button>
+        </div><motion.div key={`${incident.incident_id}-${question}-${loading}`} className="copilot-answer" initial={{opacity:0,y:4}} animate={{opacity:1,y:0}}>{loading?<Loader2 size={15} className="spin"/>:<Bot size={15}/>}<p>{loading?'Analysing the correlated alert evidence…':copilot?.answer??answers[question]}</p></motion.div></div>
+        <div className="copilot-actions"><h3><Wrench size={14}/>Recommended response</h3><ol>{actions.map((action,index)=><li key={action}><span>{index+1}</span><p>{action}</p></li>)}</ol></div>
+      </div>
+    </div>
+    <div className="copilot-foot"><span>Evidence used</span><code>{incident.root_alert_id.slice(0,8)}…</code><i/>First signal {first.toLocaleTimeString([],{hour12:false})}<i/>{incident.alert_count} correlated alerts<i/>{incident.root_score.toFixed(2)} root score</div>
+  </section>
+}
+
+function IncidentCommandCenter({result}:{result:EngineResult}){
+  const [replayKey,setReplayKey]=useState(0)
+  const [progress,setProgress]=useState(0)
+  useEffect(()=>{
+    setProgress(0)
+    const started=performance.now()
+    const timer=setInterval(()=>{
+      const next=Math.min(100,((performance.now()-started)/1200)*100)
+      setProgress(next)
+      if(next>=100)clearInterval(timer)
+    },30)
+    return()=>clearInterval(timer)
+  },[replayKey])
+  const m=result.metrics
+  const estimatedMinutes=Math.max(0,Math.round((m.raw_count*45-m.incident_count*90)/60))
+  const shownIncidents=result.incidents.slice(0,4)
+  return <section className="panel command-center-panel">
+    <PanelHead title="Live Incident Command Center" icon={<Activity size={15}/>} meta={<><i className="command-live-dot"/>Reduction complete <button className="command-replay" onClick={()=>setReplayKey(k=>k+1)}><RotateCcw size={11}/>Replay</button></>}/>
+    <div className="command-compare">
+      <div className="command-side command-before">
+        <div className="command-side-head"><div><span>WITHOUT NUCLEUS</span><b>Alert flood</b></div><strong>{m.raw_count}</strong></div>
+        <div className="flood-stack">{Array.from({length:12},(_,index)=><motion.div key={`${replayKey}-${index}`} className={`flood-alert ${index%4===0?'warning':''}`} animate={{opacity:progress>index*7?.22:1,x:progress>index*7?-10:0}} transition={{duration:.22}}><i/><span>{index%3===0?'CPU threshold exceeded':index%3===1?'Memory utilization critical':'Session count anomaly'}</span><code>#{String(index+1).padStart(2,'0')}</code></motion.div>)}</div>
+        <p>Every alert demands attention. Symptoms and causes look identical.</p>
+      </div>
+      <div className="command-transform">
+        <div className="command-ring" style={{'--progress':`${progress*3.6}deg`} as React.CSSProperties}><Zap size={18}/></div>
+        <ArrowRight size={18}/><b>{Math.round(progress)}%</b><span>correlated</span>
+      </div>
+      <div className="command-side command-after">
+        <div className="command-side-head"><div><span>WITH NUCLEUS</span><b>Actionable incidents</b></div><strong>{progress>=96?m.incident_count:'—'}</strong></div>
+        <div className="command-incidents">{shownIncidents.map((incident,index)=><motion.div key={`${replayKey}-${incident.incident_id}`} className="command-incident" initial={{opacity:0,x:12}} animate={{opacity:progress>45+index*11?1:0,x:progress>45+index*11?0:12}}><span className={`command-severity ${incident.severity.toLowerCase()}`}/><div><b>{incident.root_metric}</b><code>{incident.host}</code></div><em>{incident.alert_count}→1</em></motion.div>)}</div>
+        <p>Root causes are ranked; duplicate symptoms are automatically suppressed.</p>
+      </div>
+    </div>
+    <div className="command-impact">
+      <div><span>Noise removed</span><b>{m.reduction_pct.toFixed(1)}%</b></div>
+      <div><span>Alerts suppressed</span><b>{m.suppressed_count}</b></div>
+      <div><span>Compression</span><b>{(m.raw_count/m.incident_count).toFixed(1)}×</b></div>
+      <div title="Illustrative estimate: 45 seconds per raw alert versus 90 seconds per correlated incident"><span><Timer size={11}/>Estimated triage saved</span><b>~{estimatedMinutes} min</b><small>illustrative estimate</small></div>
+    </div>
+  </section>
+}
 function ResolvedPhase(){
   const {engineResult,reset}=useOpsStore(useShallow(s=>({engineResult:s.engineResult,reset:s.reset})))
-  const [expandedId,setExpandedId]=useState<number|null>(null)
+  const initialIncident=engineResult?.incidents.reduce((best,current)=>current.alert_count>best.alert_count?current:best,engineResult.incidents[0])
+  const [expandedId,setExpandedId]=useState<number|null>(initialIncident?.incident_id??null)
+  const selectedIncident=engineResult?.incidents.find(i=>i.incident_id===expandedId)??initialIncident
   const ref=useRef<HTMLDivElement>(null)
   useEffect(()=>{ref.current?.scrollIntoView({behavior:'smooth',block:'start'})},[])
   if(!engineResult)return null
   return <motion.div key="resolved" ref={ref} initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} transition={{duration:.5,delay:.15}}>
+    <IncidentCommandCenter result={engineResult}/>
+    {selectedIncident&&<RootCauseGraph incident={selectedIncident}/>}
+    {selectedIncident&&<IncidentCopilot incident={selectedIncident}/>}
     <section className="panel">
       <PanelHead title="Incidents" icon={<Network size={15}/>} meta={<>{engineResult.incidents.length} incidents <button className="back-to-monitoring" onClick={()=>reset()}><RotateCcw size={12}/>Back to monitoring</button></>}/>
       <div className="table-panel engine-incidents-table">
@@ -244,28 +385,47 @@ function BenchmarkCard({size}:{size:DemoSize}){
 function ScaleChart(){
   const benchmarks=useOpsStore(s=>s.benchmarks)
   const points=DEMO_SIZES.map(sz=>({size:sz,entry:benchmarks[sz]})).filter(p=>p.entry.status==='done'&&p.entry.result)
-  if(points.length===0)return null
-  const w=760,h=260,padL=48,padR=20,padT=20,padB=34
+  const running=DEMO_SIZES.find(size=>benchmarks[size].status==='running')
+  const [selectedSize,setSelectedSize]=useState<DemoSize>(100)
+  const seenSizes=useRef(new Set<DemoSize>())
+  useEffect(()=>{
+    const newlyCompleted=points.find(point=>!seenSizes.current.has(point.size))
+    if(newlyCompleted)setSelectedSize(newlyCompleted.size)
+    seenSizes.current=new Set(points.map(point=>point.size))
+  },[points])
+  if(points.length===0&&!running)return null
+  const selected=points.find(point=>point.size===selectedSize)??points.at(-1)
+  const w=760,h=290,padL=52,padR=24,padT=28,padB=42
   const plotW=w-padL-padR,plotH=h-padT-padB
   const xMin=Math.log10(100),xMax=Math.log10(100000)
   const xPos=(size:number)=>padL+((Math.log10(size)-xMin)/(xMax-xMin))*plotW
-  const yPos=(pct:number)=>padT+(1-pct/100)*plotH
-  const gridY=[0,25,50,75,100]
-  const line=points.map(p=>`${xPos(p.size)},${yPos(p.entry.result!.metrics.reduction_pct)}`).join(' ')
-  return <section className="panel">
-    <PanelHead title="Reduction vs. dataset size" icon={<GitCompare size={15}/>} meta={`${points.length} of ${DEMO_SIZES.length} sizes run`}/>
-    <div className="scale-chart">
-      <svg width="100%" viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="xMidYMid meet">
-        {gridY.map(g=><line key={g} x1={padL} x2={w-padR} y1={yPos(g)} y2={yPos(g)} className="chart-grid"/>)}
-        {gridY.map(g=><text key={g} x={padL-8} y={yPos(g)+4} textAnchor="end" className="chart-axis-label">{g}%</text>)}
-        {DEMO_SIZES.map(sz=><text key={sz} x={xPos(sz)} y={h-padB+22} textAnchor="middle" className="chart-axis-label">{SIZE_LABEL[sz]}</text>)}
-        {points.length>1&&<polyline points={line} fill="none" stroke="var(--green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>}
-        {points.map(p=>{const pct=p.entry.result!.metrics.reduction_pct;return <g key={p.size}>
-          <circle cx={xPos(p.size)} cy={yPos(pct)} r="4.5" fill="var(--green)" stroke="var(--panel)" strokeWidth="2"><title>{`${SIZE_LABEL[p.size]} alerts -> ${pct.toFixed(2)}% reduction`}</title></circle>
-          <text x={xPos(p.size)} y={yPos(pct)-12} textAnchor="middle" className="chart-point-label">{pct.toFixed(1)}%</text>
-        </g>})}
-      </svg>
+  const yPos=(pct:number)=>padT+((100-Math.max(75,pct))/25)*plotH
+  const gridY=[75,80,85,90,95,100]
+  const linePath=points.map((p,index)=>`${index===0?'M':'L'} ${xPos(p.size)} ${yPos(p.entry.result!.metrics.reduction_pct)}`).join(' ')
+  const areaPath=points.length?`${linePath} L ${xPos(points.at(-1)!.size)} ${h-padB} L ${xPos(points[0].size)} ${h-padB} Z`:''
+  const selectedResult=selected?.entry.result
+  const throughput=selectedResult?Math.round(selectedResult.metrics.raw_count/((selected.entry.elapsedMs??1)/1000)):0
+  const compression=selectedResult?selectedResult.metrics.raw_count/selectedResult.metrics.incident_count:0
+  return <section className="panel benchmark-intelligence">
+    <PanelHead title="Engine scaling intelligence" icon={<GitCompare size={15}/>} meta={<>{running?<><i className="benchmark-live-dot"/>Processing {SIZE_LABEL[running]} alerts</>:<><CheckCircle2 size={12}/>{points.length} of {DEMO_SIZES.length} scales measured</>}</>}/>
+    <div className="benchmark-visual">
+      <div className="scale-chart">
+        <div className="chart-title"><div><span>NOISE REDUCTION CURVE</span><b>Performance improves as alert density grows</b></div><em>Higher is better</em></div>
+        <svg width="100%" viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="xMidYMid meet">
+          <defs><linearGradient id="chart-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#1fd88f" stopOpacity=".28"/><stop offset="1" stopColor="#1fd88f" stopOpacity="0"/></linearGradient><filter id="point-glow"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          {gridY.map(g=><g key={g}><line x1={padL} x2={w-padR} y1={yPos(g)} y2={yPos(g)} className="chart-grid"/><text x={padL-10} y={yPos(g)+4} textAnchor="end" className="chart-axis-label">{g}%</text></g>)}
+          {DEMO_SIZES.map(sz=><g key={sz}><line x1={xPos(sz)} x2={xPos(sz)} y1={padT} y2={h-padB} className="chart-grid vertical"/><text x={xPos(sz)} y={h-padB+25} textAnchor="middle" className="chart-axis-label">{SIZE_LABEL[sz]}</text></g>)}
+          {areaPath&&<motion.path key={`area-${points.length}`} d={areaPath} fill="url(#chart-area)" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:.7}}/>}
+          {linePath&&<motion.path key={`line-${points.length}`} d={linePath} fill="none" stroke="var(--green)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" initial={{pathLength:0}} animate={{pathLength:1}} transition={{duration:.8,ease:'easeOut'}}/>}
+          {points.map(p=>{const pct=p.entry.result!.metrics.reduction_pct,isSelected=p.size===selected?.size;return <g key={p.size} className="chart-point" onClick={()=>setSelectedSize(p.size)}>
+            <line x1={xPos(p.size)} x2={xPos(p.size)} y1={yPos(pct)} y2={h-padB} className="chart-stem"/>{isSelected&&<circle cx={xPos(p.size)} cy={yPos(pct)} r="14" className="chart-point-halo"/>}<circle cx={xPos(p.size)} cy={yPos(pct)} r={isSelected?7:5} className={isSelected?'selected':''} filter={isSelected?'url(#point-glow)':undefined}/><text x={xPos(p.size)} y={yPos(pct)-16} textAnchor="middle" className="chart-point-label">{pct.toFixed(2)}%</text>
+          </g>})}
+          {running&&<g className="chart-running" transform={`translate(${xPos(running)} ${h-padB-18})`}><circle r="7"/><circle r="14"/><text y="-17" textAnchor="middle">RUNNING</text></g>}
+        </svg>
+      </div>
+      <aside className="benchmark-spotlight">{selected&&selectedResult?<motion.div key={selected.size} initial={{opacity:0,x:8}} animate={{opacity:1,x:0}}><span className="spotlight-kicker">SELECTED RUN</span><h3>{SIZE_LABEL[selected.size]} <small>alerts</small></h3><div className="reduction-ring" style={{'--reduction':`${selectedResult.metrics.reduction_pct*3.6}deg`} as React.CSSProperties}><div><b>{selectedResult.metrics.reduction_pct.toFixed(1)}%</b><span>reduced</span></div></div><div className="spotlight-stats"><div><span>Incidents</span><b>{selectedResult.metrics.incident_count.toLocaleString()}</b></div><div><span>Compression</span><b>{compression.toFixed(1)}×</b></div><div><span>Throughput</span><b>{throughput.toLocaleString()}<small>/s</small></b></div><div><span>Runtime</span><b>{((selected.entry.elapsedMs??0)/1000).toFixed(2)}<small>s</small></b></div></div><p><Zap size={12}/>Nucleus converted every <b>{compression.toFixed(1)}</b> raw alerts into one actionable incident.</p></motion.div>:<div className="spotlight-wait"><Loader2 size={22} className="spin"/><b>Correlating alerts</b><span>The chart will populate when this run completes.</span></div>}</aside>
     </div>
+    <div className="benchmark-scale-strip">{DEMO_SIZES.map(size=>{const entry=benchmarks[size],done=entry.status==='done';return <button key={size} disabled={!done} className={`${entry.status} ${selected?.size===size?'active':''}`} onClick={()=>setSelectedSize(size)}><span>{SIZE_LABEL[size]}</span><b>{done?`${entry.result!.metrics.reduction_pct.toFixed(1)}%`:entry.status==='running'?'Running…':'Not run'}</b><i/></button>})}</div>
   </section>
 }
 function BenchmarkView(){
