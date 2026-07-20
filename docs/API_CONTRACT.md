@@ -7,6 +7,16 @@ All responses are JSON. There is no auth, no database, and no write
 endpoints — the dataset is a bundled, read-only CSV
 (`app/data/aiops_full_alerts.csv`, 132,927 real AIOps2020-derived alerts).
 
+## `POST /api/aiops/copilot`
+
+Generates a Groq explanation grounded in one incident returned by an
+engine run. The request contains `{ "incident": <EngineIncident>,
+"question": "cause" | "evidence" | "action" }`; the response contains a
+short `summary`, `answer`, exactly three safe diagnostic `actions`, and the
+`model` used. Configure `GROQ_API_KEY` on the backend only. If it is absent,
+the endpoint returns 503 and the frontend retains its deterministic evidence
+fallback. `GROQ_COPILOT_MODEL` defaults to `openai/gpt-oss-20b`.
+
 ---
 
 ## `GET /api/aiops/summary`

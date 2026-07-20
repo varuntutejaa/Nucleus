@@ -159,21 +159,27 @@ class _CorrelationEngine:
         return pd.DataFrame(self.correlated)
 
 
-def _root_cause_score(row, incident_df: pd.DataFrame) -> float:
-    score = (SEVERITY_SCORE.get(row["severity"], 1) / 5.0) * 0.35
+def _root_cause_scores(incident_df: pd.DataFrame) -> pd.Series:
+    """Score all incident members together, avoiding a full scan per alert."""
+    severity = (
+        incident_df["severity"].map(SEVERITY_SCORE).fillna(1).astype(float) / 5.0 * 0.35
+    )
 
-    earliest, latest = incident_df["timestamp"].min(), incident_df["timestamp"].max()
+    timestamps = incident_df["timestamp"]
+    earliest, latest = timestamps.min(), timestamps.max()
     total = (latest - earliest).total_seconds()
     if total == 0:
-        score += 0.25
+        temporal = pd.Series(0.25, index=incident_df.index)
     else:
-        position = (row["timestamp"] - earliest).total_seconds()
-        score += (1 - position / total) * 0.25
+        positions = (timestamps - earliest).dt.total_seconds()
+        temporal = (1 - positions / total) * 0.25
 
-    metric_count = (incident_df["metric"] == row["metric"]).sum()
-    score += (metric_count / len(incident_df)) * 0.20
-    score += (METRIC_PRIORITY.get(row["metric"], 1) / 5.0) * 0.20
-    return round(score, 4)
+    metric_counts = incident_df["metric"].value_counts()
+    frequency = incident_df["metric"].map(metric_counts) / len(incident_df) * 0.20
+    priority = (
+        incident_df["metric"].map(METRIC_PRIORITY).fillna(1).astype(float) / 5.0 * 0.20
+    )
+    return (severity + temporal + frequency + priority).round(4)
 
 
 def run_engine(alerts_df: pd.DataFrame, include_members: bool = False,
@@ -224,9 +230,7 @@ def run_engine(alerts_df: pd.DataFrame, include_members: bool = False,
     incidents = []
     for incident_id, incident_df in correlated_df.groupby("incident_id"):
         incident_df = incident_df.sort_values("timestamp").copy()
-        incident_df["root_score"] = [
-            _root_cause_score(row, incident_df) for _, row in incident_df.iterrows()
-        ]
+        incident_df["root_score"] = _root_cause_scores(incident_df)
         root = incident_df.sort_values("root_score", ascending=False).iloc[0]
         incident = {
             "incident_id": int(incident_id),

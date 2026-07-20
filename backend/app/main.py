@@ -34,8 +34,8 @@ from app.aiops_full_loader import DEMO_SIZES, load_demo_sample, load_full_datase
 from app.distance import DEFAULT_ALPHA, DEFAULT_BETA, DEFAULT_GAMMA
 from app.preprocessing import full_matrices, get_full_result, most_similar, run_preprocessing, summarize
 from app.schemas import (
-    AiopsSampleResponse, AiopsSummary, EngineRunResponse, PreprocessMatricesOut, PreprocessSummaryOut,
-    SimilarAlertsResponse,
+    AiopsSampleResponse, AiopsSummary, CopilotRequest, CopilotResponse, EngineRunResponse,
+    PreprocessMatricesOut, PreprocessSummaryOut, SimilarAlertsResponse,
 )
 from app.streaming_engine import AI_SCORE_WEIGHT_AI, AI_SCORE_WEIGHT_EXISTING, run_engine
 
@@ -220,3 +220,17 @@ def get_similar_alerts(preprocessing_id: str, alert_id: str, top_k: int = Query(
     if preview is None:
         raise HTTPException(404, f"alert_id {alert_id!r} not found in preprocessing result {preprocessing_id!r}")
     return preview
+
+
+@app.post("/api/aiops/copilot", response_model=CopilotResponse)
+def ask_incident_copilot(request: CopilotRequest):
+    """Generate a Groq explanation grounded in one correlated incident.
+    GROQ_API_KEY is read server-side and is never exposed to the frontend."""
+    from app.llm_copilot import generate_copilot_response
+    try:
+        return generate_copilot_response(request)
+    except RuntimeError as exc:
+        raise HTTPException(503, str(exc))
+    except Exception:
+        logging.exception("incident copilot request failed")
+        raise HTTPException(502, "Incident Copilot could not reach the configured LLM")
