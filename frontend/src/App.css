@@ -72,6 +72,7 @@
 .simulate-btn:disabled{opacity:.5;cursor:default}
 .simulate-btn:not(:disabled):hover{border-color:rgba(91,157,255,.55);color:#8fc0ff;transform:translateY(-1px)}
 .simulate-btn:not(:disabled):active{transform:scale(.95);filter:brightness(1.25)}
+.reset-btn{width:auto;padding:0 11px}
 
 /* Page shell */
 main{padding:30px 32px;max-width:1800px;margin:auto;transition:padding-right .2s ease}

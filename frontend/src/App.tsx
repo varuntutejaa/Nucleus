@@ -28,7 +28,7 @@ function Sidebar(){
 }
 function LiveClock(){const now=useNow(1000);return <div className="live-clock"><i/>{new Date(now).toLocaleTimeString([],{hour12:false})}</div>}
 function Topbar(){
-  const {dark,toggleTheme,view,aiopsSummary,simPhase,engineResult,simulate,sidebarOpen,toggleSidebar,rightPanelVisible,toggleRightPanel}=useOpsStore(useShallow(s=>({dark:s.dark,toggleTheme:s.toggleTheme,view:s.view,aiopsSummary:s.aiopsSummary,simPhase:s.simPhase,engineResult:s.engineResult,simulate:s.simulate,sidebarOpen:s.sidebarOpen,toggleSidebar:s.toggleSidebar,rightPanelVisible:s.rightPanelVisible,toggleRightPanel:s.toggleRightPanel})))
+  const {dark,toggleTheme,view,aiopsSummary,simPhase,engineResult,simulate,sidebarOpen,toggleSidebar,rightPanelVisible,toggleRightPanel,resetAll}=useOpsStore(useShallow(s=>({dark:s.dark,toggleTheme:s.toggleTheme,view:s.view,aiopsSummary:s.aiopsSummary,simPhase:s.simPhase,engineResult:s.engineResult,simulate:s.simulate,sidebarOpen:s.sidebarOpen,toggleSidebar:s.toggleSidebar,rightPanelVisible:s.rightPanelVisible,toggleRightPanel:s.toggleRightPanel,resetAll:s.resetAll})))
   const showSimulate=view==='operations'&&simPhase==='idle'&&!engineResult
   const showPanelToggle=view==='operations'&&simPhase!=='idle'
   return <header className="topbar">
@@ -38,7 +38,8 @@ function Topbar(){
     </div>
     <div className="top-actions">
       {showPanelToggle&&<button className={`icon-btn ${rightPanelVisible?'active-toggle':''}`} onClick={toggleRightPanel} title={rightPanelVisible?'Hide alert panel':'Show alert panel'}><PanelRight size={16}/></button>}
-      {showSimulate&&<button className="simulate-btn icon-btn" disabled={!aiopsSummary} title="Simulate incoming alerts" onClick={()=>simulate()}><Activity size={15}/></button>}
+      {showSimulate&&<button className="simulate-btn icon-btn" disabled={!aiopsSummary} title="Simulate incoming alerts" aria-label="Simulate incoming alerts" onClick={()=>simulate()}><Activity size={15}/></button>}
+      <button className="reset-btn icon-btn" onClick={resetAll} title="Reset saved dashboard data" aria-label="Reset saved dashboard data"><RotateCcw size={15}/><span>Reset</span></button>
       <LiveClock/>
       <button className="icon-btn" onClick={toggleTheme}>{dark?<Sun size={16}/>:<Moon size={16}/>}</button>
     </div>

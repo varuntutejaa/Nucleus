@@ -1,4 +1,5 @@
 import {create} from 'zustand'
+import {createJSONStorage,persist} from 'zustand/middleware'
 import {DEMO_SIZES,fetchAiopsSample,fetchAiopsSummary,runAiopsEngine,runAiopsSampleEngine,type Alert,type AiopsSummary,type DemoSize,type EngineResult} from './api'
 
 type EngineStatus='idle'|'running'|'done'|'error'
@@ -78,12 +79,21 @@ type State={
   runBenchmark:(size:DemoSize)=>Promise<void>
   simulate:()=>void
   reset:()=>void
+  resetAll:()=>void
   jitterBaseline:()=>void
 }
 let simTimer:ReturnType<typeof setTimeout>|null=null
 const clearSimTimer=()=>{if(simTimer){clearTimeout(simTimer);simTimer=null}}
 
-export const useOpsStore=create<State>((set,get)=>({
+const persistedStorage=createJSONStorage(()=>localStorage,{
+  replacer:(_key,value)=>value instanceof Set?{__nucleusType:'Set',values:[...value]}:value,
+  reviver:(_key,value)=>{
+    if(value&&typeof value==='object'&&'__nucleusType' in value&&value.__nucleusType==='Set'&&'values' in value&&Array.isArray(value.values))return new Set(value.values)
+    return value
+  },
+})
+
+export const useOpsStore=create<State>()(persist((set,get)=>({
   view:'operations',setView:view=>set({view}),
   aiopsSummary:null,monitoringSince:Date.now(),lastSyncedAt:null,engineStatus:'idle',engineResult:null,engineError:null,
   simAlerts:[],simPhase:'idle',alertsReceived:0,affectedHosts:new Set(),metricCounts:{},metricSeries:seedSeries(),
@@ -145,6 +155,15 @@ export const useOpsStore=create<State>((set,get)=>({
     clearSimTimer()
     set({simAlerts:[],simPhase:'idle',alertsReceived:0,affectedHosts:new Set(),metricCounts:{},metricSeries:seedSeries(),engineResult:null,engineStatus:'idle',engineError:null})
   },
+  resetAll:()=>{
+    clearSimTimer()
+    set({
+      view:'operations',monitoringSince:Date.now(),engineStatus:'idle',engineResult:null,engineError:null,
+      simAlerts:[],simPhase:'idle',alertsReceived:0,affectedHosts:new Set(),metricCounts:{},metricSeries:seedSeries(),
+      benchmarks:emptyBenchmarks(),fullRunStatus:'idle',fullRunResult:null,fullRunElapsedMs:null,fullRunError:null,
+      dark:true,sidebarOpen:true,rightPanelVisible:true,
+    })
+  },
   runBenchmark:async(size)=>{
     if(get().benchmarks[size].status==='running')return
     set(s=>({benchmarks:{...s.benchmarks,[size]:{status:'running',result:null,elapsedMs:null,error:null}}}))
@@ -156,6 +175,33 @@ export const useOpsStore=create<State>((set,get)=>({
       set(s=>({benchmarks:{...s.benchmarks,[size]:{status:'error',result:null,elapsedMs:null,error:e instanceof Error?e.message:'Run failed'}}}))
     }
   }
+}),{
+  name:'nucleus-dashboard-state-v1',
+  storage:persistedStorage,
+  partialize:s=>({
+    view:s.view,monitoringSince:s.monitoringSince,engineResult:s.engineResult,
+    simAlerts:s.simAlerts,simPhase:s.simPhase,alertsReceived:s.alertsReceived,affectedHosts:s.affectedHosts,
+    metricCounts:s.metricCounts,metricSeries:s.metricSeries,benchmarks:s.benchmarks,
+    dark:s.dark,sidebarOpen:s.sidebarOpen,rightPanelVisible:s.rightPanelVisible,
+    fullRunResult:s.fullRunResult,fullRunElapsedMs:s.fullRunElapsedMs,
+  }),
+  merge:(persisted,current)=>{
+    const saved=persisted as Partial<State>
+    const engineResult=saved.engineResult??null
+    const fullRunResult=saved.fullRunResult??null
+    const benchmarks=saved.benchmarks??current.benchmarks
+    const restoredBenchmarks=Object.fromEntries(DEMO_SIZES.map(size=>{
+      const entry=benchmarks[size]
+      return [size,entry?.status==='running'?{...entry,status:'idle' as const}:entry]
+    })) as State['benchmarks']
+    return {
+      ...current,...saved,benchmarks:restoredBenchmarks,
+      affectedHosts:saved.affectedHosts instanceof Set?saved.affectedHosts:new Set(),
+      simPhase:saved.simPhase==='streaming'?'done':saved.simPhase??'idle',
+      engineStatus:engineResult?'done':'idle',engineResult,engineError:null,
+      fullRunStatus:fullRunResult?'done':'idle',fullRunResult,fullRunError:null,
+    }
+  },
 }))
 
 export {lastOf}
